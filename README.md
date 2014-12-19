@@ -28,6 +28,6 @@ Does not contain a working implementation of a Cordova BLE plugin.
 
 /hygge-ionic $ ionic build [ios / android]
 
-/hygge-ionic $ ionic serve
+/hygge-ionic $ ionic serve [--lab]
 
 /hygge-ionic $ ionic emulate [ios / android]
