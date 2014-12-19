@@ -1,6 +1,6 @@
 hygge
 =====
-Hygge app working file and testbed apps. 
+Hygge app working files and testbed apps. 
 
 All contents are Cordova projects. 
 
