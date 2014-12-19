@@ -1,0 +1,257 @@
+2014-12-16 15:56:31.881 Hygge[49649:12323252] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/travisgalloway/Library/Developer/CoreSimulator/Devices/AE60B675-E7D8-4A1B-88D5-D20C99D68FDD/data/Containers/Data/Application/981E9277-C8EB-4A6F-B737-BCB64092D133/Library/Cookies/Cookies.binarycookies
+2014-12-16 15:56:31.968 Hygge[49649:12323252] Apache Cordova native platform version 3.7.0 is starting.
+2014-12-16 15:56:31.968 Hygge[49649:12323252] Multi-tasking -> Device: YES, App: YES
+2014-12-16 15:56:31.970 Hygge[49649:12323252] Unlimited access to network resources
+2014-12-16 15:56:31.972 Hygge[49649:12323252] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2014-12-16 15:56:32.670 Hygge[49649:12323252] Resetting plugins due to page load.
+2014-12-16 15:56:32.714 Hygge[49649:12323252] Finished load of: file:///Users/travisgalloway/Library/Developer/CoreSimulator/Devices/AE60B675-E7D8-4A1B-88D5-D20C99D68FDD/data/Containers/Bundle/Application/6F21C399-8CB2-4A1D-81A2-528C1A0FE9E9/Hygge.app/www/index.html
+2014-12-16 15:56:32.739 Hygge[49649:12323301] [DOM] registerDelegateCallbackId()
+2014-12-16 15:56:32.739 Hygge[49649:12323301] peripheralManagerDidUpdateState: PeripheralManagerStateUnsupported
+2014-12-16 15:56:32.739 Hygge[49649:12323252] peripheralManagerDidUpdateState() state: PeripheralManagerStateUnsupported
+2014-12-16 15:56:32.739 Hygge[49649:12323301] Converted peripheralManagerDidUpdateState: into peripheralManagerDidUpdateState
+2014-12-16 15:56:32.739 Hygge[49649:12323252] didChangeAuthorizationStatus
+2014-12-16 15:56:32.739 Hygge[49649:12323301] Invalid callback id received by sendPluginResult
+2014-12-16 15:56:32.739 Hygge[49649:12323252] didChangeAuthorizationStatus: 0 => AuthorizationStatusNotDetermined
+2014-12-16 15:56:32.739 Hygge[49649:12323252] Converted locationManager:didChangeAuthorizationStatus: into didChangeAuthorizationStatus
+2014-12-16 15:56:32.740 Hygge[49649:12323252] Invalid callback id received by sendPluginResult
+2014-12-16 15:56:32.742 Hygge[49649:12323303] Registering delegate callback ID: LocationManager1147133821
+2014-12-16 15:56:32.744 Hygge[49649:12323303] [DOM] _onDelegateCallback() null
+2014-12-16 15:56:32.748 Hygge[49649:12323303] monitoringDidFailForRegion: Error Domain=kCLErrorDomain Code=5 "The operation couldn’t be completed. (kCLErrorDomain error 5.)"
+2014-12-16 15:56:32.748 Hygge[49649:12323303] Converted locationManager:monitoringDidFailForRegion:withError: into monitoringDidFailForRegionWithError
+2014-12-16 15:56:33.869 Hygge[49649:12323252] didChangeAuthorizationStatus
+2014-12-16 15:56:33.870 Hygge[49649:12323252] didChangeAuthorizationStatus: 3 => AuthorizationStatusAuthorized
+2014-12-16 15:56:33.870 Hygge[49649:12323252] Converted locationManager:didChangeAuthorizationStatus: into didChangeAuthorizationStatus
+2014-12-16 15:56:33.871 Hygge[49649:12323302] [DOM] _mapDelegateCallback() found eventType didChangeAuthorizationStatus
+2014-12-16 15:56:33.871 Hygge[49649:12323301] [DOM] DEFAULT didChangeAuthorizationStatus()
+2014-12-16 15:56:33.871 Hygge[49649:12323303] [DOM] _onDelegateCallback() {"eventType":"didChangeAuthorizationStatus","status":"AuthorizationStatusAuthorized"}
+2014-12-16 16:15:18.543 Hygge[50709:12439212] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/travisgalloway/Library/Developer/CoreSimulator/Devices/AE60B675-E7D8-4A1B-88D5-D20C99D68FDD/data/Containers/Data/Application/77ADB8A3-E19F-4013-A53E-BE1E6C5B45E6/Library/Cookies/Cookies.binarycookies
+2014-12-16 16:15:18.609 Hygge[50709:12439212] Apache Cordova native platform version 3.7.0 is starting.
+2014-12-16 16:15:18.609 Hygge[50709:12439212] Multi-tasking -> Device: YES, App: YES
+2014-12-16 16:15:18.610 Hygge[50709:12439212] Unlimited access to network resources
+2014-12-16 16:15:18.612 Hygge[50709:12439212] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2014-12-16 16:15:18.852 Hygge[50709:12439212] Resetting plugins due to page load.
+2014-12-16 16:15:18.940 Hygge[50709:12439212] Finished load of: file:///Users/travisgalloway/Library/Developer/CoreSimulator/Devices/AE60B675-E7D8-4A1B-88D5-D20C99D68FDD/data/Containers/Bundle/Application/D7BB67A6-DC5B-4AC6-A5AE-CDF9387A20D5/Hygge.app/www/index.html
+2014-12-16 16:15:19.048 Hygge[50709:12439238] [DOM] registerDelegateCallbackId()
+2014-12-16 16:15:19.048 Hygge[50709:12439212] peripheralManagerDidUpdateState() state: PeripheralManagerStateUnsupported
+2014-12-16 16:15:19.048 Hygge[50709:12439237] peripheralManagerDidUpdateState: PeripheralManagerStateUnsupported
+2014-12-16 16:15:19.048 Hygge[50709:12439237] Converted peripheralManagerDidUpdateState: into peripheralManagerDidUpdateState
+2014-12-16 16:15:19.048 Hygge[50709:12439237] Invalid callback id received by sendPluginResult
+2014-12-16 16:15:19.049 Hygge[50709:12439238] Registering delegate callback ID: LocationManager1929651246
+2014-12-16 16:15:19.050 Hygge[50709:12439212] didChangeAuthorizationStatus
+2014-12-16 16:15:19.050 Hygge[50709:12439212] didChangeAuthorizationStatus: 3 => AuthorizationStatusAuthorized
+2014-12-16 16:15:19.050 Hygge[50709:12439212] Converted locationManager:didChangeAuthorizationStatus: into didChangeAuthorizationStatus
+2014-12-16 16:15:19.051 Hygge[50709:12439237] [DOM] _onDelegateCallback() null
+2014-12-16 16:15:19.052 Hygge[50709:12439237] [DOM] _onDelegateCallback() {"eventType":"didChangeAuthorizationStatus","status":"AuthorizationStatusAuthorized"}
+2014-12-16 16:15:19.052 Hygge[50709:12439238] [DOM] _mapDelegateCallback() found eventType didChangeAuthorizationStatus
+2014-12-16 16:15:19.063 Hygge[50709:12439212] ERROR: Fail in safeTraceLogging()undefined is not an object (evaluating 'cordova.plugins.locationManager') TypeError: undefined is not an object (evaluating 'cordova.plugins.locationManager')
+2014-12-16 16:15:19.065 Hygge[50709:12439237] monitoringDidFailForRegion: Error Domain=kCLErrorDomain Code=5 "The operation couldn’t be completed. (kCLErrorDomain error 5.)"
+2014-12-16 16:15:19.065 Hygge[50709:12439237] Converted locationManager:monitoringDidFailForRegion:withError: into monitoringDidFailForRegionWithError
+2014-12-16 16:49:29.159 Hygge[51114:12729928] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/travisgalloway/Library/Developer/CoreSimulator/Devices/AE60B675-E7D8-4A1B-88D5-D20C99D68FDD/data/Containers/Data/Application/82C131F9-3CCA-43B4-B5F1-415AF1F358F7/Library/Cookies/Cookies.binarycookies
+2014-12-16 16:49:29.248 Hygge[51114:12729928] Apache Cordova native platform version 3.7.0 is starting.
+2014-12-16 16:49:29.249 Hygge[51114:12729928] Multi-tasking -> Device: YES, App: YES
+2014-12-16 16:49:29.250 Hygge[51114:12729928] Unlimited access to network resources
+2014-12-16 16:49:29.252 Hygge[51114:12729928] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2014-12-16 16:49:29.471 Hygge[51114:12729928] Resetting plugins due to page load.
+2014-12-16 16:49:29.665 Hygge[51114:12730005] [DOM] registerDelegateCallbackId()
+2014-12-16 16:49:29.665 Hygge[51114:12729928] peripheralManagerDidUpdateState() state: PeripheralManagerStateUnsupported
+2014-12-16 16:49:29.665 Hygge[51114:12729977] peripheralManagerDidUpdateState: PeripheralManagerStateUnsupported
+2014-12-16 16:49:29.665 Hygge[51114:12729977] Converted peripheralManagerDidUpdateState: into peripheralManagerDidUpdateState
+2014-12-16 16:49:29.666 Hygge[51114:12729977] Invalid callback id received by sendPluginResult
+2014-12-16 16:49:29.667 Hygge[51114:12729928] didChangeAuthorizationStatus
+2014-12-16 16:49:29.667 Hygge[51114:12729974] Registering delegate callback ID: LocationManager1816833279
+2014-12-16 16:49:29.667 Hygge[51114:12729928] didChangeAuthorizationStatus: 3 => AuthorizationStatusAuthorized
+2014-12-16 16:49:29.667 Hygge[51114:12729928] Converted locationManager:didChangeAuthorizationStatus: into didChangeAuthorizationStatus
+2014-12-16 16:49:29.667 Hygge[51114:12729928] Invalid callback id received by sendPluginResult
+2014-12-16 16:49:29.667 Hygge[51114:12729977] [DOM] _onDelegateCallback() null
+2014-12-16 16:49:29.677 Hygge[51114:12729977] monitoringDidFailForRegion: Error Domain=kCLErrorDomain Code=5 "The operation couldn’t be completed. (kCLErrorDomain error 5.)"
+2014-12-16 16:49:29.677 Hygge[51114:12729977] Converted locationManager:monitoringDidFailForRegion:withError: into monitoringDidFailForRegionWithError
+2014-12-16 16:49:30.476 Hygge[51114:12729928] Finished load of: file:///Users/travisgalloway/Library/Developer/CoreSimulator/Devices/AE60B675-E7D8-4A1B-88D5-D20C99D68FDD/data/Containers/Bundle/Application/476B56BA-4CBB-49C2-8411-BA0CE3233B74/Hygge.app/www/index.html
+2014-12-16 16:50:52.568 Hygge[51278:12743017] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/travisgalloway/Library/Developer/CoreSimulator/Devices/AE60B675-E7D8-4A1B-88D5-D20C99D68FDD/data/Containers/Data/Application/D528E747-0E92-4AB6-AC66-F823E62EA580/Library/Cookies/Cookies.binarycookies
+2014-12-16 16:50:52.670 Hygge[51278:12743017] Apache Cordova native platform version 3.7.0 is starting.
+2014-12-16 16:50:52.670 Hygge[51278:12743017] Multi-tasking -> Device: YES, App: YES
+2014-12-16 16:50:52.671 Hygge[51278:12743017] Unlimited access to network resources
+2014-12-16 16:50:52.674 Hygge[51278:12743017] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2014-12-16 16:50:52.877 Hygge[51278:12743017] Resetting plugins due to page load.
+2014-12-16 16:50:52.978 Hygge[51278:12743033] [DOM] registerDelegateCallbackId()
+2014-12-16 16:50:52.978 Hygge[51278:12743017] peripheralManagerDidUpdateState() state: PeripheralManagerStateUnsupported
+2014-12-16 16:50:52.978 Hygge[51278:12743038] peripheralManagerDidUpdateState: PeripheralManagerStateUnsupported
+2014-12-16 16:50:52.978 Hygge[51278:12743038] Converted peripheralManagerDidUpdateState: into peripheralManagerDidUpdateState
+2014-12-16 16:50:52.979 Hygge[51278:12743038] Invalid callback id received by sendPluginResult
+2014-12-16 16:50:52.980 Hygge[51278:12743017] didChangeAuthorizationStatus
+2014-12-16 16:50:52.980 Hygge[51278:12743036] Registering delegate callback ID: LocationManager144276300
+2014-12-16 16:50:52.980 Hygge[51278:12743017] didChangeAuthorizationStatus: 3 => AuthorizationStatusAuthorized
+2014-12-16 16:50:52.980 Hygge[51278:12743017] Converted locationManager:didChangeAuthorizationStatus: into didChangeAuthorizationStatus
+2014-12-16 16:50:52.980 Hygge[51278:12743017] Invalid callback id received by sendPluginResult
+2014-12-16 16:50:52.980 Hygge[51278:12743038] [DOM] _onDelegateCallback() null
+2014-12-16 16:50:53.020 Hygge[51278:12743036] monitoringDidFailForRegion: Error Domain=kCLErrorDomain Code=5 "The operation couldn’t be completed. (kCLErrorDomain error 5.)"
+2014-12-16 16:50:53.020 Hygge[51278:12743036] Converted locationManager:monitoringDidFailForRegion:withError: into monitoringDidFailForRegionWithError
+2014-12-16 16:50:53.229 Hygge[51278:12743017] Finished load of: file:///Users/travisgalloway/Library/Developer/CoreSimulator/Devices/AE60B675-E7D8-4A1B-88D5-D20C99D68FDD/data/Containers/Bundle/Application/945CC53E-E706-4566-8BEF-FE90CC09F791/Hygge.app/www/index.html
+2014-12-16 16:51:44.293 Hygge[51439:12750922] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/travisgalloway/Library/Developer/CoreSimulator/Devices/AE60B675-E7D8-4A1B-88D5-D20C99D68FDD/data/Containers/Data/Application/D4A3EF29-5321-413F-B24B-3B62202DACC6/Library/Cookies/Cookies.binarycookies
+2014-12-16 16:51:44.377 Hygge[51439:12750922] Apache Cordova native platform version 3.7.0 is starting.
+2014-12-16 16:51:44.377 Hygge[51439:12750922] Multi-tasking -> Device: YES, App: YES
+2014-12-16 16:51:44.378 Hygge[51439:12750922] Unlimited access to network resources
+2014-12-16 16:51:44.380 Hygge[51439:12750922] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2014-12-16 16:51:44.578 Hygge[51439:12750922] Resetting plugins due to page load.
+2014-12-16 16:51:44.670 Hygge[51439:12750942] [DOM] registerDelegateCallbackId()
+2014-12-16 16:51:44.670 Hygge[51439:12750922] peripheralManagerDidUpdateState() state: PeripheralManagerStateUnsupported
+2014-12-16 16:51:44.671 Hygge[51439:12750968] peripheralManagerDidUpdateState: PeripheralManagerStateUnsupported
+2014-12-16 16:51:44.671 Hygge[51439:12750968] Converted peripheralManagerDidUpdateState: into peripheralManagerDidUpdateState
+2014-12-16 16:51:44.671 Hygge[51439:12750968] Invalid callback id received by sendPluginResult
+2014-12-16 16:51:44.672 Hygge[51439:12750968] Registering delegate callback ID: LocationManager87835387
+2014-12-16 16:51:44.674 Hygge[51439:12750943] [DOM] _onDelegateCallback() null
+2014-12-16 16:51:44.674 Hygge[51439:12750922] didChangeAuthorizationStatus
+2014-12-16 16:51:44.674 Hygge[51439:12750922] didChangeAuthorizationStatus: 3 => AuthorizationStatusAuthorized
+2014-12-16 16:51:44.674 Hygge[51439:12750922] Converted locationManager:didChangeAuthorizationStatus: into didChangeAuthorizationStatus
+2014-12-16 16:51:44.675 Hygge[51439:12750968] [DOM] _onDelegateCallback() {"eventType":"didChangeAuthorizationStatus","status":"AuthorizationStatusAuthorized"}
+2014-12-16 16:51:44.675 Hygge[51439:12750942] [DOM] DEFAULT didChangeAuthorizationStatus()
+2014-12-16 16:51:44.675 Hygge[51439:12750943] [DOM] _mapDelegateCallback() found eventType didChangeAuthorizationStatus
+2014-12-16 16:51:44.681 Hygge[51439:12750943] monitoringDidFailForRegion: Error Domain=kCLErrorDomain Code=5 "The operation couldn’t be completed. (kCLErrorDomain error 5.)"
+2014-12-16 16:51:44.681 Hygge[51439:12750943] Converted locationManager:monitoringDidFailForRegion:withError: into monitoringDidFailForRegionWithError
+2014-12-16 16:51:44.850 Hygge[51439:12750922] Finished load of: file:///Users/travisgalloway/Library/Developer/CoreSimulator/Devices/AE60B675-E7D8-4A1B-88D5-D20C99D68FDD/data/Containers/Bundle/Application/C8FE11E9-75F1-4C97-A1B4-8BD77E9AF2BF/Hygge.app/www/index.html
+2014-12-16 16:59:17.411 Hygge[51655:12812920] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/travisgalloway/Library/Developer/CoreSimulator/Devices/AE60B675-E7D8-4A1B-88D5-D20C99D68FDD/data/Containers/Data/Application/1B37C1CC-62E2-44A8-A69D-F5D67941EACE/Library/Cookies/Cookies.binarycookies
+2014-12-16 16:59:17.498 Hygge[51655:12812920] Apache Cordova native platform version 3.7.0 is starting.
+2014-12-16 16:59:17.499 Hygge[51655:12812920] Multi-tasking -> Device: YES, App: YES
+2014-12-16 16:59:17.500 Hygge[51655:12812920] Unlimited access to network resources
+2014-12-16 16:59:17.501 Hygge[51655:12812920] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2014-12-16 16:59:17.699 Hygge[51655:12812920] Resetting plugins due to page load.
+2014-12-16 16:59:17.772 Hygge[51655:12812920] Finished load of: file:///Users/travisgalloway/Library/Developer/CoreSimulator/Devices/AE60B675-E7D8-4A1B-88D5-D20C99D68FDD/data/Containers/Bundle/Application/74CCE04F-95E9-4399-B428-A9B1F01812EA/Hygge.app/www/index.html
+2014-12-16 16:59:17.795 Hygge[51655:12812933] [DOM] registerDelegateCallbackId()
+2014-12-16 16:59:17.795 Hygge[51655:12812920] peripheralManagerDidUpdateState() state: PeripheralManagerStateUnsupported
+2014-12-16 16:59:17.795 Hygge[51655:12812936] peripheralManagerDidUpdateState: PeripheralManagerStateUnsupported
+2014-12-16 16:59:17.795 Hygge[51655:12812936] Converted peripheralManagerDidUpdateState: into peripheralManagerDidUpdateState
+2014-12-16 16:59:17.796 Hygge[51655:12812936] Invalid callback id received by sendPluginResult
+2014-12-16 16:59:17.796 Hygge[51655:12812936] Registering delegate callback ID: LocationManager463527408
+2014-12-16 16:59:17.797 Hygge[51655:12812920] didChangeAuthorizationStatus
+2014-12-16 16:59:17.797 Hygge[51655:12812920] didChangeAuthorizationStatus: 3 => AuthorizationStatusAuthorized
+2014-12-16 16:59:17.797 Hygge[51655:12812920] Converted locationManager:didChangeAuthorizationStatus: into didChangeAuthorizationStatus
+2014-12-16 16:59:17.799 Hygge[51655:12812933] [DOM] _onDelegateCallback() null
+2014-12-16 16:59:17.799 Hygge[51655:12812948] [DOM] DEFAULT didChangeAuthorizationStatus()
+2014-12-16 16:59:17.799 Hygge[51655:12812933] [DOM] _onDelegateCallback() {"eventType":"didChangeAuthorizationStatus","status":"AuthorizationStatusAuthorized"}
+2014-12-16 16:59:17.799 Hygge[51655:12812936] [DOM] _mapDelegateCallback() found eventType didChangeAuthorizationStatus
+2014-12-16 16:59:17.805 Hygge[51655:12812936] monitoringDidFailForRegion: Error Domain=kCLErrorDomain Code=5 "The operation couldn’t be completed. (kCLErrorDomain error 5.)"
+2014-12-16 16:59:17.806 Hygge[51655:12812936] Converted locationManager:monitoringDidFailForRegion:withError: into monitoringDidFailForRegionWithError
+2014-12-16 17:02:42.179 Hygge[51787:12843111] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/travisgalloway/Library/Developer/CoreSimulator/Devices/AE60B675-E7D8-4A1B-88D5-D20C99D68FDD/data/Containers/Data/Application/337B7A9A-FEB8-4D83-B937-B503E68D015A/Library/Cookies/Cookies.binarycookies
+2014-12-16 17:02:42.256 Hygge[51787:12843111] Apache Cordova native platform version 3.7.0 is starting.
+2014-12-16 17:02:42.257 Hygge[51787:12843111] Multi-tasking -> Device: YES, App: YES
+2014-12-16 17:02:42.258 Hygge[51787:12843111] Unlimited access to network resources
+2014-12-16 17:02:42.260 Hygge[51787:12843111] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2014-12-16 17:02:42.466 Hygge[51787:12843111] Resetting plugins due to page load.
+2014-12-16 17:02:42.798 Hygge[51787:12843111] Finished load of: file:///Users/travisgalloway/Library/Developer/CoreSimulator/Devices/AE60B675-E7D8-4A1B-88D5-D20C99D68FDD/data/Containers/Bundle/Application/198EAB96-DF06-4A4D-A5E5-B58C3EEB4263/Hygge.app/www/index.html
+2014-12-16 17:02:42.851 Hygge[51787:12843126] [DOM] registerDelegateCallbackId()
+2014-12-16 17:02:42.852 Hygge[51787:12843111] peripheralManagerDidUpdateState() state: PeripheralManagerStateUnsupported
+2014-12-16 17:02:42.852 Hygge[51787:12843124] peripheralManagerDidUpdateState: PeripheralManagerStateUnsupported
+2014-12-16 17:02:42.852 Hygge[51787:12843124] Converted peripheralManagerDidUpdateState: into peripheralManagerDidUpdateState
+2014-12-16 17:02:42.852 Hygge[51787:12843124] Invalid callback id received by sendPluginResult
+2014-12-16 17:02:42.853 Hygge[51787:12843111] didChangeAuthorizationStatus
+2014-12-16 17:02:42.853 Hygge[51787:12843111] didChangeAuthorizationStatus: 3 => AuthorizationStatusAuthorized
+2014-12-16 17:02:42.853 Hygge[51787:12843111] Converted locationManager:didChangeAuthorizationStatus: into didChangeAuthorizationStatus
+2014-12-16 17:02:42.854 Hygge[51787:12843111] Invalid callback id received by sendPluginResult
+2014-12-16 17:02:42.863 Hygge[51787:12843131] Registering delegate callback ID: LocationManager1835299884
+2014-12-16 17:02:42.865 Hygge[51787:12843131] [DOM] _onDelegateCallback() null
+2014-12-16 17:02:42.887 Hygge[51787:12843131] monitoringDidFailForRegion: Error Domain=kCLErrorDomain Code=5 "The operation couldn’t be completed. (kCLErrorDomain error 5.)"
+2014-12-16 17:02:42.887 Hygge[51787:12843131] Converted locationManager:monitoringDidFailForRegion:withError: into monitoringDidFailForRegionWithError
+2014-12-16 22:25:40.138 Hygge[53961:13194252] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/travisgalloway/Library/Developer/CoreSimulator/Devices/AE60B675-E7D8-4A1B-88D5-D20C99D68FDD/data/Containers/Data/Application/1ACFAD9D-407D-4144-A82D-1EC5ED1DC407/Library/Cookies/Cookies.binarycookies
+2014-12-16 22:25:40.440 Hygge[53961:13194252] Apache Cordova native platform version 3.7.0 is starting.
+2014-12-16 22:25:40.441 Hygge[53961:13194252] Multi-tasking -> Device: YES, App: YES
+2014-12-16 22:25:40.465 Hygge[53961:13194252] Unlimited access to network resources
+2014-12-16 22:25:40.497 Hygge[53961:13194252] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2014-12-16 22:25:41.211 Hygge[53961:13194252] Resetting plugins due to page load.
+2014-12-16 22:25:41.371 Hygge[53961:13194252] Finished load of: file:///Users/travisgalloway/Library/Developer/CoreSimulator/Devices/AE60B675-E7D8-4A1B-88D5-D20C99D68FDD/data/Containers/Bundle/Application/06384FAD-2135-465B-B3F2-E66EDED563A8/Hygge.app/www/index.html
+2014-12-16 22:25:41.806 Hygge[53961:13194310] [DOM] registerDelegateCallbackId()
+2014-12-16 22:25:41.806 Hygge[53961:13194252] peripheralManagerDidUpdateState() state: PeripheralManagerStateUnsupported
+2014-12-16 22:25:41.806 Hygge[53961:13194308] peripheralManagerDidUpdateState: PeripheralManagerStateUnsupported
+2014-12-16 22:25:41.806 Hygge[53961:13194308] Converted peripheralManagerDidUpdateState: into peripheralManagerDidUpdateState
+2014-12-16 22:25:41.806 Hygge[53961:13194252] didChangeAuthorizationStatus
+2014-12-16 22:25:41.807 Hygge[53961:13194308] Invalid callback id received by sendPluginResult
+2014-12-16 22:25:41.807 Hygge[53961:13194252] didChangeAuthorizationStatus: 3 => AuthorizationStatusAuthorized
+2014-12-16 22:25:41.807 Hygge[53961:13194252] Converted locationManager:didChangeAuthorizationStatus: into didChangeAuthorizationStatus
+2014-12-16 22:25:41.807 Hygge[53961:13194252] Invalid callback id received by sendPluginResult
+2014-12-16 22:25:42.774 Hygge[53961:13194309] Registering delegate callback ID: LocationManager69849739
+2014-12-16 22:25:42.777 Hygge[53961:13194309] [DOM] _onDelegateCallback() null
+2014-12-16 22:25:43.194 Hygge[53961:13194310] monitoringDidFailForRegion: Error Domain=kCLErrorDomain Code=5 "The operation couldn’t be completed. (kCLErrorDomain error 5.)"
+2014-12-16 22:25:43.194 Hygge[53961:13194310] Converted locationManager:monitoringDidFailForRegion:withError: into monitoringDidFailForRegionWithError
+2014-12-16 22:41:00.698 Hygge[54293:13207764] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/travisgalloway/Library/Developer/CoreSimulator/Devices/AE60B675-E7D8-4A1B-88D5-D20C99D68FDD/data/Containers/Data/Application/9802D06F-8516-4916-B195-1436E999EBA3/Library/Cookies/Cookies.binarycookies
+2014-12-16 22:41:00.818 Hygge[54293:13207764] Apache Cordova native platform version 3.7.0 is starting.
+2014-12-16 22:41:00.819 Hygge[54293:13207764] Multi-tasking -> Device: YES, App: YES
+2014-12-16 22:41:00.820 Hygge[54293:13207764] Unlimited access to network resources
+2014-12-16 22:41:00.821 Hygge[54293:13207764] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2014-12-16 22:41:01.069 Hygge[54293:13207764] Resetting plugins due to page load.
+2014-12-16 22:41:01.170 Hygge[54293:13207764] Finished load of: file:///Users/travisgalloway/Library/Developer/CoreSimulator/Devices/AE60B675-E7D8-4A1B-88D5-D20C99D68FDD/data/Containers/Bundle/Application/B0A0665C-DB93-4999-8C6B-67B3A559DDD7/Hygge.app/www/index.html
+2014-12-16 22:41:01.324 Hygge[54293:13207805] [DOM] registerDelegateCallbackId()
+2014-12-16 22:41:01.324 Hygge[54293:13207764] peripheralManagerDidUpdateState() state: PeripheralManagerStateUnsupported
+2014-12-16 22:41:01.324 Hygge[54293:13207806] peripheralManagerDidUpdateState: PeripheralManagerStateUnsupported
+2014-12-16 22:41:01.325 Hygge[54293:13207806] Converted peripheralManagerDidUpdateState: into peripheralManagerDidUpdateState
+2014-12-16 22:41:01.325 Hygge[54293:13207806] Invalid callback id received by sendPluginResult
+2014-12-16 22:41:01.326 Hygge[54293:13207806] Registering delegate callback ID: LocationManager254761427
+2014-12-16 22:41:01.326 Hygge[54293:13207764] didChangeAuthorizationStatus
+2014-12-16 22:41:01.326 Hygge[54293:13207764] didChangeAuthorizationStatus: 3 => AuthorizationStatusAuthorized
+2014-12-16 22:41:01.327 Hygge[54293:13207764] Converted locationManager:didChangeAuthorizationStatus: into didChangeAuthorizationStatus
+2014-12-16 22:41:01.329 Hygge[54293:13207814] [DOM] _onDelegateCallback() null
+2014-12-16 22:41:01.329 Hygge[54293:13207814] [DOM] _onDelegateCallback() {"eventType":"didChangeAuthorizationStatus","status":"AuthorizationStatusAuthorized"}
+2014-12-16 22:41:01.329 Hygge[54293:13207806] [DOM] _mapDelegateCallback() found eventType didChangeAuthorizationStatus
+2014-12-16 22:41:01.329 Hygge[54293:13207805] [DOM] DEFAULT didChangeAuthorizationStatus()
+2014-12-16 22:41:01.383 Hygge[54293:13207806] monitoringDidFailForRegion: Error Domain=kCLErrorDomain Code=5 "The operation couldn’t be completed. (kCLErrorDomain error 5.)"
+2014-12-16 22:41:01.383 Hygge[54293:13207806] Converted locationManager:monitoringDidFailForRegion:withError: into monitoringDidFailForRegionWithError
