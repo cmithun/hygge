@@ -4,7 +4,6 @@ Hygge app working files and testbed apps.
 
 Both sub-directories are Cordova projects.  
 
-/$ cordova platform add [ios / android]
 
 
 hygge-evothings
