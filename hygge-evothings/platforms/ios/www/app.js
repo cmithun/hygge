@@ -12,6 +12,12 @@ var app = (function()
 
 	// Dictionary of beacons.
 	var beacons = {};
+    
+    // Variables for view display.
+    var onfloor = 0;
+    var atbeacon = 0;
+    var lastfloor = 0;
+    var lastbeacon = 0;
 
 	// Timer that displays list of beacons.
 	var updateTimer = null;
@@ -30,7 +36,7 @@ var app = (function()
 		startScan();
 
 		// Display refresh timer.
-		updateTimer = setInterval(displayBeaconList, 500);
+		updateTimer = setInterval(updateBeaconList, 500);
 	}
 
 	function startScan()
@@ -94,13 +100,38 @@ var app = (function()
 		}
 	}
 
-	function displayBeaconList()
+    function clearView(){
+        lastbeacon = atbeacon;
+        lastfloor = onfloor;
+        //clearfloor
+        for(i=14;i>9;i--){
+            $("#floor-"+i).removeClass("onfloor");
+            $("#pin-"+i).hide();
+        }
+    }
+    function showBeacon(thisfloor,thisbeacon){
+        $("#pin-"+thisfloor).show();
+    }
+    function updateLocation(thisfloor,thisbeacon){
+        if(thisbeacon!=lastbeacon){
+            clearView();
+            $("#floor-"+thisfloor).addClass("onfloor");
+            //position beacon
+            showBeacon(thisfloor,thisbeacon);            
+            //load content into beacon-cms
+            var thisurl = "http://mithun-46828.azurewebsites.net/"+thisfloor+"-"+thisbeacon+"/";
+             $.get(thisurl, function(response) {
+                  $('#beacon-cms').html(response);
+             });            
+        }
+    }
+    
+	function updateBeaconList()
 	{
 		// Clear beacon list.
 		$('#found-beacons').empty();
 
 		var timeNow = Date.now();
-
 		// Update beacon list.
 		$.each(beacons, function(key, beacon)
 		{
@@ -114,7 +145,7 @@ var app = (function()
 
 				// Create tag to display beacon data.
 				var element = $(
-					'<li>'
+					'<li style="color:#888" data-major="' + beacon.major + '" data-minor="' + beacon.minor + '" data-distance="'+beacon.accuracy+'">'
 					+	'<strong>UUID: ' + beacon.uuid + '</strong><br />'
 					+	'Major: ' + beacon.major + '<br />'
 					+	'Minor: ' + beacon.minor + '<br />'
@@ -125,10 +156,21 @@ var app = (function()
 					+ 		rssiWidth + '%;"></div>'
 					+ '</li>'
 				);
+            $('#found-beacons').append(element);    
+            var ul = $('#found-beacons'),
+                li = ul.children('li');
 
-				$('#found-beacons').append(element);
+                li.detach().sort(function(a,b) {
+                    return $(a).data('distance') - $(b).data('distance');  
+                });
+                ul.append(li);
+                var closest = li.first();
+                onfloor = closest.data('major');
+                atbeacon = closest.data('minor');
+                $('#closest-beacon').html("Floor:"+onfloor+"<br>Beacon:"+atbeacon);
 			}
 		});
+        updateLocation(onfloor,atbeacon);
 	}
 
 	return app;
