@@ -32,7 +32,7 @@
     <div id="location-info">
         <div id="floor-13" class="floor">
             <img src="250px-Hexagon.svg.png" id="pin-13" class="beaconpin">
-            <img src="floor-13.png" width="100%">
+            <img src="floor-13.png">
             <h3 style="margin-left:30px">13th floor</h3>
         </div>
         <div id="floor-12" class="floor">
@@ -47,12 +47,11 @@
             <img src="floor-13.png" width="100%">
             <h3 style="margin-left:30px">10th floor</h3>
         </div>
-        <div style="height:20px"></div>
+        <div style="height:30px"></div>
     </div>  
     <br>
     <div id="beacon-info" style="display:none;">
-    <div id="beacon-cms">
-    </div>
+    <div id="beacon-cms"></div>
     <hr>
     <div id="beacon-debug">   
         <h1>Debug info</h1>    
@@ -62,16 +61,17 @@
 
         <ul id="found-beacons" class="dynamic"></ul>
         </div>
-    </div>                 
+    </div>                
+    <div id="beacon-xy" style="display:none;"></div>
                 		      
       <!-- End Main Content -->
   </div>
   <!-- End Main Content and Sidebar -->
 <footer class="row footer">
-        <div class="large-6 medium-6 small-6 columns" id="finna">
+        <div class="large-6 medium-6 small-6 columns bottomnavbar" id="finna">
             <span class="bottomnav">FINNA</span>
         </div>
-        <div class="large-6 medium-6 small-6 columns" id="nyta">
+        <div class="large-6 medium-6 small-6 columns bottomnavbar" id="nyta">
             <span class="bottomnav">NYTA</span>
         </div>
 </footer>
@@ -82,10 +82,14 @@
       
       $(document).ready(function(){
         $("#nyta").click(function(){
+            $("#nyta").addClass("bottomnavon");
+            $("#finna").removeClass("bottomnavon");
             $("#beacon-info").show();
             $("#location-info").hide();
         });
         $("#finna").click(function(){
+            $("#finna").addClass("bottomnavon");
+            $("#nyta").removeClass("bottomnavon");
             $("#beacon-info").hide();
             $("#location-info").show();
         });
