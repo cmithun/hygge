@@ -18,7 +18,8 @@ var app = (function()
     var atbeacon = 0;
     var lastfloor = 0;
     var lastbeacon = 0;
-
+    var coordinates = 0;
+    
 	// Timer that displays list of beacons.
 	var updateTimer = null;
 
@@ -34,7 +35,13 @@ var app = (function()
 
 		// Start tracking beacons!
 		startScan();
-
+        
+        //Get Beacon coodinates
+            var thisurl = "http://mithun-46828.azurewebsites.net/beacon-xy/";
+             $.get(thisurl, function(response) {
+                  $("#beacon-xy").html(response);
+                  showBeacon(onfloor,atbeacon);
+             });   
 		// Display refresh timer.
 		updateTimer = setInterval(updateBeaconList, 500);
 	}
@@ -100,6 +107,10 @@ var app = (function()
 		}
 	}
 
+    function helloGoodbye(){
+        //if thisbeacon = 0 and lastbeacon !=0 user has left say goodbye
+        //if lastbeacon = 0 and thisbeacon !=0 user has arrived say hello
+    }
     function clearView(){
         lastbeacon = atbeacon;
         lastfloor = onfloor;
@@ -110,10 +121,12 @@ var app = (function()
         }
     }
     function showBeacon(thisfloor,thisbeacon){
-        $("#pin-"+thisfloor).show();
+        var xy = $("#"+thisfloor+"-"+thisbeacon).html().split(',');
+        $("#pin-"+thisfloor).show().css({left:parseInt(xy[0],10),top:parseInt(xy[1],10)});
     }
     function updateLocation(thisfloor,thisbeacon){
         if(thisbeacon!=lastbeacon){
+            helloGoodbye();
             clearView();
             $("#floor-"+thisfloor).addClass("onfloor");
             //position beacon
@@ -159,15 +172,19 @@ var app = (function()
             $('#found-beacons').append(element);    
             var ul = $('#found-beacons'),
                 li = ul.children('li');
-
-                li.detach().sort(function(a,b) {
-                    return $(a).data('distance') - $(b).data('distance');  
-                });
-                ul.append(li);
-                var closest = li.first();
-                onfloor = closest.data('major');
-                atbeacon = closest.data('minor');
-                $('#closest-beacon').html("Floor:"+onfloor+"<br>Beacon:"+atbeacon);
+                if (li.is(':empty')){
+                    onfloor = 0;
+                    atbeacon = 0;
+                } else {
+                    li.detach().sort(function(a,b) {
+                        return $(a).data('distance') - $(b).data('distance');  
+                    });
+                    ul.append(li);
+                    var closest = li.first();
+                    onfloor = closest.data('major');
+                    atbeacon = closest.data('minor');
+                    $('#closest-beacon').html("Floor:"+onfloor+"<br>Beacon:"+atbeacon);
+                }
 			}
 		});
         updateLocation(onfloor,atbeacon);

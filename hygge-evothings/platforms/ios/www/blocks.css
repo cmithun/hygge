@@ -253,7 +253,6 @@ header .columns{
 footer {
     position: fixed;
     bottom: 0;    
-    padding-top:5px;
     text-align: center;
     background:#fff;
     color:#93B6BB;
@@ -265,7 +264,7 @@ footer {
     background:#fff;
     width:100%;
     max-width: none;
-    opacity: 0.9;
+    /*opacity: 0.9;*/
 }
 footer p {
     background:#E4E4E5;
@@ -320,10 +319,15 @@ div.iphone {
     font-size: .62em;
     margin-right: 10px;
 }
-
+.bottomnavbar {
+    height:48px;
+}
 .bottomnav {
-    display:inline-block; vertical-align:middle;
-    margin-top:10px;
+    line-height: 48px;
+}
+.bottomnavon {
+    color: #fff;
+    background:#93B6BB;
 }
 #found-beacons {
     list-style:none;
@@ -340,6 +344,9 @@ div.iphone {
 #beacon-debug {
     margin-left:30px;
 }
+#beacon-xy {
+    display:none;
+}
 .floor {
     border-bottom:dotted 1px #888;
     padding-top:20px;
@@ -354,6 +361,7 @@ div.iphone {
 .beaconpin{
     position:absolute;
     width:10%;
+    display:none;
 }
 @media only screen and (max-width: 64em) {
     .articlebox p.mediatag {
