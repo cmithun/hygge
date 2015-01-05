@@ -11,7 +11,7 @@
 	<script src="app.js"></script>
 	<style>
 		body { margin: 0; }
-	</style>    
+	</style>
     <link rel="stylesheet" href="foundation.css" />
     <link rel="stylesheet" href="blocks.css" />
     <script src="js/vendor/modernizr.js"></script>
@@ -48,27 +48,27 @@
             <h3 style="margin-left:30px">10th floor</h3>
         </div>
         <div style="height:30px"></div>
-    </div>  
+    </div>
     <br>
     <div id="beacon-info" style="display:none;">
     <div id="beacon-cms"></div>
     <hr>
-    <div id="beacon-debug">   
-        <h1>Debug info</h1>    
+    <div id="beacon-debug">
+        <h1>Debug info</h1>
         <h2>Closest Beacon</h2>
         <h3 id="closest-beacon"></h3>
         <h2>Closest Beacons</h2>
 
         <ul id="found-beacons" class="dynamic"></ul>
         </div>
-    </div>                
+    </div>
     <div id="beacon-xy" style="display:none;"></div>
-                		      
+
       <!-- End Main Content -->
   </div>
   <!-- End Main Content and Sidebar -->
 <footer class="row footer">
-        <div class="large-6 medium-6 small-6 columns bottomnavbar" id="finna">
+        <div class="large-6 medium-6 small-6 columns bottomnavbar bottomnavon" id="finna">
             <span class="bottomnav">FINNA</span>
         </div>
         <div class="large-6 medium-6 small-6 columns bottomnavbar" id="nyta">
@@ -79,7 +79,7 @@
     <script src="js/foundation.min.js"></script>
     <script>
       $(document).foundation();
-      
+
       $(document).ready(function(){
         $("#nyta").click(function(){
             $("#nyta").addClass("bottomnavon");
@@ -93,7 +93,7 @@
             $("#beacon-info").hide();
             $("#location-info").show();
         });
-          
+
       });
     </script>
   </body>
