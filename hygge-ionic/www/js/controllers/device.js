@@ -1,10 +1,5 @@
-angular.module('hygge.device', [])
+angular.module('hygge.device', ['ionic'])
 
-.controller('DeviceCtrl', function($scope, $state) {
-
-  document.addEventListener("deviceready", onDeviceReady, false);
-  function onDeviceReady() {
-    console.log(device.cordova);
-  }
-
-});
+.controller('DeviceCtrl', ['$scope', 'DeviceService', function ($scope, DeviceService) {
+  $scope.device = DeviceService.getDevice();
+}]);
