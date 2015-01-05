@@ -5,6 +5,9 @@ Hygge app working files and testbed apps.
 Both sub-directories are Cordova projects.  
 http://cordova.apache.org/
 
+Ant:
+
+
 Android SDK:
 http://developer.android.com/sdk/index.html
 Install SDK versions for any other Android versions you wan to support ( e.g. 4.x )
