@@ -54,7 +54,7 @@ h3.boxcopy,h4.boxcopy  {
 body{
   font-family: CircularStd-Book, OpenSansLight, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   background: rgb(255,255,255);
-  overflow:hidden;
+  overflow: hidden;
 }
 
 .active{
@@ -79,8 +79,8 @@ body{
     font-family: CircularStd-Book, OpenSansLight, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
     background:#93B6BB;
     color:#fff;
-    text-shadow: 1px 0px 0px #ccc, 1px 1px 0px #ccc, 0px 1px 0px #ccc, 
-    -1px 1px 0px #ccc, -1px 0px 0px #ccc, -1px -1px 0px #ccc, 
+    text-shadow: 1px 0px 0px #ccc, 1px 1px 0px #ccc, 0px 1px 0px #ccc,
+    -1px 1px 0px #ccc, -1px 0px 0px #ccc, -1px -1px 0px #ccc,
     0px -1px 0px #ccc, 1px -1px 0px #ccc, 1px 4px 5px #ccc;
     -webkit-transition: all .5s ease-out;
     -moz-transition: all .5s ease-out;
@@ -140,7 +140,7 @@ html, body {
     -moz-box-shadow: 1px 1px 1px #999;
     box-shadow: 1px 1px 1px #999;
     text-align: left;
-    
+
 }
 
 .timelineCard .mediaPhoto {
@@ -252,12 +252,13 @@ header .columns{
 }
 footer {
     position: fixed;
-    bottom: 0;    
+    bottom: 0;
     text-align: center;
     background:#fff;
     color:#93B6BB;
     font-weight:bold;
     border-top: solid 1px #93B6BB;
+
 }
 .footer {
     margin-top: 40px;
@@ -459,7 +460,7 @@ div.iphone {
     .quotebox .q, .quotebox p{
         font-size: .8em;
     }
-    
+
     .articlebox p{
         font-size: 1em;
     }

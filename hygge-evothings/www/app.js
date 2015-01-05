@@ -12,14 +12,14 @@ var app = (function()
 
 	// Dictionary of beacons.
 	var beacons = {};
-    
+
     // Variables for view display.
     var onfloor = 0;
     var atbeacon = 0;
     var lastfloor = 0;
     var lastbeacon = 0;
     var coordinates = 0;
-    
+
 	// Timer that displays list of beacons.
 	var updateTimer = null;
 
@@ -35,13 +35,13 @@ var app = (function()
 
 		// Start tracking beacons!
 		startScan();
-        
+
         //Get Beacon coodinates
             var thisurl = "http://mithun-46828.azurewebsites.net/beacon-xy/";
              $.get(thisurl, function(response) {
                   $("#beacon-xy").html(response);
                   showBeacon(onfloor,atbeacon);
-             });   
+             });
 		// Display refresh timer.
 		updateTimer = setInterval(updateBeaconList, 500);
 	}
@@ -130,15 +130,15 @@ var app = (function()
             clearView();
             $("#floor-"+thisfloor).addClass("onfloor");
             //position beacon
-            showBeacon(thisfloor,thisbeacon);            
+            showBeacon(thisfloor,thisbeacon);
             //load content into beacon-cms
             var thisurl = "http://mithun-46828.azurewebsites.net/"+thisfloor+"-"+thisbeacon+"/";
              $.get(thisurl, function(response) {
                   $('#beacon-cms').html(response);
-             });            
+             });
         }
     }
-    
+
 	function updateBeaconList()
 	{
 		// Clear beacon list.
@@ -169,7 +169,7 @@ var app = (function()
 					+ 		rssiWidth + '%;"></div>'
 					+ '</li>'
 				);
-            $('#found-beacons').append(element);    
+            $('#found-beacons').append(element);
             var ul = $('#found-beacons'),
                 li = ul.children('li');
                 if (li.is(':empty')){
@@ -177,7 +177,7 @@ var app = (function()
                     atbeacon = 0;
                 } else {
                     li.detach().sort(function(a,b) {
-                        return $(a).data('distance') - $(b).data('distance');  
+                        return $(a).data('distance') - $(b).data('distance');
                     });
                     ul.append(li);
                     var closest = li.first();
