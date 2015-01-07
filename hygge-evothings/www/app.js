@@ -43,7 +43,7 @@ var app = (function()
                   showBeacon(onfloor,atbeacon);
              });
 		// Display refresh timer.
-		updateTimer = setInterval(updateBeaconList, 5000);
+		updateTimer = setInterval(updateBeaconList, 15000);
 	}
 
 	function startScan()
