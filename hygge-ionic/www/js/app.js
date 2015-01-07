@@ -20,8 +20,6 @@ angular.module('hygge', [
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
-
-
   });
 })
 
