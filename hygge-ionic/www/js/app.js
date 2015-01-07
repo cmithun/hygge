@@ -4,6 +4,9 @@
 angular.module('hygge', [
   'ionic',
   'hygge.services',
+  'hygge.beaconServices',
+  'hygge.contextServices',
+  'hygge.beaconControllers',
   'hygge.device',
   'hygge.directory'
   ])
