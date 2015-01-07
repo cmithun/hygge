@@ -1,5 +1,11 @@
-angular.module('hygge.device', [])
+angular.module('hygge.device', ['ionic'])
 
-.controller('DeviceCtrl', ['$scope', 'DeviceService', function ($scope, DeviceService) {
-  $scope.device = DeviceService.getDevice();
+.controller('DeviceCtrl', ['$scope', '$ionicPlatform', function ($scope, $ionicPlatform) {
+
+  $ionicPlatform.ready(function() {
+    $scope.thisDevice = window.device;
+    console.log($scope.thisDevice);
+    $scope.$apply();
+  });
+
 }]);
