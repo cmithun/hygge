@@ -43,7 +43,7 @@ var app = (function()
                   showBeacon(onfloor,atbeacon);
              });
 		// Display refresh timer.
-		updateTimer = setInterval(updateBeaconList, 500);
+		updateTimer = setInterval(updateBeaconList, 5000);
 	}
 
 	function startScan()
@@ -56,7 +56,7 @@ var app = (function()
 		delegate.didRangeBeaconsInRegion = function(pluginResult)
 		{
 			//console.log('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult))
-			for (var i in pluginResult.beacons)
+			for (var i in pluginResult.beacons )
 			{
 				// Insert beacon into table of found beacons.
 				var beacon = pluginResult.beacons[i];
@@ -125,6 +125,7 @@ var app = (function()
         $("#pin-"+thisfloor).show().css({left:parseInt(xy[0],10),top:parseInt(xy[1],10)});
     }
     function updateLocation(thisfloor,thisbeacon){
+				console.log("updateLocation:" + thisfloor + ", " + thisbeacon);
         if(thisbeacon!=lastbeacon){
             helloGoodbye();
             clearView();
@@ -144,6 +145,7 @@ var app = (function()
 		// Clear beacon list.
 		$('#found-beacons').empty();
 
+		console.log("updateBeaconList");
 		var timeNow = Date.now();
 		// Update beacon list.
 		$.each(beacons, function(key, beacon)
