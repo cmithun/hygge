@@ -7,8 +7,8 @@ angular.module('hygge', [
   'hygge.beaconServices',
   'hygge.contextServices',
   'hygge.beaconControllers',
+  'hygge.contextControllers',
   'hygge.device',
-  'hygge.directory'
   ])
 
 .run(function($ionicPlatform) {
@@ -61,7 +61,7 @@ angular.module('hygge', [
     views: {
       'tab-directory': {
         templateUrl: 'templates/directory.html',
-        controller: 'DirectoryCtrl'
+        controller: 'ContextCtrl'
       }
     }
   });
