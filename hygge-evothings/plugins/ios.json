@@ -10,7 +10,7 @@
                     "CoreBluetooth.framework": [
                         {
                             "xml": "false",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "CoreLocation.framework": [
@@ -30,10 +30,6 @@
             "config.xml": {
                 "parents": {
                     "/*": [
-                        {
-                            "xml": "<feature name=\"BLE\"><param name=\"ios-package\" value=\"EVOBLE\" /></feature>",
-                            "count": 1
-                        },
                         {
                             "xml": "<feature name=\"LocationManager\"><param name=\"ios-package\" value=\"CDVLocationManager\" /></feature>",
                             "count": 1
@@ -72,9 +68,6 @@
         }
     },
     "installed_plugins": {
-        "com.evothings.ble": {
-            "PACKAGE_NAME": "com.mithun.hygge"
-        },
         "com.unarin.cordova.beacon": {
             "PACKAGE_NAME": "com.mithun.hygge"
         },

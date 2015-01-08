@@ -1,37 +1,37 @@
 <ion-view view-title="Map">
   <ion-content class="padding">
-    <div class="list card">
+    <div class="list card" ng-repeat="beacon in beacons">
 
-      <div class="item item-text-wrap">
-        <h2>Available</h2>
-
-        <p>{{thisDevice.name}}</p>
-      </div>
-
-      <div class="item item-text-wrap">
-        <h2>Model</h2>
-
-        <p>{{thisDevice.model}}</p>
-      </div>
-      <div class="item item-text-wrap">
-        <h2>Platform</h2>
-
-        <p>{{thisDevice.platform}}</p>
-      </div>
-      <div class="item item-text-wrap">
-        <h2>Version</h2>
-
-        <p>{{thisDevice.version}}</p>
-      </div>
       <div class="item item-text-wrap">
         <h2>UUID</h2>
 
-        <p>{{thisDevice.uuid}}</p>
+        <p>{{beacon.uuid}}</p>
+      </div>
+
+      <div class="item item-text-wrap">
+        <h2>Major</h2>
+
+        <p>{{beacon.major}}</p>
       </div>
       <div class="item item-text-wrap">
-        <h2>Cordova Version</h2>
+        <h2>Minor</h2>
 
-        <p>{{thisDevice.cordova}}</p>
+        <p>{{beacon.minor}}</p>
+      </div>
+      <div class="item item-text-wrap">
+        <h2>Proximity</h2>
+
+        <p>{{beacon.proximity}}</p>
+      </div>
+      <div class="item item-text-wrap">
+        <h2>Accuracy</h2>
+
+        <p>{{beacon.accuracy}}</p>
+      </div>
+      <div class="item item-text-wrap">
+        <h2>RSSI</h2>
+
+        <p>{{beacon.rssi}}</p>
       </div>
 
     </div>
