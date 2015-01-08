@@ -23,6 +23,9 @@ angular.module('hygge', [
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
+    console.log(window.plugins);
+
   });
 })
 
@@ -48,7 +51,7 @@ angular.module('hygge', [
     views: {
       'tab-map': {
         templateUrl: 'templates/map.html',
-        controller: 'DeviceCtrl'
+        controller: 'BeaconCtrl'
       }
     }
   })
