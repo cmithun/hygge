@@ -1,7 +1,7 @@
 <ion-view view-title="Map">
   <ion-content class="padding">
     <div class="list card" ng-repeat="beacon in beacons">
-
+      <div class="item item-divider">{{beacon.major}} - {{beacon.minor}}</div>
       <div class="item item-text-wrap">
         <h2>UUID</h2>
 
@@ -33,7 +33,6 @@
 
         <p>{{beacon.rssi}}</p>
       </div>
-
     </div>
   </ion-content>
 </ion-view>
