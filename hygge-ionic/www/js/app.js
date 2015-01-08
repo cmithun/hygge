@@ -24,7 +24,7 @@ angular.module('hygge', [
       StatusBar.styleDefault();
     }
 
-    console.log(window.plugins);
+    // console.log(window.plugins);
 
   });
 })
