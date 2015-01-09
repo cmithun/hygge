@@ -2,6 +2,7 @@ angular.module('hygge.contextControllers', [])
 
 .controller('ContextCtrl', function($scope, contextLocations) {
 
-  $scope.locations = contextLocations.all();
-  
+  notesData = contextLocations.all();
+  console.log(notesData);
+
 });
