@@ -3,6 +3,7 @@
 
 angular.module('hygge', [
   'ionic',
+  'ngResource',
   'hygge.services',
   'hygge.beaconServices',
   'hygge.contextServices',

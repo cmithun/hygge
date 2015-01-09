@@ -1,6 +1,6 @@
 angular.module('hygge.contextServices', ['ionic'])
 
-.factory('contextLocations', function ($ionicPlatform, $http) {
+.factory('contextLocations', function ($ionicPlatform, $http, $resource) {
 
   var locations = [];
 
@@ -33,7 +33,8 @@ angular.module('hygge.contextServices', ['ionic'])
       .then(function(response){
         var jsonData = response.data;
         console.log(jsonData);
-      })
+      });
+
   }
 
   // Return context data to controllers
