@@ -27,17 +27,18 @@ angular.module('hygge.beaconServices', ['ionic'])
 
       var delegate = new cordova.plugins.locationManager.Delegate();
 
-      // delegate.didDetermineStateForRegion = function (pluginResult) {
-      //   console.log('[DOM] didDetermineStateForRegion: '+ JSON.stringify(pluginResult));
-      // };
-      //
-      // delegate.didStartMonitoringForRegion = function (pluginResult) {
-      //   console.log('didStartMonitoringForRegion:', pluginResult);
-      // };
+      delegate.didDetermineStateForRegion = function (pluginResult) {
+        console.log('[DOM] didDetermineStateForRegion: '+ JSON.stringify(pluginResult));
+      };
+
+      delegate.didStartMonitoringForRegion = function (pluginResult) {
+        console.log('didStartMonitoringForRegion:', pluginResult);
+      };
 
       delegate.didRangeBeaconsInRegion = function (pluginResult) {
         console.log('[DOM] didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
         console.log('pluginResult Beacons: ' + JSON.stringify(pluginResult.beacons));
+
       };
 
       var identifier = '0';
@@ -49,8 +50,8 @@ angular.module('hygge.beaconServices', ['ionic'])
       cordova.plugins.locationManager.requestWhenInUseAuthorization();
 
       cordova.plugins.locationManager.startRangingBeaconsInRegion(beaconRegion)
-        .fail(console.error)
-        .done();
+      .fail(console.error)
+      .done();
     });
   }
 
