@@ -60,5 +60,5 @@ Currently Requires:
 ###Debug in Browser
 > /hygge-ionic $ ionic serve [--lab]
 
-###Emulate on Device
+###Emulate Platform
 > /hygge-ionic $ ionic emulate [ios / android]
