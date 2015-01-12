@@ -36,10 +36,27 @@ Ionic framework iteration.
 
 Does not contain a working implementation of a Cordova BLE plugin. 
 
+Local Setup:
+
+Add Platforms
 /hygge-ionic $ ionic platform add [ios / android]
+
+Add Plugins
+/hygge-ionic $ cordova plugin add [org.apache...]
+
+com.ionic.keyboard
+com.unarin.cordova.beacon
+org.apache.cordova.console
+org.apache.cordova.device
+org.apache.cordova.statusbar
+
+Build Resources
+/hygge-ionic $ ionic resources
 
 /hygge-ionic $ ionic build [ios / android]
 
+Debug in Browser
 /hygge-ionic $ ionic serve [--lab]
 
+Emulate on Device
 /hygge-ionic $ ionic emulate [ios / android]
