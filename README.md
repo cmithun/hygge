@@ -32,11 +32,11 @@ To Build:
 
 hygge-ionic
 =====
-Ionic framework iteration. 
+#Ionic framework iteration. 
 
 Does not contain a working implementation of a Cordova BLE plugin. 
 
-Local Setup:
+##Local Setup:
 
 Add Platforms
 /hygge-ionic $ ionic platform add [ios / android]
