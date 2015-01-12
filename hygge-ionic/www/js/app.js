@@ -22,7 +22,7 @@ angular.module('hygge', [
     }
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
+      StatusBar.styleLightContent();
     }
 
     // console.log(window.plugins);
