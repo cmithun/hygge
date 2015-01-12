@@ -25,8 +25,10 @@ Evothings derived iBeacon example.
 
 ###To Build: 
 > /hygge-evothings $ cordova platform add [ios / android]
-/hygge-evothings $ cordova build [ios / android]
-/hygge-evothings $ cordova emulate [ios / android]
+>
+> /hygge-evothings $ cordova build [ios / android]
+> 
+> /hygge-evothings $ cordova emulate [ios / android]
 
 hygge-ionic
 =====
