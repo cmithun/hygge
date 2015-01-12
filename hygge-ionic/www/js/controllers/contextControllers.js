@@ -1,8 +1,7 @@
-angular.module('hygge.contextControllers', [])
+angular.module('hygge.contextControllers', ['ngResource'])
 
 .controller('ContextCtrl', function($scope, contextLocations) {
 
-  notesData = contextLocations.all();
-  console.log(notesData);
+  $scope.locations = contextLocations.query();
 
 });
