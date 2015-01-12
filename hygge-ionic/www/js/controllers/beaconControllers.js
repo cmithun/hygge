@@ -6,21 +6,11 @@ angular.module('hygge.beaconControllers', [])
   //$scope.beacons = beaconScan.all();
 
   //Use an interval timer to poll our controller
-  var emptyCount = 0;
   var beaconPollTimer = setInterval(function(){
 
       console.log("POLLING BEACONS................");
-      var beacons = beaconScan.all();
-      // didRangeBecaons seems to return empty lists sometimes.
-      // Ignore up to 4 consecutive empty beacon lists
-      if (beacons.length == 0 & emptyCount > 4 ){
-        emptyCount++;
-      }
-      else{
-        emptyCount = 0;
-        $scope.beacons = beacons;
-        $scope.$apply(); // This seems to be necessary.
-      }
+      $scope.beacons = beaconScan.all();
+      $scope.$apply(); // This seems to be necessary.
 
   }, pollInterval);
 
