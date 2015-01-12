@@ -25,40 +25,42 @@ angular.module('hygge.beaconServices', ['ionic'])
   else {
     $ionicPlatform.ready(function() {
 
-      window.locationManager = cordova.plugins.locationManager;
+      //w indow.locationManager = cordova.plugins.locationManager;
 
-      var delegate = new locationManager.Delegate();
+      var delegate = new cordova.plugins.locationManager.Delegate();
 
-    //   delegate.didDetermineStateForRegion = function (pluginResult) {
-    //     console.log('[DOM] didDetermineStateForRegion: '+ JSON.stringify(pluginResult));
-    //   };
-    //
-    //   delegate.didStartMonitoringForRegion = function (pluginResult) {
-    //     console.log('didStartMonitoringForRegion:', pluginResult);
-    //   };
-    //
-    //   delegate.didRangeBeaconsInRegion = function (pluginResult) {
-    //     console.log('[DOM] didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
-    //   };
-    //
+      delegate.didDetermineStateForRegion = function (pluginResult) {
+        console.log('[DOM] didDetermineStateForRegion: '+ JSON.stringify(pluginResult));
+      };
+
+      delegate.didStartMonitoringForRegion = function (pluginResult) {
+        console.log('didStartMonitoringForRegion:', pluginResult);
+      };
+
+      delegate.didRangeBeaconsInRegion = function (pluginResult) {
+        console.log('[DOM] didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
+        console.log('pluginResult Beacons: ' + JSON.stringify(pluginResult.beacons));
+        beacons = pluginResult.beacons;
+      };
+
+      var identifier = '0';
       var uuid = '113F44CF-4850-4891-B48C-0E5A337DF580';
-      var beaconRegion = new locationManager.BeaconRegion(1, uuid);
+      var beaconRegion = new cordova.plugins.locationManager.BeaconRegion(identifier, uuid);
 
-      locationManager.setDelegate(delegate);
+      cordova.plugins.locationManager.setDelegate(delegate);
 
-      locationManager.requestWhenInUseAuthorization();
+      cordova.plugins.locationManager.requestWhenInUseAuthorization();
 
-    //   cordova.plugins.locationManager.startRangingBeaconsInRegion(beaconRegion)
-    //   .fail(console.error)
-    //   .done();
+      cordova.plugins.locationManager.startRangingBeaconsInRegion(beaconRegion)
+        .fail(console.error)
+        .done();
     });
   }
-
-  console.log(beacons);
 
   // Return beacon data to controllers
   return {
     all: function () {
+      console.log('*return all*');
       return beacons;
     }
   };
