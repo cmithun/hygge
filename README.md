@@ -39,10 +39,10 @@ Does not contain a working implementation of a Cordova BLE plugin.
 ##Local Setup:
 
 ###Add Platforms
-/hygge-ionic $ ionic platform add [ios / android]
+> /hygge-ionic $ ionic platform add [ios / android]
 
 ###Add Plugins
-/hygge-ionic $ cordova plugin add [org.apache...]
+> /hygge-ionic $ cordova plugin add [org.apache...]
 
 Currently Requires:
 - com.ionic.keyboard
@@ -52,13 +52,13 @@ Currently Requires:
 - org.apache.cordova.statusbar
 
 ###Build Resources
-/hygge-ionic $ ionic resources
+> /hygge-ionic $ ionic resources
 
 ###Build for Platforms
-/hygge-ionic $ ionic build [ios / android]
+> /hygge-ionic $ ionic build [ios / android]
 
 ###Debug in Browser
-/hygge-ionic $ ionic serve [--lab]
+> /hygge-ionic $ ionic serve [--lab]
 
 ###Emulate on Device
-/hygge-ionic $ ionic emulate [ios / android]
+> /hygge-ionic $ ionic emulate [ios / android]
