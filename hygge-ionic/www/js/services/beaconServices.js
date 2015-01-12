@@ -2,10 +2,11 @@ angular.module('hygge.beaconServices', ['ionic'])
 
 .factory('beaconScan', function ($ionicPlatform, $q) {
 
-  var beacons = {};
+  var beacons = [];
 
   // Mock data for console UI debug
   if (!window.cordova) {
+    console.log("No Cordova! Defaulting to hard-coded beacon list.");
     beacons = [{
       uuid: '113F44CF-4850-4891-B48C-0E5A337DF580',
       major: 13,
@@ -36,8 +37,10 @@ angular.module('hygge.beaconServices', ['ionic'])
       // };
 
       delegate.didRangeBeaconsInRegion = function (pluginResult) {
-        console.log('[DOM] didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
-        console.log('pluginResult Beacons: ' + JSON.stringify(pluginResult.beacons));
+        //console.log('[DOM] didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
+        //console.log('pluginResult Beacons: ' + JSON.stringify(pluginResult.beacons));
+        beacons = pluginResult.beacons;
+        console.log("Beacons IS " + JSON.stringify(beacons));
       };
 
       var identifier = '0';
@@ -57,7 +60,7 @@ angular.module('hygge.beaconServices', ['ionic'])
   // Return beacon data to controllers
   return {
     all: function () {
-      console.log('*return all*: ', beacons);
+      //console.log('*return all*: ' + beacons);
       return beacons;
     }
   };
