@@ -24,7 +24,7 @@ hygge-evothings
 Evothings derived iBeacon example. 
 
 ###To Build: 
-/hygge-evothings $ cordova platform add [ios / android]
+> /hygge-evothings $ cordova platform add [ios / android]
 
 /hygge-evothings $ cordova build [ios / android]
 
