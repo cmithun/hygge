@@ -2,7 +2,7 @@ angular.module('hygge.contextServices', ['ionic'])
 
 .factory('contextLocations', function ($ionicPlatform, $http, $resource) {
 
-  // var locations = [];
+  var locations = [];
   //
   // // Mock data for console UI debug
   // if (window.cordova) {
@@ -23,27 +23,56 @@ angular.module('hygge.contextServices', ['ionic'])
   //   }];
   // }
   // else {
-  //   $http.get("http://mithun-46828.azurewebsites.net/beaconsjson/?json=1")
-  //     .success(function(data, status, headers, config){
-  //       console.log('Success', status);
-  //     })
-  //     .error(function(data, status, headers, config){
-  //       console.log('Error', status);
-  //     })
-  //     .then(function(response){
-  //       var jsonData = response.data;
-  //       console.log(jsonData);
-  //     });
-  //
+    $http.get('http://mithun-46828.azurewebsites.net/?post_type=beacon&json=1')
+    //$http.get('http://mithun-46828.azurewebsites.net/locationsjson?json=1')
+      .success(function(data, status, headers, config){
+        console.log('Success', status);
+      })
+      .error(function(data, status, headers, config){
+        console.log('Error', status);
+      })
+      .then(function(response){
+        var jsonData = response.data;
+        console.log(jsonData);
+        var rawlocs = jsonData.posts;
+
+        //Walk the list and create our own data structure
+        for (var i = 0; i < rawlocs.length; i++){
+          var loc = {};
+          loc.slug = rawlocs[i].slug;
+          loc.title = rawlocs[i].title;
+          loc.excerpt = rawlocs[i].excerpt;
+          loc.content = rawlocs[i].content;
+          loc.major = rawlocs[i].custom_fields.major[0];
+          loc.minor = rawlocs[i].custom_fields.minor[0];
+          loc.x = rawlocs[i].custom_fields.x[0];
+          loc.y = rawlocs[i].custom_fields.y[0];
+          loc.floor = rawlocs[i].custom_fields.floor[0];
+
+          locations.push(loc);
+        }
+        console.log("all locations: " + JSON.stringify(locations));
+      });
+
   // }
   //
-  // // Return context data to controllers
-  // return {
-  //   all: function () {
-  //     return locations;
-  //   }
-  // };
 
-  return $resource('http://private-bbb5a-contextapi.apiary-mock.com/context');
+  // Return context data to controllers
+  return {
+    all: function () {
+
+      return locations;
+    },
+    get: function(major, minor) {
+      for (var i = 0; i < locations.length; i++){
+          //console.log("TESTING " + locations[i].major + locations[i].minor);
+          if (locations[i].major == major && locations[i].minor == minor) {
+            return locations[i];
+          }
+      }
+      return null;
+
+    }
+  };
 
 });
