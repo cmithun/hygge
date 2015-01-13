@@ -43,7 +43,7 @@ angular.module('hygge.contextServices', ['ionic'])
   //     return locations;
   //   }
   // };
-
+  console.log('contextLocations');
   return $resource('http://private-bbb5a-contextapi.apiary-mock.com/context');
 
 });
