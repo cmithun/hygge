@@ -2,65 +2,96 @@
   <ion-nav-title>
     <img class="title-image" src="img/Mithun_White.png">
   </ion-nav-title>
-  <ion-content class="padding">
-
-  <div class="item item-text-wrap">
-    <h2>Location Name</h2>
-
-    <p>{{currentlocation.title}}</p>
-    <p>Floor: {{currentlocation.floor}}</p>
-    <p>X,Y: {{currentlocation.x}}, {{currentlocation.y}}</p>
-  </div>
   <ion-content>
-    <ion-list>
-      <ion-item>
-        <img src="img/13.png" width="100%">
-      </ion-item>
-      <ion-item>
-        <img src="img/12.png" width="100%">
-      </ion-item>
-      <ion-item>
-        <img src="img/11.png" width="100%">
-      </ion-item>
-      <ion-item>
-        <img src="img/10.png" width="100%">
-      </ion-item>
-    </ion-list>
 
-    <div class="list card" ng-repeat="beacon in beacons">
-      <div class="item item-divider">{{beacon.major}} - {{beacon.minor}}</div>
 
-      <div class="item item-text-wrap">
-        <h2>UUID</h2>
+    <div class="item item-text-wrap">
+      <h2>Location Name</h2>
 
-        <p>{{beacon.uuid}}</p>
-      </div>
-
-      <div class="item item-text-wrap">
-        <h2>Major</h2>
-
-        <p>{{beacon.major}}</p>
-      </div>
-      <div class="item item-text-wrap">
-        <h2>Minor</h2>
-
-        <p>{{beacon.minor}}</p>
-      </div>
-      <div class="item item-text-wrap">
-        <h2>Proximity</h2>
-
-        <p>{{beacon.proximity}}</p>
-      </div>
-      <div class="item item-text-wrap">
-        <h2>Accuracy</h2>
-
-        <p>{{beacon.accuracy}}</p>
-      </div>
-      <div class="item item-text-wrap">
-        <h2>RSSI</h2>
-
-        <p>{{beacon.rssi}}</p>
-      </div>
+      <p>{{currentlocation.title}}</p>
+      <p>Floor: {{currentlocation.floor}}</p>
+      <p>X,Y: {{currentlocation.x}}, {{currentlocation.y}}</p>
     </div>
+
+
+
+  <ion-list>
+      <!--ion-item>
+      <h2 class="floor-title">14th floor - coming soon!</h2>
+      <p style="height:20px"></p>
+    </ion-item-->
+    <ion-item class="floor">
+      <h2 class="floor-title">13th floor</h2>
+      <div id="floor13" class="floor-map">
+        <img src="img/13.png">
+        <svg id="pin13" class="option1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 250 250">
+          <g>
+            <rect id="base" x="98.026" y="168.847" width="6.074" height="29.153"></rect>
+            <path class="second" id="second_square" fill="#92B5BA" d="M30,51v142h142V51H30z M159,180H43V64h116V180z"></path>
+            <path class="first" id="first_square" fill="#92B5BA" d="M49,69v105h105V69H49z M144,165H58V79h86V165z"></path>
+            <g>
+              <rect id="White_Behind_Logo" x="68" y="89" fill="#FFFFFF" width="67" height="67"></rect>
+              <path id="Mithun_Logo" fill="#92B5BA" d="M87.552,111.247h10.134v27.532h6.757v-27.532h10.138v27.532h6.756v-33.782H80.795
+              v33.782h6.757V111.247z M63.9,84.726v74.327h74.326V84.726H63.9z M131.473,152.295H70.659V91.484h60.813V152.295z"></path>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </ion-item>
+    <ion-item class="floor">
+      <h2 class="floor-title">12th floor</h2>
+      <div id="floor12" class="floor-map">
+        <img src="img/12.png">
+        <svg id="pin12" class="option1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 250 250">
+          <g>
+            <rect id="base" x="98.026" y="168.847" width="6.074" height="29.153"></rect>
+            <path class="second" id="second_square" fill="#92B5BA" d="M30,51v142h142V51H30z M159,180H43V64h116V180z"></path>
+            <path class="first" id="first_square" fill="#92B5BA" d="M49,69v105h105V69H49z M144,165H58V79h86V165z"></path>
+            <g>
+              <rect id="White_Behind_Logo" x="68" y="89" fill="#FFFFFF" width="67" height="67"></rect>
+              <path id="Mithun_Logo" fill="#92B5BA" d="M87.552,111.247h10.134v27.532h6.757v-27.532h10.138v27.532h6.756v-33.782H80.795
+              v33.782h6.757V111.247z M63.9,84.726v74.327h74.326V84.726H63.9z M131.473,152.295H70.659V91.484h60.813V152.295z"></path>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </ion-item>
+    <ion-item class="floor">
+      <h2 class="floor-title">11th floor</h2>
+      <div id="floor11" class="floor-map">
+        <img src="img/11.png">
+        <svg id="pin11" class="option1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 250 250">
+          <g>
+            <rect id="base" x="98.026" y="168.847" width="6.074" height="29.153"></rect>
+            <path class="second" id="second_square" fill="#92B5BA" d="M30,51v142h142V51H30z M159,180H43V64h116V180z"></path>
+            <path class="first" id="first_square" fill="#92B5BA" d="M49,69v105h105V69H49z M144,165H58V79h86V165z"></path>
+            <g>
+              <rect id="White_Behind_Logo" x="68" y="89" fill="#FFFFFF" width="67" height="67"></rect>
+              <path id="Mithun_Logo" fill="#92B5BA" d="M87.552,111.247h10.134v27.532h6.757v-27.532h10.138v27.532h6.756v-33.782H80.795
+              v33.782h6.757V111.247z M63.9,84.726v74.327h74.326V84.726H63.9z M131.473,152.295H70.659V91.484h60.813V152.295z"></path>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </ion-item>
+    <ion-item class="floor">
+      <h2 class="floor-title">10th floor</h2>
+      <div id="floor10" class="floor-map">
+        <img src="img/10.png">
+        <svg id="pin10" class="option1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 250 250">
+          <g>
+            <rect id="base" x="98.026" y="168.847" width="6.074" height="29.153"></rect>
+            <path class="second" id="second_square" fill="#92B5BA" d="M30,51v142h142V51H30z M159,180H43V64h116V180z"></path>
+            <path class="first" id="first_square" fill="#92B5BA" d="M49,69v105h105V69H49z M144,165H58V79h86V165z"></path>
+            <g>
+              <rect id="White_Behind_Logo" x="68" y="89" fill="#FFFFFF" width="67" height="67"></rect>
+              <path id="Mithun_Logo" fill="#92B5BA" d="M87.552,111.247h10.134v27.532h6.757v-27.532h10.138v27.532h6.756v-33.782H80.795
+              v33.782h6.757V111.247z M63.9,84.726v74.327h74.326V84.726H63.9z M131.473,152.295H70.659V91.484h60.813V152.295z"></path>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </ion-item>
+  </ion-list>
   </ion-content>
 </ion-view>
