@@ -70,6 +70,9 @@ angular.module('hygge.beaconServices', ['ionic'])
   // Return beacon data to controllers
   return {
     all: function () {
+
+      // !- Sort Beacons -!
+
       //console.log('*return all*: ' + beacons);
       return beacons;
     }
