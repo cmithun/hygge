@@ -3,11 +3,13 @@
     <img class="title-image" src="img/Mithun_White.png">
   </ion-nav-title>
   <ion-content class="padding">
-    <div class="list card" ng-repeat="location in locations">
-      <div class="item item-divider">{{location.major}} - {{location.minor}}</div>
+
+    <div class="list card">
+      <div class="item item-divider">{{currentlocation.title}}</div>
       <div class="item item-body">
         <div>
-          {{location.message}}
+          {{currentlocation.major}} - {{currentlocation.minor}}
+          {{currentlocation.excerpt}}
         </div>
       </div>
     </div>
