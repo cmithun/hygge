@@ -62,7 +62,7 @@ angular.module('hygge', [
     views: {
       'tab-directory': {
         templateUrl: 'templates/directory.html',
-        controller: 'ContextCtrl'
+        controller: 'BeaconCtrl'
       }
     }
   });
