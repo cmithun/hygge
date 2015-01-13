@@ -49,7 +49,7 @@ angular.module('hygge.beaconServices', ['ionic'])
           emptyScanTries = 5;
           beacons = beaconResult;
         }
-        console.log("BEACONRESULT: " + JSON.stringify(beaconResult));
+        //console.log("BEACONRESULT: " + JSON.stringify(beaconResult));
         console.log("BEACONS: " + JSON.stringify(beacons));
       };
 

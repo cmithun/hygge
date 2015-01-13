@@ -3,8 +3,18 @@
     <img class="title-image" src="img/Mithun_White.png">
   </ion-nav-title>
   <ion-content class="padding">
+
+  <div class="item item-text-wrap">
+    <h2>Location Name</h2>
+
+    <p>{{location.title}}</p>
+    <p>Floor: {{location.floor}}</p>
+    <p>X,Y: {{location.x}}, {{location.y}}</p>
+  </div>
+
     <div class="list card" ng-repeat="beacon in beacons">
       <div class="item item-divider">{{beacon.major}} - {{beacon.minor}}</div>
+
       <div class="item item-text-wrap">
         <h2>UUID</h2>
 
