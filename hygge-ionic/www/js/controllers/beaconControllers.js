@@ -24,7 +24,6 @@ angular.module('hygge.beaconControllers', [])
       // Sort beacons
       $scope.beacons.sortorder = "accuracy";
       var loc = $scope.beacons[0];
-<<<<<<< HEAD
 
       $scope.currentlocation = contextLocations.get(loc.major, loc.minor);  
         switch($scope.currentlocation.floor){
@@ -55,10 +54,6 @@ angular.module('hygge.beaconControllers', [])
                     $scope.pin10display = "";
                     break;
         }
-=======
-      $scope.currentbeacon = loc;
-      $scope.currentlocation = contextLocations.get(loc.major, loc.minor);
->>>>>>> FETCH_HEAD
     }
     $scope.$apply(); // This seems to be necessary.
   }
