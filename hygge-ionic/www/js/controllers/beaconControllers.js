@@ -9,8 +9,12 @@ angular.module('hygge.beaconControllers', [])
 
     console.log("found this many: " + $scope.beacons.length);
 
+    // Match Beacon and Location data and pass to View
+    // Beacon = currentbeacon
+    // Location = currentlocation
     if ($scope.beacons.length > 0){
       var loc = $scope.beacons[0];
+      $scope.currentbeacon = loc;
       $scope.currentlocation = contextLocations.get(loc.major, loc.minor);
     }
     $scope.$apply(); // This seems to be necessary.

@@ -11,15 +11,15 @@ angular.module('hygge.beaconServices', ['ionic'])
       uuid: '113F44CF-4850-4891-B48C-0E5A337DF580',
       major: 13,
       minor: 1,
-      proximity: 0,
-      accuracy: 0,
+      proximity: 'Near',
+      accuracy: 2,
       rssi: 0
     },{
       uuid: '113F44CF-4850-4891-B48C-0E5A337DF580',
       major: 13,
       minor: 2,
-      proximity: 0,
-      accuracy: 0,
+      proximity: 'Far',
+      accuracy: 5,
       rssi: 0
     }];
   }
