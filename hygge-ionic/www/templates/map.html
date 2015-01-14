@@ -3,28 +3,20 @@
     <img class="title-image" src="img/Mithun_White.png">
   </ion-nav-title>
   <ion-content>
-
-
-    <div class="item item-text-wrap">
-      <h2>Location Name</h2>
-
-      <p>{{currentlocation.title}}</p>
-      <p>Floor: {{currentlocation.floor}}</p>
-      <p>X,Y: {{currentlocation.x}}, {{currentlocation.y}}</p>
-    </div>
-
-
-
+  <ion-refresher
+    pulling-text="14th floor coming soon"
+    on-refresh="doRefresh()">
+  </ion-refresher>
   <ion-list>
       <!--ion-item>
       <h2 class="floor-title">14th floor - coming soon!</h2>
       <p style="height:20px"></p>
     </ion-item-->
-    <ion-item class="floor">
+    <ion-item id="floor13" class="item floor {{floor13class}}">
       <h2 class="floor-title">13th floor</h2>
-      <div id="floor13" class="floor-map">
+      <div class="floor-map">
         <img src="img/13.png">
-        <svg id="pin13" class="option1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 250 250">
+        <svg id="pin13" class="option1" style="top:{{currentlocation.y}};left:{{currentlocation.x}};display:{{pin13display}}" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 250 250">
           <g>
             <rect id="base" x="98.026" y="168.847" width="6.074" height="29.153"></rect>
             <path class="second" id="second_square" fill="#92B5BA" d="M30,51v142h142V51H30z M159,180H43V64h116V180z"></path>
@@ -38,11 +30,11 @@
         </svg>
       </div>
     </ion-item>
-    <ion-item class="floor">
+    <ion-item id="floor12" class="item floor {{floor12class}}">
       <h2 class="floor-title">12th floor</h2>
-      <div id="floor12" class="floor-map">
+      <div class="floor-map">
         <img src="img/12.png">
-        <svg id="pin12" class="option1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 250 250">
+        <svg id="pin12" class="option1" style="top:{{currentlocation.y}}px;left:{{currentlocation.x}}px;display:{{pin12display}}" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 250 250">
           <g>
             <rect id="base" x="98.026" y="168.847" width="6.074" height="29.153"></rect>
             <path class="second" id="second_square" fill="#92B5BA" d="M30,51v142h142V51H30z M159,180H43V64h116V180z"></path>
@@ -56,11 +48,11 @@
         </svg>
       </div>
     </ion-item>
-    <ion-item class="floor">
+    <ion-item id="floor11" class="item floor {{floor11class}}">
       <h2 class="floor-title">11th floor</h2>
-      <div id="floor11" class="floor-map">
+      <div class="floor-map">
         <img src="img/11.png">
-        <svg id="pin11" class="option1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 250 250">
+        <svg id="pin11" class="option1" style="top:{{currentlocation.y}}px;left:{{currentlocation.x}}px;;display:{{pin11display}}" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 250 250">
           <g>
             <rect id="base" x="98.026" y="168.847" width="6.074" height="29.153"></rect>
             <path class="second" id="second_square" fill="#92B5BA" d="M30,51v142h142V51H30z M159,180H43V64h116V180z"></path>
@@ -74,11 +66,11 @@
         </svg>
       </div>
     </ion-item>
-    <ion-item class="floor">
+    <ion-item id="floor10" class="item floor {{floor10class}}">
       <h2 class="floor-title">10th floor</h2>
-      <div id="floor10" class="floor-map">
+      <div class="floor-map">
         <img src="img/10.png">
-        <svg id="pin10" class="option1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 250 250">
+        <svg id="pin10" class="option1" style="top:{{currentlocation.y}}px;left:{{currentlocation.x}}px;;display:{{pin10display}}" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 250 250">
           <g>
             <rect id="base" x="98.026" y="168.847" width="6.074" height="29.153"></rect>
             <path class="second" id="second_square" fill="#92B5BA" d="M30,51v142h142V51H30z M159,180H43V64h116V180z"></path>
