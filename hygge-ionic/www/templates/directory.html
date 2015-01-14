@@ -5,13 +5,17 @@
   <ion-content class="padding">
 
     <div class="list card">
-      <div class="item item-divider">{{currentlocation.title}}</div>
-      <div class="item item-body">
-        <div>
-          {{currentlocation.major}} - {{currentlocation.minor}}
-          {{currentlocation.excerpt}}
-        </div>
-      </div>
+        <div class="item item-divider" ng-bind-html="currentlocation.title"></div>
+        <div class="item item-text-wrap"  ng-bind-html="currentlocation.excerpt"></div>
     </div>
+        <div class="item item-text-wrap">
+          <h2>Debug info</h2>
+
+          <p ng-bind-html="currentlocation.title"></p>
+          <p>Floor: {{currentlocation.floor}}</p>
+          <p>Excerpt: {{currentlocation.excerpt}}</p>
+          <p>htmltext: {{currentlocation.htmltext}}</p>
+          <p>X,Y: {{currentlocation.x}}, {{currentlocation.y}}</p>
+        </div>  
   </ion-content>
 </ion-view>
