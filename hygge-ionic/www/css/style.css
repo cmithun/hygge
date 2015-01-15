@@ -1,5 +1,4 @@
 /* Empty. Add your own CSS if you like */
-
 .title-image {
   margin-top: 8px;
   height: 27px;
@@ -21,8 +20,8 @@ body{
   background: linear-gradient(white, #efefef);
 }
 .bar.bar-calm {
-  background-color:#fff;
-  border:none;
+  background: #92b7bc;
+  border-bottom:solid 1px #fff;
 }
 .tabs {
   background:#fff;
