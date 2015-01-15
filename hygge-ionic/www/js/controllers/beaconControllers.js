@@ -12,19 +12,22 @@ angular.module('hygge.beaconControllers', [])
     $scope.pin10display = "";
 
   function pollBeacons(){
-    console.log("POLLING BEACONS................");
+    //console.log("POLLING BEACONS................");
     $scope.beacons = beaconScan.all();
 
-    console.log("found this many: " + $scope.beacons.length);
+    //console.log("found this many: " + $scope.beacons.length);
 
     // Match Beacon and Location data and pass to View
     // Beacon = currentbeacon
     // Location = currentlocation
     if ($scope.beacons.length > 0){
-      // Sort beacons
-      $scope.beacons.sortorder = "accuracy";
-      var loc = $scope.beacons[0];
-
+      //filter out beacons with accuracy = -1 or greater than 12m
+      var knownbeacons = $scope.beacons.filter(function(val) {
+          return (val.accuracy > 0 && val.accuracy < 12);
+      });
+      // Sort knownbeacons
+      knownbeacons.sortorder = "accuracy";
+      var loc = knownbeacons[0];
       $scope.currentlocation = contextLocations.get(loc.major, loc.minor);  
         switch($scope.currentlocation.floor){
                 case "13":
@@ -60,7 +63,7 @@ angular.module('hygge.beaconControllers', [])
 
   pollBeacons();
 
-  var pollInterval = 2000; // 10 seconds
+  var pollInterval = 3000;
   //$scope.beacons = beaconScan.all();
 
   //Use an interval timer to poll our controller

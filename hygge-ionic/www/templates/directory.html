@@ -8,14 +8,14 @@
         <div class="item item-divider" ng-bind-html="currentlocation.title"></div>
         <div class="item item-text-wrap"  ng-bind-html="currentlocation.excerpt"></div>
     </div>
-        <div class="item item-text-wrap">
+        <div class="item item-text-wrap" style="padding-top:50px;">
           <h2>Debug info</h2>
 
           <p ng-bind-html="currentlocation.title"></p>
-          <p>Floor: {{currentlocation.floor}}</p>
-          <p>Excerpt: {{currentlocation.excerpt}}</p>
-          <p>htmltext: {{currentlocation.htmltext}}</p>
-          <p>X,Y: {{currentlocation.x}}, {{currentlocation.y}}</p>
+          <p>Floor: <span ng-bind-html="currentlocation.floor"></span></p>
+          <p>Excerpt: <span ng-bind-html="currentlocation.excerpt"></span></p>
+          <p>Accuracy: <span ng-bind-html="currentlocation.accuracy"></span></p>
+          <p>X,Y: <span ng-bind-html="currentlocation.x"></span>, <span ng-bind-html="currentlocation.y"></span></p>
         </div>  
   </ion-content>
 </ion-view>
