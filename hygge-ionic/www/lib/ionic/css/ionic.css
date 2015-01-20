@@ -2488,7 +2488,7 @@ ion-infinite-scroll {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: #92b7bc;
   overflow: hidden; }
 
 .view-container {
@@ -2782,12 +2782,11 @@ a.subdued {
       color: #fff; }
     .bar.bar-positive.bar-footer {
       background-image: linear-gradient(180deg, #fff, #fff 50%, transparent 50%); }
-  .bar.bar-calm {
-    border: #fff;
-    background-color: #fff;
-    background-image: linear-gradient(0deg, #84a3a8, #84a3a8 50%, transparent 50%);
-    color: #fff; }
-    .bar.bar-calm .title {
+    .bar.bar-calm {
+      background: #92b7bc;
+      border-bottom:solid 1px #92b7bc;
+    }
+   .bar.bar-calm .title {
       color: #fff; }
     .bar.bar-calm.bar-footer {
       background-image: linear-gradient(180deg, #84a3a8, #84a3a8 50%, transparent 50%); }
@@ -3166,7 +3165,7 @@ a.subdued {
   justify-content: center;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
-  border-color: #b2b2b2;
+  border-color: #92b7bc;
   background-color: #f8f8f8;
   background-image: linear-gradient(0deg, #b2b2b2, #b2b2b2 50%, transparent 50%);
   color: #444;
@@ -5109,7 +5108,7 @@ a.item-content {
     display: inline-block;
     margin: 0px 3px;
     width: 15px;
-    color: #000;
+    color: #fff;
     text-decoration: none;
     opacity: 0.3; }
     .slider-pager .slider-pager-page.active {

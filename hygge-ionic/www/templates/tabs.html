@@ -8,14 +8,22 @@ navigation history that also transitions its views in and out.
 
   <!-- What's This-->
   <ion-tab title="Map" icon-off="ion-map" icon-on="ion-map" href="#/tab/map">
-    <ion-nav-view name="tab-map"></ion-nav-view>
+    <ion-nav-view name="tab-map">
+    <ion-view>
+      <ion-nav-title>
+        <img class="title-image" src="img/Mithun_White.png">
+      </ion-nav-title>    
+    </ion-view>  
+    </ion-nav-view>
   </ion-tab>
 
 
   <!-- Where's That -->
   <ion-tab title="More" icon-off="ion-more " icon-on="ion-more" href="#/tab/directory">
-    <ion-nav-view name="tab-directory"></ion-nav-view>
+    <ion-nav-view name="tab-directory">
+      <ion-nav-title>
+        <img class="title-image" src="img/Mithun_White.png">
+      </ion-nav-title>          
+    </ion-nav-view>
   </ion-tab>
-
-
 </ion-tabs>
