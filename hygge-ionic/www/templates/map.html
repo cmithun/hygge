@@ -2,12 +2,11 @@
   <ion-nav-title>
     <img class="title-image" src="img/Mithun_White.png">
   </ion-nav-title>
-  <ion-content>
+  <ion-content data-ng-controller="BeaconCtrl" data-ng-init="pollBeacons()">
   <ion-refresher
     pulling-text="14th floor coming soon"
     on-refresh="doRefresh()">
   </ion-refresher>
-  <button type="button" class="btn btn-danger" data-animation="am-fade-and-scale" data-placement="center" bs-modal="modal">modal from center<br><small>(am-fade-and-scale)</small></button>      
   <ion-list>
     <ion-item id="floor13" class="item floor {{floor13class}}">
       <h2 class="floor-title">13th floor</h2>
