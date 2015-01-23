@@ -71,47 +71,5 @@ angular.module('hygge', [
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/map');
 
-})
-
-.config(function($stateProvider, $urlRouterProvider) {
-    
-  $stateProvider
-  .state('intro', {
-    url: '/',
-    templateUrl: 'templates/intro.html',
-    controller: 'IntroCtrl'
-  });
-
-  $urlRouterProvider.otherwise("/");
-
-})
-
-.controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate,$ionicNavBarDelegate) {
-
-/* Skip the intro if launched before     
-  if (window.localStorage.skipIntro === 'true') {
-    $ionicNavBarDelegate.title('<img class="title-image" src="img/Mithun_White.png">');
-    $ionicNavBarDelegate.showBar(true);
-    $state.go('tab.map');
-  };    
-*/
-   
-  // Called to navigate to the main app
-  $scope.startApp = function() {
-    $ionicNavBarDelegate.showBar(true);
-    $ionicNavBarDelegate.title('<img class="title-image" src="img/Mithun_White.png">');
-    window.localStorage.skipIntro = 'true';
-    $state.go('tab.map');
-  };
-  $scope.next = function() {
-    $ionicSlideBoxDelegate.next();
-  };
-  $scope.previous = function() {
-    $ionicSlideBoxDelegate.previous();
-  };
-
-  // Called each time the slide changes
-  $scope.slideChanged = function(index) {
-    $scope.slideIndex = index;
-  };
 });
+
