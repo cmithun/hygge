@@ -188,3 +188,7 @@ body{
   left:0;
   opacity:0;
 }
+
+.scroll-refresher .icon-refreshing, .scroll-refresher .text-refreshing,.scroll-refresher .icon-pulling,.scroll-refresher .ionic-refresher-content {
+    color:#fff;
+}
