@@ -1,0 +1,190 @@
+/* Empty. Add your own CSS if you like */
+.title-image {
+  margin-top: 8px;
+  height: 27px;
+}
+@font-face {
+  font-family: CircularStd-Book;
+  src: url("../fonts/CircularStd-Book.otf") format("opentype");
+}
+@font-face {
+  font-family: CircularStd-Black;
+  src: url("../fonts/CircularStd-Black.otf") format("opentype");
+}
+@font-face {
+  font-family: CircularStd-Medium;
+  src: url("../fonts/CircularStd-Medium.otf") format("opentype");
+}
+body{
+  font-family: CircularStd-Book;
+  background: linear-gradient(white, #efefef);
+}
+
+.tabs {
+  background:#fff;
+  border-top:solid 1px #fff;
+}
+.tab-nav{
+    border-top: solid 1px #fff;
+}
+.floor-title {
+  font-family: CircularStd-Book;
+  position: absolute;
+}
+.floor {
+  width:100%;
+  border:none;
+  background-color: #fff;
+  background: linear-gradient(#fff, #fafafa);
+}
+.active-floor {
+  color: #fff;
+  background-color: #92b7bc;
+  background: linear-gradient(#92b7bc, #99cccc);
+}
+.active-floor h2 {
+  color: #fff;
+  font-weight:bold;
+}
+.active-pin {
+  display:inline;
+}
+.floor-map {
+  transform:scale(1.0);
+}
+.floor-map img{
+  width:100%; /*using 366px as standard non-scaled width*/
+}
+
+/* Pin Styles and Animations
+/*Container*/
+.container {
+  margin: 0 auto;
+  position: relative;
+  width: 1000px;
+}
+.container svg {
+  position: absolute;
+  z-index: 100;
+}
+.container img {
+  height: 100%;
+  width: 100%;
+}
+
+.option1 {
+  display:none;
+  position: absolute;
+}
+
+/*Animation*/
+@-webkit-keyframes hideshow {
+  0% { opacity: 0; }
+  25% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@-moz-keyframes hideshow {
+  0% { opacity: 0; }
+  25% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@-o-keyframes hideshow {
+  0% { opacity: 0; }
+  25% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes hideshow {
+  0% { opacity: 0; }
+  25% { opacity: 1; }
+  100% { opacity: 0; }
+}
+.first {
+  opacity: 0;
+  -webkit-animation: hideshow 1s .1s ease infinite;
+  -moz-animation:    hideshow 1s .1s ease infinite;
+  -o-animation:      hideshow 1s .1s ease infinite;
+  animation:         hideshow 1s .1s ease infinite;
+}
+
+.second {
+  opacity: 0;
+  -webkit-animation: hideshow 1s .2s ease infinite;
+  -moz-animation:    hideshow 1s .2s ease infinite;
+  -o-animation:      hideshow 1s .2s ease infinite;
+  animation:         hideshow 1s .2s ease infinite;
+}
+
+.third {
+  opacity: 0;
+  -webkit-animation: hideshow 1s .3s ease infinite;
+  -moz-animation:    hideshow 1s .3s ease infinite;
+  -o-animation:      hideshow 1s .3s ease infinite;
+  animation:         hideshow 1s .3s ease infinite;
+}
+
+.slider {
+  height: 100%;
+}
+.slider-slide {
+  padding-top: 80px;
+  color: #fff;
+  background-color: #92b7bc;
+  text-align: center;
+}
+.slider-slide h1, .slider-slide h2, .slider-slide h3, .slider-slide h4, .slider-slide h5   {
+  color: #fff;
+}
+
+#logo {
+  margin: 30px 0px;
+}
+
+#list {
+  width: 170px;
+  margin: 30px auto;
+  font-size: 20px;
+}
+#list ol {
+  margin-top: 30px;
+}
+#list ol li {
+  text-align: left;
+  list-style: decimal;
+  margin: 10px 0px;
+}
+
+.button.ng-hide{
+  display:none;
+}
+
+.view-slide-in.ng-enter {
+  transition: all 1s ease;
+  -webkit-transition:all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+   
+  opacity:0.5;
+  position:relative;
+  opacity:0;
+  top:10px;
+  left:20px;
+}
+
+.view-slide-in.ng-enter {
+  opacity: 0;
+}
+.view-slide-in.ng-enter.ng-enter-active {
+  top:0;
+  left:0;
+  opacity: 1;
+}
+.view-slide-in.ng-leave.ng-leave-active{
+  top:5px;
+  left:5px;
+  opacity:1;
+}
+.view-slide-in.ng-leave{
+  top:0;
+  left:0;
+  opacity:0;
+}
