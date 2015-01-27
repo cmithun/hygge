@@ -1,8 +1,8 @@
 angular.module('hygge.beaconControllers', [])
 
-.controller('BeaconCtrl', function($scope, beaconScan, contextLocations) {
+.controller('BeaconCtrl', function($scope, beaconScan, contextLocations, sharedProperties,Data) {
 
-    $scope.floor13class = "";
+    $scope.floor13class = sharedProperties.getFloor13();
     $scope.floor12class = "";
     $scope.floor11class = "";
     $scope.floor10class = "";    
@@ -10,12 +10,11 @@ angular.module('hygge.beaconControllers', [])
     $scope.pin12display = "";
     $scope.pin11display = "";
     $scope.pin10display = "";
-
   function pollBeacons(){
-    //console.log("POLLING BEACONS................");
+    console.log("POLLING BEACONS................");
     $scope.beacons = beaconScan.all();
 
-    //console.log("found this many: " + $scope.beacons.length);
+    console.log("found this many: " + $scope.beacons.length);
 
     // Match Beacon and Location data and pass to View
     // Beacon = currentbeacon
@@ -28,10 +27,11 @@ angular.module('hygge.beaconControllers', [])
       // Sort knownbeacons
       knownbeacons.sortorder = "accuracy";
       var loc = knownbeacons[0];
-      $scope.currentlocation = contextLocations.get(loc.major, loc.minor);  
+      $scope.currentlocation = contextLocations.get(loc.major, loc.minor); 
         switch($scope.currentlocation.floor){
                 case "13":
-                    $scope.floor13class = "active-floor";
+                    sharedProperties.setFloor13('active-floor');
+                    $scope.floor13class = sharedProperties.getFloor13();
                     $scope.pin13display = "inline";
                     break;
                 case "12":

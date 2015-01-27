@@ -4,16 +4,17 @@
     <img class="title-image" src="img/Mithun_White.png">
   </ion-nav-title>
   <ion-content> 
-<div style="margin-top:60px;background-color:#fff;border-bottom:solid 1px #92B5BA">      
+<div style="background-color:#fff;border-bottom:solid 1px #92B5BA">      
   <ion-refresher style="color:#fff;"
     pulling-text="14th floor coming soon"
-    refreshing-text="updating..."
+    refreshing-icon="ion-loading-c"
+    refreshing-text="updating"
     on-refresh="doRefresh()">
   </ion-refresher>
 </div>      
 <div><ion-list>
     <ion-item id="floor13" class="item floor {{floor13class}}">
-      <h2 class="floor-title">13th floor</h2>
+      <h2 class="floor-title">13th floor {{floor13class}}</h2>
       <div class="floor-map">
         <img src="img/13.png">
         <svg id="pin13" class="option1" style="top:{{currentlocation.y}};left:{{currentlocation.x}};display:{{pin13display}}" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 250 250">

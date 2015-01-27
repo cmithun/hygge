@@ -1,5 +1,30 @@
 angular.module('hygge.beaconServices', ['ionic'])
 
+.service('sharedProperties', function() {
+    var mapView = {
+        "floor13class" : "",
+        "floor12class" : "",
+        "floor11class" : "",
+        "floor10class" : "",    
+        "pin13display" : "",
+        "pin12display" : "",
+        "pin11display" : "",
+        "pin10display" : ""
+    };
+    
+    return {
+        getFloor13: function() {
+            return mapView.floor13class;
+        },
+        setFloor13: function(value) {
+            mapView.floor13class = value;
+        },
+        getObject: function() {
+            return mapView;
+        }
+    }
+})
+
 .factory('beaconScan', function ($ionicPlatform, $q) {
 
   var beacons = [];
