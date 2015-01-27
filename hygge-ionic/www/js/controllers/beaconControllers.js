@@ -40,15 +40,33 @@ angular.module('hygge.beaconControllers', [])
                     $scope.pin13display = "inline";
                     break;
                 case "12":
+                    $scope.floor13class = "";
                     $scope.floor12class = "active-floor";
+                    $scope.floor11class = "";
+                    $scope.floor10class = "";    
+                    $scope.pin13display = "";
+                    $scope.pin12display = "";
+                    $scope.pin11display = "";                
                     $scope.pin12display = "inline";
                     break;
                 case "11":
+                    $scope.floor13class = "";
+                    $scope.floor12class = "";
                     $scope.floor11class = "active-floor";
+                    $scope.floor10class = "";    
+                    $scope.pin13display = "";
+                    $scope.pin12display = "";
+                    $scope.pin11display = "";                
                     $scope.pin11display = "inline";
                     break;
                 case "10":
-                    $scope.floor10class = "active-floor";
+                    $scope.floor13class = "";
+                    $scope.floor12class = "";
+                    $scope.floor11class = "";
+                    $scope.floor10class = "active-floor";    
+                    $scope.pin13display = "";
+                    $scope.pin12display = "";
+                    $scope.pin11display = "";                
                     $scope.pin10display = "inline";
                     break;                
                 default:
