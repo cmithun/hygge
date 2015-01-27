@@ -31,9 +31,6 @@ angular.module('hygge', [
 
   });
 })
-.factory('Data', function(){
-    return {message:"I'm data from a service"};
-})
 .config(function($stateProvider, $urlRouterProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
@@ -51,16 +48,6 @@ angular.module('hygge', [
 
   // Each tab has its own nav history stack:
 
-  .state('tab.map', {
-    url: '/map',
-    views: {
-      'tab-map': {
-        templateUrl: 'templates/map.html',
-        controller: 'BeaconCtrl'
-      }
-    }
-  })
-
   .state('tab.directory', {
     url: '/directory',
     views: {
@@ -69,10 +56,30 @@ angular.module('hygge', [
         controller: 'BeaconCtrl'
       }
     }
-  });
+  })
+  
+  .state('tab.map', {
+    url: '/map',
+    views: {
+      'tab-map': {
+        templateUrl: 'templates/map.html',
+        controller: 'BeaconCtrl'
+      }
+    }
+  })  
+
+ .state('tab.intro', {
+    url: '/intro',
+    views: {
+      'tab-intro': {
+        templateUrl: 'templates/intro.html',
+        controller: 'BeaconCtrl'
+      }
+    }
+  });    
     
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/directory');
+  $urlRouterProvider.otherwise('/tab/intro');
 
 });
 

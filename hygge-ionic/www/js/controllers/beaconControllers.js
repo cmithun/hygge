@@ -1,8 +1,8 @@
 angular.module('hygge.beaconControllers', [])
 
-.controller('BeaconCtrl', function($scope, beaconScan, contextLocations, sharedProperties,Data) {
+.controller('BeaconCtrl', function($scope, $state, beaconScan, contextLocations) {
 
-    $scope.floor13class = sharedProperties.getFloor13();
+    $scope.floor13class = "";
     $scope.floor12class = "";
     $scope.floor11class = "";
     $scope.floor10class = "";    
@@ -30,8 +30,13 @@ angular.module('hygge.beaconControllers', [])
       $scope.currentlocation = contextLocations.get(loc.major, loc.minor); 
         switch($scope.currentlocation.floor){
                 case "13":
-                    sharedProperties.setFloor13('active-floor');
-                    $scope.floor13class = sharedProperties.getFloor13();
+                    $scope.floor13class = "active-floor";
+                    $scope.floor12class = "";
+                    $scope.floor11class = "";
+                    $scope.floor10class = "";    
+                    $scope.pin13display = "";
+                    $scope.pin12display = "";
+                    $scope.pin11display = "";                
                     $scope.pin13display = "inline";
                     break;
                 case "12":
@@ -69,6 +74,10 @@ angular.module('hygge.beaconControllers', [])
   //Use an interval timer to poll our controller
   var beaconPollTimer = setInterval(function() {pollBeacons();}, pollInterval);
 
+  $scope.startApp = function(){
+    $state.go('tabs.map',{});
+  }
+    
   // Clear the interval timer ot avoid a memory leak
   $scope.$on('$destroy', function(){
     clearInterval (becaonPollTimer);
