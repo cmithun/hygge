@@ -3,26 +3,26 @@ angular.module('hygge.contextServices', ['ionic'])
 .factory('contextLocations', function ($ionicPlatform, $http, $resource) {
 
   var locations = [];
-  //
-  // // Mock data for console UI debug
-  // if (window.cordova) {
-  //   locations = [{
-  //     major: 13,
-  //     minor: 1,
-  //     floor: 13,
-  //     x: 50,
-  //     y: 50,
-  //     message: 'test beacon 1'
-  //   },{
-  //     major: 13,
-  //     minor: 2,
-  //     floor: 13,
-  //     x: 100,
-  //     y: 100,
-  //     message: 'test beacon 2'
-  //   }];
-  // }
-  // else {
+  
+   // Mock data for console UI debug
+   if (!window.cordova) {
+     locations = [{
+       major: 13,
+       minor: 1,
+       floor: 13,
+       x: 50,
+       y: 50,
+       message: 'test beacon 1'
+     },{
+       major: 13,
+       minor: 2,
+       floor: 13,
+       x: 100,
+       y: 100,
+       message: 'test beacon 2'
+     }];
+   }
+   else {
     $http.get('http://mithun-46828.azurewebsites.net/?post_type=beacon&json=1')
     //$http.get('http://mithun-46828.azurewebsites.net/locationsjson?json=1')
       .success(function(data, status, headers, config){
@@ -54,7 +54,7 @@ angular.module('hygge.contextServices', ['ionic'])
         console.log("all locations: " + JSON.stringify(locations));
       });
 
-  // }
+   }
   //
 
   // Return context data to controllers
@@ -65,13 +65,12 @@ angular.module('hygge.contextServices', ['ionic'])
     },
     get: function(major, minor) {
       for (var i = 0; i < locations.length; i++){
-          //console.log("TESTING " + locations[i].major + locations[i].minor);
+          console.log("TESTING " + locations[i].major + locations[i].minor);
           if (locations[i].major == major && locations[i].minor == minor) {
-            return locations[i];
+                console.log('Locations: ', locations[i]);
+              return locations[i];
           }
       }
-      return null;
-
     }
   };
 

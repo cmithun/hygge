@@ -31,6 +31,9 @@ angular.module('hygge', [
 
   });
 })
+.factory('Data', function(){
+    return {message:"I'm data from a service"};
+})
 .config(function($stateProvider, $urlRouterProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
@@ -69,7 +72,7 @@ angular.module('hygge', [
   });
     
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/map');
+  $urlRouterProvider.otherwise('/tab/directory');
 
 });
 
