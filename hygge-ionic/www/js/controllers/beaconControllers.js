@@ -10,8 +10,13 @@ angular.module('hygge.beaconControllers', [])
     $scope.pin12display = "";
     $scope.pin11display = "";
     $scope.pin10display = "";
+
+  $scope.clearFloor = function(value){
+        jQuery("#floor"+value).removeClass("active-floor");  
+        jQuery("#pin"+value).css({'display':'none'});
+  }
     
-  function pollBeacons(){
+  $scope.pollBeacons = function(){
     console.log("POLLING BEACONS................");
     $scope.beacons = beaconScan.all();
 
@@ -31,69 +36,58 @@ angular.module('hygge.beaconControllers', [])
       $scope.currentlocation = contextLocations.get(loc.major, loc.minor); 
         switch($scope.currentlocation.floor){
                 case "13":
-                    sharedProperties.setX($scope.currentlocation.x);
-                    $scope.floor13class = "active-floor";
-                    $scope.floor12class = "";
-                    $scope.floor11class = "";
-                    $scope.floor10class = "";    
-                    $scope.pin13display = "";
-                    $scope.pin12display = "";
-                    $scope.pin11display = "";                
-                    $scope.pin13display = "inline";
-                    alert(sharedProperties.getX());
+                    $scope.clearFloor(12);
+                    $scope.clearFloor(11);
+                    $scope.clearFloor(10);
+                    jQuery("#floor13").addClass("active-floor");  
+                    jQuery("#pin13").css({'top':$scope.currentlocation.y,'left':$scope.currentlocation.x,'display':'inline'});
                     break;
                 case "12":
-                    $scope.floor13class = "";
-                    $scope.floor12class = "active-floor";
-                    $scope.floor11class = "";
-                    $scope.floor10class = "";    
-                    $scope.pin13display = "";
-                    $scope.pin12display = "";
-                    $scope.pin11display = "";                
-                    $scope.pin12display = "inline";
+                    $scope.clearFloor(13);
+                    $scope.clearFloor(11);
+                    $scope.clearFloor(10);
+                    jQuery("#floor12").addClass("active-floor");  
+                    jQuery("#pin12").css({'top':$scope.currentlocation.y,'left':$scope.currentlocation.x,'display':'inline'});
                     break;
                 case "11":
-                    $scope.floor13class = "";
-                    $scope.floor12class = "";
-                    $scope.floor11class = "active-floor";
-                    $scope.floor10class = "";    
-                    $scope.pin13display = "";
-                    $scope.pin12display = "";
-                    $scope.pin11display = "";                
-                    $scope.pin11display = "inline";
+                    $scope.clearFloor(13);
+                    $scope.clearFloor(12);
+                    $scope.clearFloor(10);
+                    jQuery("#floor11").addClass("active-floor");  
+                    jQuery("#pin11").css({'top':$scope.currentlocation.y,'left':$scope.currentlocation.x,'display':'inline'});
                     break;
                 case "10":
-                    $scope.floor13class = "";
-                    $scope.floor12class = "";
-                    $scope.floor11class = "";
-                    $scope.floor10class = "active-floor";    
-                    $scope.pin13display = "";
-                    $scope.pin12display = "";
-                    $scope.pin11display = "";                
-                    $scope.pin10display = "inline";
+                    $scope.clearFloor(13);
+                    $scope.clearFloor(12);
+                    $scope.clearFloor(11);
+                    jQuery("#floor10").addClass("active-floor");  
+                    jQuery("#pin10").css({'top':$scope.currentlocation.y,'left':$scope.currentlocation.x,'display':'inline'});
                     break;                
                 default:
-                    $scope.floor13class = "";
-                    $scope.floor12class = "";
-                    $scope.floor11class = "";
-                    $scope.floor10class = "";
-                    $scope.pin13display = "";
-                    $scope.pin12display = "";
-                    $scope.pin11display = "";
-                    $scope.pin10display = "";
+                    $scope.clearFloor(13);
+                    $scope.clearFloor(12);
+                    $scope.clearFloor(11);
+                    $scope.clearFloor(10);
                     break;
         }
+        jQuery("#currentlocationTitle").html($scope.currentlocation.title);
+        jQuery("#currentlocationExcerpt").html($scope.currentlocation.excerpt);
+        jQuery("#debugTitle").html($scope.currentlocation.title);
+        jQuery("#debugFloor").html($scope.currentlocation.floor);
+        jQuery("#debugAccuracy").html(loc.accuracy);
+        jQuery("#debugX").html($scope.currentlocation.x);
+        jQuery("#debugY").html($scope.currentlocation.y);
     }
     $scope.$apply(); // This seems to be necessary.
   }
 
-  pollBeacons();
+  $scope.pollBeacons();
 
   var pollInterval = 3000;
   //$scope.beacons = beaconScan.all();
 
   //Use an interval timer to poll our controller
-  var beaconPollTimer = setInterval(function() {pollBeacons();}, pollInterval);
+  var beaconPollTimer = setInterval(function() {$scope.pollBeacons();}, pollInterval);
 
   $scope.startApp = function(){
     $state.go('tabs.map',{});
@@ -105,7 +99,7 @@ angular.module('hygge.beaconControllers', [])
   });
     
  $scope.doRefresh = function() {
-    pollBeacons();
+    $scope.pollBeacons();
     $scope.$broadcast('scroll.refreshComplete');
   };
     
