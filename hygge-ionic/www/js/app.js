@@ -12,6 +12,7 @@ angular.module('hygge', [
   'hygge.beaconControllers',
   'hygge.contextControllers',
   'hygge.device',
+  'hygge.directives',
   ])
 
 .run(function($ionicPlatform) {
@@ -40,7 +41,7 @@ angular.module('hygge', [
   $stateProvider
 
   // setup an abstract state for the tabs directive
-    .state('tab', {
+  .state('tab', {
     url: "/tab",
     abstract: true,
     templateUrl: "templates/tabs.html"
