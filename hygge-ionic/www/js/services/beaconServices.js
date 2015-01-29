@@ -30,7 +30,6 @@ angular.module('hygge.beaconServices', ['ionic'])
 })
 
 .factory('beaconScan', function ($ionicPlatform, $q) {
-
   var beacons = [];
 
   // Mock data for console UI debug

@@ -1,6 +1,9 @@
 angular.module('hygge.beaconControllers', [])
 
-.controller('BeaconCtrl', function($scope, $state, beaconScan, contextLocations, sharedProperties) {
+.controller('BeaconCtrl', function($scope, $state, beaconScan, contextLocations, $ionicLoading){
+        $ionicLoading.show({
+            template: '<i class="icon ion-loading-c"></i><br>Loading...'
+        })
 
     $scope.floor13class = "";
     $scope.floor12class = "";
@@ -79,6 +82,7 @@ angular.module('hygge.beaconControllers', [])
         jQuery("#debugY").html($scope.currentlocation.y);
     }
     $scope.$apply(); // This seems to be necessary.
+    $ionicLoading.hide();
   }
 
   $scope.pollBeacons();

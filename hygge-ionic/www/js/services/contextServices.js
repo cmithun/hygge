@@ -26,14 +26,16 @@ angular.module('hygge.contextServices', ['ionic'])
     $http.get('http://mithun-46828.azurewebsites.net/?post_type=beacon&json=1')
     //$http.get('http://mithun-46828.azurewebsites.net/locationsjson?json=1')
       .success(function(data, status, headers, config){
-        console.log('Success', status);
+        //console.log('Success', status);
+        //fire directive to show tabs
+        //alert("bind");
       })
       .error(function(data, status, headers, config){
-        console.log('Error', status);
+        //console.log('Error', status);
       })
       .then(function(response){
         var jsonData = response.data;
-        console.log(jsonData);
+        //console.log(jsonData);
         var rawlocs = jsonData.posts;
 
         //Walk the list and create our own data structure
@@ -51,7 +53,7 @@ angular.module('hygge.contextServices', ['ionic'])
 
           locations.push(loc);
         }
-        console.log("all locations: " + JSON.stringify(locations));
+        //console.log("all locations: " + JSON.stringify(locations));
       });
 
    }
