@@ -20,7 +20,8 @@ angular.module('hygge.beaconControllers', [])
   }
     
   $scope.pollBeacons = function(){
-    console.log("POLLING BEACONS................");
+    var seconds = new Date().getTime() / 1000;
+    console.log("POLLING BEACONS................"+seconds);
     $scope.beacons = beaconScan.all();
 
     console.log("found this many: " + $scope.beacons.length);
@@ -87,14 +88,15 @@ angular.module('hygge.beaconControllers', [])
 
   $scope.pollBeacons();
 
-  var pollInterval = 3000;
+  //var pollInterval = 10000;
   //$scope.beacons = beaconScan.all();
 
   //Use an interval timer to poll our controller
-  var beaconPollTimer = setInterval(function() {$scope.pollBeacons();}, pollInterval);
+  //var beaconPollTimer = setInterval(function() {$scope.pollBeacons();}, pollInterval);
 
   $scope.startApp = function(){
-    $state.go('tabs.map',{});
+    $scope.pollBeacons();
+    $state.go('tab.map',{});
   }
     
   // Clear the interval timer ot avoid a memory leak
