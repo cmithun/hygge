@@ -18,6 +18,9 @@ angular.module('hygge', [
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     console.log("Platform Ready");
+      
+    //initialize Polling $timeout function
+      
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -44,7 +47,8 @@ angular.module('hygge', [
   .state('tab', {
     url: "/tab",
     abstract: true,
-    templateUrl: "templates/tabs.html"
+    templateUrl: "templates/tabs.html",
+    controller: 'BeaconCtrl'
   })
 
   // Each tab has its own nav history stack:
@@ -53,8 +57,7 @@ angular.module('hygge', [
     url: '/directory',
     views: {
       'tab-directory': {
-        templateUrl: 'templates/directory.html',
-        controller: 'BeaconCtrl'
+        templateUrl: 'templates/directory.html'
       }
     }
   })
@@ -63,24 +66,19 @@ angular.module('hygge', [
     url: '/map',
     views: {
       'tab-map': {
-        templateUrl: 'templates/map.html',
-        controller: 'BeaconCtrl'
+        templateUrl: 'templates/map.html'
       }
     }
   })  
 
- .state('tab.intro', {
+ .state('intro', {
     url: '/intro',
-    views: {
-      'tab-intro': {
-        templateUrl: 'templates/intro.html',
-        controller: 'BeaconCtrl'
-      }
-    }
+    templateUrl: 'templates/intro.html'
   });    
     
+  // check for first-run    
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/intro');
+  $urlRouterProvider.otherwise('/intro');
 
 });
 
