@@ -1,6 +1,6 @@
 angular.module('hygge.contextServices', ['ionic'])
 
-.factory('contextLocations', function ($ionicPlatform, $http, $resource) {
+.factory('contextLocations', function ($ionicPlatform, $http, $resource,$ionicLoading) {
 
   var locations = [];
   
@@ -23,9 +23,13 @@ angular.module('hygge.contextServices', ['ionic'])
      }];
    }
    else {
+    $ionicLoading.show({
+        template: '<i class="icon ion-loading-c"></i><br>Loading...'
+    })       
     $http.get('http://mithun-46828.azurewebsites.net/?post_type=beacon&json=1')
     //$http.get('http://mithun-46828.azurewebsites.net/locationsjson?json=1')
       .success(function(data, status, headers, config){
+        $ionicLoading.hide();
         //console.log('Success', status);
         //fire directive to show tabs
         //alert("bind");

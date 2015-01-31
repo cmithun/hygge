@@ -1,71 +1,92 @@
 angular.module('hygge.beaconControllers', [])
 
-.controller('BeaconCtrl', function($scope, $state, beaconScan, contextLocations, $ionicLoading){
-        $ionicLoading.show({
-            template: '<i class="icon ion-loading-c"></i><br>Loading...'
-        })
-
-    $scope.floor13class = "";
-    $scope.floor12class = "";
-    $scope.floor11class = "";
-    $scope.floor10class = "";    
-    $scope.pin13display = "";
-    $scope.pin12display = "";
-    $scope.pin11display = "";
-    $scope.pin10display = "";
-
-  $scope.clearFloor = function(value){
-        jQuery("#floor"+value).removeClass("active-floor");  
-        jQuery("#pin"+value).css({'display':'none'});
-  }
+.controller('BeaconCtrl', function($scope, $state, beaconScan, contextLocations,$interval){
     
-  $scope.pollBeacons = function(){
-    var seconds = new Date().getTime() / 1000;
-    console.log("POLLING BEACONS................"+seconds);
-    $scope.beacons = beaconScan.all();
+    $scope.poll = function(){
+        var seconds = new Date().getTime() / 1000;
+        console.log("POLLING BEACONS................"+seconds);
+        $scope.beacons = beaconScan.all();
 
-    console.log("found this many: " + $scope.beacons.length);
+        console.log("found this many: " + $scope.beacons.length);
 
-    // Match Beacon and Location data and pass to View
-    // Beacon = currentbeacon
-    // Location = currentlocation
-    if ($scope.beacons.length > 0){
-      //filter out beacons with accuracy = -1 or greater than 12m
-      var knownbeacons = $scope.beacons.filter(function(val) {
-          return (val.accuracy > 0 && val.accuracy < 12);
-      });
-      // Sort knownbeacons
-      knownbeacons.sortorder = "accuracy";
-      var loc = knownbeacons[0];
-      $scope.currentlocation = contextLocations.get(loc.major, loc.minor); 
-        switch($scope.currentlocation.floor){
+        // Match Beacon and Location data and pass to View
+        // Beacon = currentbeacon
+        // Location = currentlocation
+        if ($scope.beacons.length > 0){
+        //filter out beacons with accuracy = -1 or greater than 12m
+            var knownbeacons = $scope.beacons.filter(function(val) {
+                return (val.accuracy > 0 && val.accuracy < 12);
+            });
+            // Sort knownbeacons
+            knownbeacons.sortorder = "accuracy";
+            var loc = knownbeacons[0];
+            $scope.currentlocation = contextLocations.get(loc.major, loc.minor); 
+        }
+        //call viewStateUpdate directive
+        $scope.updateViews($scope.currentlocation);
+    }
+
+    var stop;
+    
+    $scope.startPolling = function() {
+        // Don't start a new poll if we are already polling
+        if ( angular.isDefined(stop) ) return;
+        stop = $interval(function() {
+            $scope.poll();
+        }, 3000);
+    };
+
+    $scope.stopPolling = function() {
+        if (angular.isDefined(stop)) {
+            $interval.cancel(stop);
+        stop = undefined;
+        }
+    };
+    
+    $scope.startApp = function(){
+        $scope.startPolling();
+        $state.go('tab.map',{});
+    };
+    
+    // Clear the interval timer ot avoid a memory leak
+    $scope.$on('$destroy', function(){
+        $scope.stopPolling();
+    });
+    
+    $scope.doRefresh = function() {
+        $scope.pollBeacons();
+        $scope.$broadcast('scroll.refreshComplete');
+    };
+    
+    $scope.updateViews = function(currentlocation) {
+          switch(currentlocation.floor){
                 case "13":
                     $scope.clearFloor(12);
                     $scope.clearFloor(11);
                     $scope.clearFloor(10);
                     jQuery("#floor13").addClass("active-floor");  
-                    jQuery("#pin13").css({'top':$scope.currentlocation.y,'left':$scope.currentlocation.x,'display':'inline'});
+                    jQuery("#pin13").css({'top':currentlocation.y,'left':currentlocation.x,'display':'inline'});
                     break;
                 case "12":
                     $scope.clearFloor(13);
                     $scope.clearFloor(11);
                     $scope.clearFloor(10);
                     jQuery("#floor12").addClass("active-floor");  
-                    jQuery("#pin12").css({'top':$scope.currentlocation.y,'left':$scope.currentlocation.x,'display':'inline'});
+                    jQuery("#pin12").css({'top':currentlocation.y,'left':currentlocation.x,'display':'inline'});
                     break;
                 case "11":
                     $scope.clearFloor(13);
                     $scope.clearFloor(12);
                     $scope.clearFloor(10);
                     jQuery("#floor11").addClass("active-floor");  
-                    jQuery("#pin11").css({'top':$scope.currentlocation.y,'left':$scope.currentlocation.x,'display':'inline'});
+                    jQuery("#pin11").css({'top':currentlocation.y,'left':currentlocation.x,'display':'inline'});
                     break;
                 case "10":
                     $scope.clearFloor(13);
                     $scope.clearFloor(12);
                     $scope.clearFloor(11);
                     jQuery("#floor10").addClass("active-floor");  
-                    jQuery("#pin10").css({'top':$scope.currentlocation.y,'left':$scope.currentlocation.x,'display':'inline'});
+                    jQuery("#pin10").css({'top':currentlocation.y,'left':currentlocation.x,'display':'inline'});
                     break;                
                 default:
                     $scope.clearFloor(13);
@@ -74,39 +95,18 @@ angular.module('hygge.beaconControllers', [])
                     $scope.clearFloor(10);
                     break;
         }
-        jQuery("#currentlocationTitle").html($scope.currentlocation.title);
-        jQuery("#currentlocationExcerpt").html($scope.currentlocation.excerpt);
-        jQuery("#debugTitle").html($scope.currentlocation.title);
-        jQuery("#debugFloor").html($scope.currentlocation.floor);
+        jQuery("#currentlocationTitle").html(currentlocation.title);
+        jQuery("#currentlocationExcerpt").html(currentlocation.excerpt);
+        jQuery("#debugTitle").html(currentlocation.title);
+        jQuery("#debugFloor").html(currentlocation.floor);
         jQuery("#debugAccuracy").html(loc.accuracy);
-        jQuery("#debugX").html($scope.currentlocation.x);
-        jQuery("#debugY").html($scope.currentlocation.y);
-    }
-    $scope.$apply(); // This seems to be necessary.
-    $ionicLoading.hide();
-  }
-
-  $scope.pollBeacons();
-
-  //var pollInterval = 10000;
-  //$scope.beacons = beaconScan.all();
-
-  //Use an interval timer to poll our controller
-  //var beaconPollTimer = setInterval(function() {$scope.pollBeacons();}, pollInterval);
-
-  $scope.startApp = function(){
-    $scope.pollBeacons();
-    $state.go('tab.map',{});
-  }
+        jQuery("#debugX").html(currentlocation.x);
+        jQuery("#debugY").html(currentlocation.y);    
+        $scope.$apply(); // This seems to be necessary.
+    };
     
-  // Clear the interval timer ot avoid a memory leak
-  $scope.$on('$destroy', function(){
-    clearInterval (becaonPollTimer);
-  });
-    
- $scope.doRefresh = function() {
-    $scope.pollBeacons();
-    $scope.$broadcast('scroll.refreshComplete');
-  };
-    
+    $scope.clearFloor = function(value) {
+        jQuery("#floor"+value).removeClass("active-floor");  
+        jQuery("#pin"+value).css({'display':'none'});
+    };
 });
