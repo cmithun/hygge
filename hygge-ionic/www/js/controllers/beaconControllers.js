@@ -19,8 +19,7 @@ angular.module('hygge.beaconControllers', [])
             });
             // Sort knownbeacons
             knownbeacons.sortorder = "accuracy";
-            var loc = knownbeacons[0];
-            $scope.currentlocation = contextLocations.get(loc.major, loc.minor); 
+            $scope.currentlocation = contextLocations.get(knownbeacons[0].major, knownbeacons[0].minor); 
         }
         //call viewStateUpdate directive
         $scope.updateViews($scope.currentlocation);
@@ -34,7 +33,8 @@ angular.module('hygge.beaconControllers', [])
         stop = $interval(function() {
             $scope.poll();
         }, 3000);
-    };
+    };    
+    $scope.startPolling();
 
     $scope.stopPolling = function() {
         if (angular.isDefined(stop)) {
@@ -44,7 +44,6 @@ angular.module('hygge.beaconControllers', [])
     };
     
     $scope.startApp = function(){
-        $scope.startPolling();
         $state.go('tab.map',{});
     };
     
@@ -54,7 +53,6 @@ angular.module('hygge.beaconControllers', [])
     });
     
     $scope.doRefresh = function() {
-        $scope.pollBeacons();
         $scope.$broadcast('scroll.refreshComplete');
     };
     
@@ -99,10 +97,10 @@ angular.module('hygge.beaconControllers', [])
         jQuery("#currentlocationExcerpt").html(currentlocation.excerpt);
         jQuery("#debugTitle").html(currentlocation.title);
         jQuery("#debugFloor").html(currentlocation.floor);
-        jQuery("#debugAccuracy").html(loc.accuracy);
+        jQuery("#debugAccuracy").html(currentlocation.accuracy);
         jQuery("#debugX").html(currentlocation.x);
         jQuery("#debugY").html(currentlocation.y);    
-        $scope.$apply(); // This seems to be necessary.
+        //$scope.$apply(); // This seems to be necessary.
     };
     
     $scope.clearFloor = function(value) {

@@ -77,8 +77,9 @@ angular.module('hygge', [
   });    
     
   // check for first-run    
-  // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/intro');
+  // if none of the above states are matched, use this as the fallback
+  //$urlRouterProvider.otherwise('/tab/map');
 
 });
 
