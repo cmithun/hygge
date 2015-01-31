@@ -24,7 +24,7 @@ angular.module('hygge.contextServices', ['ionic'])
    }
    else {
     $ionicLoading.show({
-        template: '<i class="icon ion-loading-c"></i><br>Loading...'
+        template: '<i class="icon ion-loading-c"></i><br>Updating content...'
     })       
     $http.get('http://mithun-46828.azurewebsites.net/?post_type=beacon&json=1')
     //$http.get('http://mithun-46828.azurewebsites.net/locationsjson?json=1')
