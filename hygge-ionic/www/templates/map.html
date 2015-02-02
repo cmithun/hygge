@@ -1,4 +1,4 @@
- <ion-view>
+ <ion-view ng-controller="BeaconCtrl">
   <ion-nav-title>
     <img class="title-image" src="img/Mithun_White.png">
   </ion-nav-title>
@@ -8,10 +8,8 @@
     refreshing-icon="ion-loading-c"
     refreshing-text="updating"
     on-refresh="doRefresh()">
-  </ion-refresher>      
-<div>
-    <ion-list>
-    <ion-item id="floor13" class="item floor">
+  </ion-refresher> 
+    <ion-pane id="floor13" class="item floor">
       <h2 class="floor-title">13th floor</h2>
       <div class="floor-map">
         <img src="img/13.png">
@@ -28,8 +26,8 @@
           </g>
         </svg>
       </div>
-    </ion-item>
-    <ion-item id="floor12" class="item floor">
+    </ion-pane>
+    <ion-pane id="floor12" class="item floor">
       <h2 class="floor-title">12th floor</h2>
       <div class="floor-map">
         <img src="img/12.png">
@@ -46,8 +44,8 @@
           </g>
         </svg>
       </div>
-    </ion-item>
-    <ion-item id="floor11" class="item floor">
+    </ion-pane>
+    <ion-pane id="floor11" class="item floor">
       <h2 class="floor-title">11th floor</h2>
       <div class="floor-map">
         <img src="img/11.png">
@@ -64,8 +62,8 @@
           </g>
         </svg>
       </div>
-    </ion-item>
-    <ion-item id="floor10" class="item floor">
+    </ion-pane>
+    <ion-pane id="floor10" class="item floor">
       <h2 class="floor-title">10th floor</h2>
       <div class="floor-map">
         <img src="img/10.png">
@@ -82,8 +80,6 @@
           </g>
         </svg>
       </div>
-    </ion-item>
-    </ion-list>
-  </div>      
+    </ion-pane>
   </ion-content>
 </ion-view>
