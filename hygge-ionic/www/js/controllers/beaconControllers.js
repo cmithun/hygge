@@ -1,7 +1,6 @@
 angular.module('hygge.beaconControllers', [])
 
-//Note that tabs each create their own scope 
-.controller('BeaconCtrl', function($scope, $state, beaconScan, contextLocations,$interval){    
+.controller('BeaconCtrl', function($scope, $state, beaconScan, contextLocations, $interval){    
     $scope.poll = function(){
         var seconds = new Date().getTime() / 1000;
         console.log("POLLING BEACONS................"+seconds);
@@ -29,7 +28,8 @@ angular.module('hygge.beaconControllers', [])
     
     $scope.startPolling = function() {
         // Don't start a new poll if we are already polling
-        if ( angular.isDefined(stop) ) return;
+        if ( angular.isDefined(stop) ) return; 
+        $scope.$apply(); // This seems to be necessary.
         stop = $interval(function() {
             $scope.poll();
         }, 3000);
@@ -53,6 +53,7 @@ angular.module('hygge.beaconControllers', [])
     });
     
     $scope.doRefresh = function() {
+        $scope.poll();
         $scope.$broadcast('scroll.refreshComplete');
     };
     
@@ -99,8 +100,7 @@ angular.module('hygge.beaconControllers', [])
         jQuery("#debugFloor").html(currentlocation.floor);
         jQuery("#debugAccuracy").html(currentlocation.accuracy);
         jQuery("#debugX").html(currentlocation.x);
-        jQuery("#debugY").html(currentlocation.y);    
-        //$scope.$apply(); // This seems to be necessary.
+        jQuery("#debugY").html(currentlocation.y);   
     };
     
     $scope.clearFloor = function(value) {
