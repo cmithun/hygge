@@ -1,7 +1,7 @@
 angular.module('hygge.beaconControllers', [])
 
-.controller('BeaconCtrl', function($scope, $state, beaconScan, contextLocations,$interval){
-    
+//Note that tabs each create their own scope 
+.controller('BeaconCtrl', function($scope, $state, beaconScan, contextLocations,$interval){    
     $scope.poll = function(){
         var seconds = new Date().getTime() / 1000;
         console.log("POLLING BEACONS................"+seconds);
