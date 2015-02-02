@@ -12,7 +12,6 @@ angular.module('hygge', [
   'hygge.beaconControllers',
   'hygge.contextControllers',
   'hygge.device',
-  'hygge.directives',
   ])
 
 .run(function($ionicPlatform) {
@@ -47,8 +46,7 @@ angular.module('hygge', [
   .state('tab', {
     url: "/tab",
     abstract: true,
-    templateUrl: "templates/tabs.html",
-    controller: 'BeaconCtrl'
+    templateUrl: "templates/tabs.html"
   })
 
   // Each tab has its own nav history stack:
