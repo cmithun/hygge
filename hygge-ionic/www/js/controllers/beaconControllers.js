@@ -44,6 +44,7 @@ angular.module('hygge.beaconControllers', [])
     };
     
     $scope.startApp = function(){
+        $scope.$apply();
         $state.go('tab.map',{});
     };
     
