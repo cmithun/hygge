@@ -67,6 +67,15 @@ angular.module('hygge', [
         templateUrl: 'templates/map.html'
       }
     }
+  }) 
+
+  .state('tab.locate', {
+    url: '/locate',
+    views: {
+      'tab-locate': {
+        templateUrl: 'templates/locate.html'
+      }
+    }
   })  
 
  .state('intro', {
