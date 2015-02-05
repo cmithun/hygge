@@ -7,7 +7,7 @@ angular.module('hygge.contextControllers', ['ngResource'])
   //$scope.getLocation = function(major, minor){ return contextLocations.get(major, minor);}
 })
 
-.controller('PersonContext', function($scope, contextPeople, $ionicScrollDelegate) {
+.controller('PersonContext', function($scope, contextPeople, $ionicScrollDelegate, $ionicPopup,$state) {
     $scope.personSearch = {name: ''};
     $scope.people = contextPeople.all();
 /*    $scope.people = new Array();  
@@ -17,4 +17,27 @@ angular.module('hygge.contextControllers', ['ngResource'])
     $scope.people.push({"name":"Allison Brown", "title":"55", "seat":"3000"});
     $scope.people.push({"name":"Stephanie Wayne", "title":"40", "seat":"4000"});
     */
+    $scope.showPin = function(value){
+        for(i=10;i<15;i++){
+            jQuery("#personpin"+i).hide();
+        }
+        jQuery("#personpin"+value.floor).show().animate({
+            left: value.x,
+            top: value.y
+          }, 4000, function() {
+            // Animation complete.
+          });
+        $scope.showAlert(value);
+    };
+    $scope.showAlert = function(value,$state) {    
+        $ionicPopup.alert({
+             title: 'You\'ll find '+value.name+' on floor '+value.floor,
+             subTitle: 'I\'ve highlighted the location on your map.',
+             okText: 'Thanks!',
+             okType: 'button-balanced'
+           });
+           alertPopup.then(function() {
+                $state.go('tab.map',{});
+           });
+    }
 });

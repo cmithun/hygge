@@ -204,3 +204,13 @@ body{
     background-color:#92b7bc;
     color:#fff;    
 }
+#personpin13, #personpin12, #personpin11, #personpin10 {
+    position: absolute;
+    font-size: 30px;
+    display:none;  
+    left:200px;
+}
+
+#personpin13 i, #personpin12 i,#personpin11 i, #personpin10 i{
+    text-shadow: 1px 0px 0px #fff, 1px 0px 0px #fff, 1px 0px 0px #fff, 1px 0px 0px #fff;  
+}
