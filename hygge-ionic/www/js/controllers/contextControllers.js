@@ -40,4 +40,21 @@ angular.module('hygge.contextControllers', ['ngResource'])
                 $state.go('tab.map',{});
            });
     }
+})
+
+.controller('IntroContext', function($scope) {
+    $scope.drawVideo = function() {
+        if (v.paused) {
+            v.play(); 
+        } else {
+            v.pause(); 
+        }
+    };
+    $scope.thumbVideo = function() {
+        v.addEventListener("loadedmetadata", function() {
+            this.play();
+            this.currentTime = 0;
+            this.pause();
+        }, false);
+    };    
 });
