@@ -1,5 +1,10 @@
-    <ion-view>
+    <ion-view ng-controller="IntroContext">
         <ion-slide-box on-slide-changed="slideChanged(index)">
+          <ion-slide>
+            <video id="v" webkit-playsinline ng-init="thumbVideo()" ng-click="drawVideo()"> 
+                <source src="img/BigBuckBunny_640x360.mp4" type="video/mp4"/> 
+            </video>                   
+          </ion-slide>
           <ion-slide>
                 <img src="img/intro/slide1.gif" style="width:100%;margin-top:-120px;">
           </ion-slide>
