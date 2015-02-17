@@ -1,21 +1,36 @@
+    <nav-page hide-nav-bar="true">
+    </nav-page>
     <ion-view ng-controller="IntroContext">
         <ion-slide-box on-slide-changed="slideChanged(index)">
           <ion-slide>
-            <video id="v" webkit-playsinline ng-init="thumbVideo()" ng-click="drawVideo()"> 
-                <source src="img/BigBuckBunny_640x360.mp4" type="video/mp4"/> 
-            </video>                   
+                <video id="v1" ng-init="thumbVideo()" loop webkit-playsinline height="100%"> 
+                    <source src="img/intro/IMG_1053.mov" type="video/mp4"/> 
+                </video>   
+                <div style="position:relative;top:-400px;text-align:center;"><img src="img/intro/slide1.png" style="width:80%;"></div>
           </ion-slide>
           <ion-slide>
-                <img src="img/intro/slide1.gif" style="width:100%;margin-top:-120px;">
-          </ion-slide>
+                <video id="v2" loop webkit-playsinline height="100%"> 
+                    <source src="img/BigBuckBunny_640x360.mp4" type="video/mp4"/> 
+                </video>   
+                <div style="position:relative;top:-400px;text-align:center;"><img src="img/intro/slide2.png" style="width:80%;"></div>
+          </ion-slide> 
           <ion-slide>
-                <img src="img/intro/slide2.gif" style="width:100%;margin-top:-120px;">
-          </ion-slide>
+                <video id="v3" loop webkit-playsinline height="100%"> 
+                    <source src="img/BigBuckBunny_640x360.mp4" type="video/mp4"/> 
+                </video>   
+                <div style="position:relative;top:-400px;text-align:center;"><img src="img/intro/slide3.png" style="width:80%;"></div>
+          </ion-slide> 
           <ion-slide>
-                <img src="img/intro/slide3.gif" style="width:100%;margin-top:-120px;">
-          </ion-slide>
+                <video id="v4" loop webkit-playsinline height="100%"> 
+                    <source src="img/BigBuckBunny_640x360.mp4" type="video/mp4"/> 
+                </video>   
+                <div style="position:relative;top:-400px;text-align:center;"><img src="img/intro/slide4.png" style="width:80%;"></div>
+          </ion-slide> 
           <ion-slide>
-                <img ng-controller="BeaconCtrl" ng-click="startApp()" src="img/intro/slide4.gif" style="width:100%;margin-top:-120px;">
+                <video id="v5" loop webkit-playsinline height="100%"> 
+                    <source src="img/BigBuckBunny_640x360.mp4" type="video/mp4"/> 
+                </video>   
+              <div style="position:relative;top:-400px;text-align:center;"><img ng-controller="BeaconCtrl" ng-click="startApp()" style="width:80%;" src="img/intro/slide5.png"></div>
           </ion-slide>
         </ion-slide-box>
       </ion-view>

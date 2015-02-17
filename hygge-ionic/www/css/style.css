@@ -126,7 +126,6 @@ body{
   height: 100%;
 }
 .slider-slide {
-  padding-top: 80px;
   color: #fff;
   background-color: #92b7bc;
   text-align: center;
@@ -212,5 +211,5 @@ body{
 }
 
 #personpin13 i, #personpin12 i,#personpin11 i, #personpin10 i{
-    text-shadow: 1px 0px 0px #fff, 1px 0px 0px #fff, 1px 0px 0px #fff, 1px 0px 0px #fff;  
+    //text-shadow: 1px 0px 0px #fff, 1px 0px 0px #fff, 1px 0px 0px #fff, 1px 0px 0px #fff;  
 }

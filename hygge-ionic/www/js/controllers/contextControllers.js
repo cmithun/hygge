@@ -22,9 +22,9 @@ angular.module('hygge.contextControllers', ['ngResource'])
             jQuery("#personpin"+i).hide();
         }
         jQuery("#personpin"+value.floor).show().animate({
-            left: value.x,
-            top: value.y
-          }, 4000, function() {
+            left: value.x+"%",
+            top: value.y+"%"
+          }, 0, function() {
             // Animation complete.
           });
         $scope.showAlert(value);
@@ -44,17 +44,58 @@ angular.module('hygge.contextControllers', ['ngResource'])
 
 .controller('IntroContext', function($scope) {
     $scope.drawVideo = function() {
-        if (v.paused) {
-            v.play(); 
+        if (v1.paused) {
+            v1.play(); 
         } else {
-            v.pause(); 
+            v1.pause(); 
         }
     };
     $scope.thumbVideo = function() {
-        v.addEventListener("loadedmetadata", function() {
+        v2.addEventListener("loadedmetadata", function() {
             this.play();
             this.currentTime = 0;
             this.pause();
+            v1.play();
+        }, false);
+        v3.addEventListener("loadedmetadata", function() {
+            this.play();
+            this.currentTime = 0;
+            this.pause();
+            v1.play();
+        }, false);
+        v4.addEventListener("loadedmetadata", function() {
+            this.play();
+            this.currentTime = 0;
+            this.pause();
+            v1.play();
+        }, false);
+        v5.addEventListener("loadedmetadata", function() {
+            this.play();
+            this.currentTime = 0;
+            this.pause();
+            v1.play();
+        }, false);
+        v1.addEventListener("loadedmetadata", function() {
+            this.play();
         }, false);
     };    
+    $scope.slideChanged = function(index) {
+        switch(index){
+                case 0:
+                    v1.play();
+                break;
+                case 1:
+                    v2.play();
+                break;
+                case 2:
+                    v3.play();
+                break;
+                case 3:
+                    v4.play();
+                break;
+                case 4:
+                    v5.play();
+                break;
+        }
+    }
 });
