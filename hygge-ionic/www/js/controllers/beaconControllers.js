@@ -44,6 +44,11 @@ angular.module('hygge.beaconControllers', [])
     };
     
     $scope.startApp = function(){
+        v5.pause();
+        v4.pause();
+        v3.pause();
+        v2.pause();
+        v1.pause();
         $scope.$apply();
         $state.go('tab.map',{});
     };
