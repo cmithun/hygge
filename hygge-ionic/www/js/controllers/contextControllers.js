@@ -29,11 +29,11 @@ angular.module('hygge.contextControllers', ['ngResource'])
           });
         $scope.showAlert(value);
     };
-    $scope.showAlert = function(value,$state) {    
-        $ionicPopup.alert({
+    $scope.showAlert = function(value) {    
+        var alertPopup = $ionicPopup.alert({
              title: 'You\'ll find '+value.name+' on floor '+value.floor,
              subTitle: 'I\'ve highlighted the location on your map.',
-             okText: 'Thanks!',
+             okText: 'Show Me',
              okType: 'button-balanced'
            });
            alertPopup.then(function() {
@@ -82,18 +82,31 @@ angular.module('hygge.contextControllers', ['ngResource'])
     $scope.slideChanged = function(index) {
         switch(index){
                 case 0:
+                    jQuery("#ts2").fadeOut();
+                    jQuery("#ts1").fadeIn();
                     v1.play();
                 break;
                 case 1:
+                    jQuery("#ts1").fadeOut();
+                    jQuery("#ts3").fadeOut();
+                    jQuery("#ts2").fadeIn();
                     v2.play();
                 break;
                 case 2:
+                    jQuery("#ts2").fadeOut();
+                    jQuery("#ts4").fadeOut();
+                    jQuery("#ts3").fadeIn();
                     v3.play();
                 break;
                 case 3:
+                    jQuery("#ts3").fadeOut();
+                    jQuery("#ts5").fadeOut();
+                    jQuery("#ts4").fadeIn();
                     v4.play();
                 break;
                 case 4:
+                    jQuery("#ts4").fadeOut();
+                    jQuery("#ts5").fadeIn();
                     v5.play();
                 break;
         }

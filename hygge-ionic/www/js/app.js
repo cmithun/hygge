@@ -84,7 +84,11 @@ angular.module('hygge', [
   });    
     
   // check for first-run    
-  $urlRouterProvider.otherwise('/intro');
+    if (window.localStorage['didTutorial'] === "true") {
+        $urlRouterProvider.otherwise('/tab/map');
+    } else {
+        $urlRouterProvider.otherwise('/intro');       
+    }    
   // if none of the above states are matched, use this as the fallback
   //$urlRouterProvider.otherwise('/tab/map');
 

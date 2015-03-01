@@ -20,6 +20,10 @@ body{
   background: linear-gradient(white, #efefef);
 }
 
+.hideOOTO{
+    display:none;
+}
+
 .tabs {
   background:#fff;
   border-top:solid 1px #fff;
@@ -32,10 +36,14 @@ body{
   position: absolute;
 }
 .floor {
+  -webkit-transition: all 0.5s ease; 
   width:100%;
   border:none;
   background-color: #fff;
   background: linear-gradient(#fff, #fafafa);
+}
+.blur {
+  -webkit-filter: blur(20px);
 }
 .active-floor {
   color: #fff;
