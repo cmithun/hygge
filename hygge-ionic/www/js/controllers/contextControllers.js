@@ -29,16 +29,27 @@ angular.module('hygge.contextControllers', ['ngResource'])
           });
         $scope.showAlert(value);
     };
+<<<<<<< HEAD
     $scope.showAlert = function(value) {    
         var alertPopup = $ionicPopup.alert({
              title: 'You\'ll find '+value.name+' on floor '+value.floor,
              subTitle: 'I\'ve highlighted the location on your map.',
              okText: 'Show Me',
+=======
+    $scope.showAlert = function(value,$state) {    
+        $ionicPopup.alert({
+             title: 'You\'ll find '+value.name+' on floor '+value.floor,
+             subTitle: 'I\'ve highlighted the location on your map.',
+             okText: 'Thanks!',
+>>>>>>> origin/reliable-polling
              okType: 'button-balanced'
            });
            alertPopup.then(function() {
                 $state.go('tab.map',{});
+<<<<<<< HEAD
                 //  window.analytics.trackView('Map');
+=======
+>>>>>>> origin/reliable-polling
            });
     }
 })
@@ -83,6 +94,7 @@ angular.module('hygge.contextControllers', ['ngResource'])
     $scope.slideChanged = function(index) {
         switch(index){
                 case 0:
+<<<<<<< HEAD
                     jQuery("#ts2").fadeOut();
                     jQuery("#ts1").fadeIn();
                     v1.play();
@@ -108,6 +120,20 @@ angular.module('hygge.contextControllers', ['ngResource'])
                 case 4:
                     jQuery("#ts4").fadeOut();
                     jQuery("#ts5").fadeIn();
+=======
+                    v1.play();
+                break;
+                case 1:
+                    v2.play();
+                break;
+                case 2:
+                    v3.play();
+                break;
+                case 3:
+                    v4.play();
+                break;
+                case 4:
+>>>>>>> origin/reliable-polling
                     v5.play();
                 break;
         }

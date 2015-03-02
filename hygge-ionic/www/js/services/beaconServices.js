@@ -41,16 +41,25 @@ angular.module('hygge.beaconServices', ['ionic'])
         //console.log('[DOM] didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
         //console.log('pluginResult Beacons: ' + JSON.stringify(pluginResult.beacons));
         var beaconResult = pluginResult.beacons || [];
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/reliable-polling
         if (beaconResult.length == 0 && emptyScanTries > 0){
           emptyScanTries--;
         }else{
           emptyScanTries = 5;
           beacons = beaconResult;
         }
+<<<<<<< HEAD
           beacons = beaconResult;
         //console.log("BEACONRESULT: " + JSON.stringify(beaconResult));
         //console.log("BEACONS: " + JSON.stringify(beacons));
           console.log("BEACONRESULT: " +beaconResult.length);
+=======
+        //console.log("BEACONRESULT: " + JSON.stringify(beaconResult));
+        console.log("BEACONS: " + JSON.stringify(beacons));
+>>>>>>> origin/reliable-polling
       };
 
       var identifier = '0';

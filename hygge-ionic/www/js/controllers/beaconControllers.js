@@ -1,16 +1,25 @@
 angular.module('hygge.beaconControllers', [])
 
+<<<<<<< HEAD
 .controller('BeaconCtrl', function($rootScope, $scope, $state, beaconScan, contextLocations, $interval, $ionicModal, $ionicSlideBoxDelegate){    
+=======
+.controller('BeaconCtrl', function($scope, $state, beaconScan, contextLocations, $interval){    
+>>>>>>> origin/reliable-polling
     $scope.poll = function(){
         var seconds = new Date().getTime() / 1000;
         console.log("POLLING BEACONS................"+seconds);
         $scope.beacons = beaconScan.all();
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> origin/reliable-polling
         console.log("found this many: " + $scope.beacons.length);
 
         // Match Beacon and Location data and pass to View
         // Beacon = currentbeacon
         // Location = currentlocation
+<<<<<<< HEAD
         var beaconCheck = 0;
         if ($scope.beacons.length > 0){
         //filter out beacons with accuracy = -1 or greater than 12m
@@ -48,15 +57,43 @@ angular.module('hygge.beaconControllers', [])
         if ( angular.isDefined($rootScope.stop) ) return; 
         $scope.$apply(); // This seems to be necessary.
         $rootScope.stop = $interval(function() {
+=======
+        if ($scope.beacons.length > 0){
+        //filter out beacons with accuracy = -1 or greater than 12m
+            var knownbeacons = $scope.beacons.filter(function(val) {
+                return (val.accuracy > 0 && val.accuracy < 12);
+            });
+            // Sort knownbeacons
+            knownbeacons.sortorder = "accuracy";
+            $scope.currentlocation = contextLocations.get(knownbeacons[0].major, knownbeacons[0].minor); 
+        }
+        //call viewStateUpdate directive
+        $scope.updateViews($scope.currentlocation);
+    }
+
+    var stop;
+    
+    $scope.startPolling = function() {
+        // Don't start a new poll if we are already polling
+        if ( angular.isDefined(stop) ) return; 
+        $scope.$apply(); // This seems to be necessary.
+        stop = $interval(function() {
+>>>>>>> origin/reliable-polling
             $scope.poll();
         }, 3000);
     };    
     $scope.startPolling();
 
     $scope.stopPolling = function() {
+<<<<<<< HEAD
         if (angular.isDefined($rootScope.stop)) {
             $interval.cancel($rootScope.stop);
         $rootScope.stop = undefined;
+=======
+        if (angular.isDefined(stop)) {
+            $interval.cancel(stop);
+        stop = undefined;
+>>>>>>> origin/reliable-polling
         }
     };
     
@@ -66,6 +103,7 @@ angular.module('hygge.beaconControllers', [])
         v3.pause();
         v2.pause();
         v1.pause();
+<<<<<<< HEAD
         jQuery("#ts2").fadeOut();
         jQuery("#ts3").fadeOut();
         jQuery("#ts4").fadeOut();
@@ -76,6 +114,10 @@ angular.module('hygge.beaconControllers', [])
         window.localStorage['didTutorial'] = "true";
         $state.go('tab.map',{});
         //window.analytics.trackView('Map');
+=======
+        $scope.$apply();
+        $state.go('tab.map',{});
+>>>>>>> origin/reliable-polling
     };
     
     // Clear the interval timer ot avoid a memory leak
@@ -91,6 +133,7 @@ angular.module('hygge.beaconControllers', [])
     $scope.updateViews = function(currentlocation) {
           switch(currentlocation.floor){
                 case "13":
+<<<<<<< HEAD
                     jQuery("#OOTO").hide();
                     $scope.clearFloor(12);
                     $scope.clearFloor(11);
@@ -151,16 +194,56 @@ angular.module('hygge.beaconControllers', [])
                     break;                
                 default:
                     $scope.showOOTO();
+=======
+                    $scope.clearFloor(12);
+                    $scope.clearFloor(11);
+                    $scope.clearFloor(10);
+                    jQuery("#floor13").addClass("active-floor");  
+                    jQuery("#pin13").css({'top':currentlocation.y,'left':currentlocation.x,'display':'inline'});
+                    break;
+                case "12":
+                    $scope.clearFloor(13);
+                    $scope.clearFloor(11);
+                    $scope.clearFloor(10);
+                    jQuery("#floor12").addClass("active-floor");  
+                    jQuery("#pin12").css({'top':currentlocation.y,'left':currentlocation.x,'display':'inline'});
+                    break;
+                case "11":
+                    $scope.clearFloor(13);
+                    $scope.clearFloor(12);
+                    $scope.clearFloor(10);
+                    jQuery("#floor11").addClass("active-floor");  
+                    jQuery("#pin11").css({'top':currentlocation.y,'left':currentlocation.x,'display':'inline'});
+                    break;
+                case "10":
+                    $scope.clearFloor(13);
+                    $scope.clearFloor(12);
+                    $scope.clearFloor(11);
+                    jQuery("#floor10").addClass("active-floor");  
+                    jQuery("#pin10").css({'top':currentlocation.y,'left':currentlocation.x,'display':'inline'});
+                    break;                
+                default:
+>>>>>>> origin/reliable-polling
                     $scope.clearFloor(13);
                     $scope.clearFloor(12);
                     $scope.clearFloor(11);
                     $scope.clearFloor(10);
+<<<<<<< HEAD
                     // doesn't look like you're here
                     break;
         }
         jQuery("#debugTitle").html(currentlocation.title);
         jQuery("#debugFloor").html(currentlocation.floor);
         jQuery("#debugAccuracy").html($scope.accuracy);
+=======
+                    break;
+        }
+        jQuery("#currentlocationTitle").html(currentlocation.title);
+        jQuery("#currentlocationExcerpt").html(currentlocation.excerpt);
+        jQuery("#debugTitle").html(currentlocation.title);
+        jQuery("#debugFloor").html(currentlocation.floor);
+        jQuery("#debugAccuracy").html(currentlocation.accuracy);
+>>>>>>> origin/reliable-polling
         jQuery("#debugX").html(currentlocation.x);
         jQuery("#debugY").html(currentlocation.y);   
     };

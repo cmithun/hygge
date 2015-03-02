@@ -29,7 +29,11 @@ angular.module('hygge', [
       // org.apache.cordova.statusbar required
       StatusBar.styleLightContent();
     }
+<<<<<<< HEAD
     window.analytics.startTrackerWithId('UA-60268305-1');
+=======
+
+>>>>>>> origin/reliable-polling
     // console.log(window.plugins);
 
   });
@@ -84,6 +88,7 @@ angular.module('hygge', [
   });    
     
   // check for first-run    
+<<<<<<< HEAD
     if (window.localStorage['didTutorial'] === "true") {
         $urlRouterProvider.otherwise('/tab/map');
         //window.analytics.trackView('Map');
@@ -91,6 +96,9 @@ angular.module('hygge', [
         $urlRouterProvider.otherwise('/intro');   
         //window.analytics.trackView('Intro');
     }    
+=======
+  $urlRouterProvider.otherwise('/intro');
+>>>>>>> origin/reliable-polling
   // if none of the above states are matched, use this as the fallback
   //$urlRouterProvider.otherwise('/tab/map');
 

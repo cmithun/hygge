@@ -1,6 +1,7 @@
     <nav-page hide-nav-bar="true">
     </nav-page>
     <ion-view ng-controller="IntroContext">
+<<<<<<< HEAD
                 <div style="position:absolute;top:20%;text-align:center;z-index:100;width:100%;pointer-events:none;"><img src="img/intro/title-slide.png" style="width:80%;"><div class="ts-wrap" style="position:relative;width:80%;"><img id="ts1" src="img/intro/slide1.png" style="position:absolute;top:0px;left: 13%;width:100%;"><i id="ts2" class="icon ion-map" style="display:none; position:absolute;left: 23%;width: 80%;top:0px;font-size: 10rem;color: #fff;"></i><i id="ts3" class="icon ion-clipboard" style="display:none; position:absolute;left: 23%;width: 80%;top:0px;font-size: 10rem;color: #fff;"></i><i id="ts4" class="icon ion-person-stalker" style="display:none; position:absolute;left: 23%;width: 80%;top:0px;font-size: 10rem;color: #fff;"></i><img id="ts5" src="img/intro/slide5-icon.png" style="display:none;position:absolute;top:10px;left: 13%;width:100%;"></div></div>
         <ion-slide-box on-slide-changed="slideChanged(index)">
           <ion-slide>
@@ -34,6 +35,38 @@
   Get Started
 </button>
 </div>
+=======
+        <ion-slide-box on-slide-changed="slideChanged(index)">
+          <ion-slide>
+                <video id="v1" ng-init="thumbVideo()" loop webkit-playsinline height="100%"> 
+                    <source src="img/intro/IMG_1053.mov" type="video/mp4"/> 
+                </video>   
+                <div style="position:relative;top:-400px;text-align:center;"><img src="img/intro/slide1.png" style="width:80%;"></div>
+          </ion-slide>
+          <ion-slide>
+                <video id="v2" loop webkit-playsinline height="100%"> 
+                    <source src="img/BigBuckBunny_640x360.mp4" type="video/mp4"/> 
+                </video>   
+                <div style="position:relative;top:-400px;text-align:center;"><img src="img/intro/slide2.png" style="width:80%;"></div>
+          </ion-slide> 
+          <ion-slide>
+                <video id="v3" loop webkit-playsinline height="100%"> 
+                    <source src="img/BigBuckBunny_640x360.mp4" type="video/mp4"/> 
+                </video>   
+                <div style="position:relative;top:-400px;text-align:center;"><img src="img/intro/slide3.png" style="width:80%;"></div>
+          </ion-slide> 
+          <ion-slide>
+                <video id="v4" loop webkit-playsinline height="100%"> 
+                    <source src="img/BigBuckBunny_640x360.mp4" type="video/mp4"/> 
+                </video>   
+                <div style="position:relative;top:-400px;text-align:center;"><img src="img/intro/slide4.png" style="width:80%;"></div>
+          </ion-slide> 
+          <ion-slide>
+                <video id="v5" loop webkit-playsinline height="100%"> 
+                    <source src="img/BigBuckBunny_640x360.mp4" type="video/mp4"/> 
+                </video>   
+              <div style="position:relative;top:-400px;text-align:center;"><img ng-controller="BeaconCtrl" ng-click="startApp()" style="width:80%;" src="img/intro/slide5.png"></div>
+>>>>>>> origin/reliable-polling
           </ion-slide>
         </ion-slide-box>
       </ion-view>

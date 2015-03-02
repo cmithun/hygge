@@ -20,10 +20,13 @@ body{
   background: linear-gradient(white, #efefef);
 }
 
+<<<<<<< HEAD
 .hideOOTO{
     display:none;
 }
 
+=======
+>>>>>>> origin/reliable-polling
 .tabs {
   background:#fff;
   border-top:solid 1px #fff;
@@ -36,15 +39,21 @@ body{
   position: absolute;
 }
 .floor {
+<<<<<<< HEAD
   -webkit-transition: all 0.5s ease; 
+=======
+>>>>>>> origin/reliable-polling
   width:100%;
   border:none;
   background-color: #fff;
   background: linear-gradient(#fff, #fafafa);
 }
+<<<<<<< HEAD
 .blur {
   -webkit-filter: blur(20px);
 }
+=======
+>>>>>>> origin/reliable-polling
 .active-floor {
   color: #fff;
   background-color: #92b7bc;
