@@ -1,21 +1,19 @@
-<ion-view>
+<ion-view ng-controller="BeaconCtrl">
   <ion-nav-title>
     <img class="title-image" src="img/Mithun_White.png">
   </ion-nav-title>
-  <ion-content class="padding">
-
+  <ion-content class="padding has-header">    
     <div class="list card">
-        <div class="item item-divider" ng-bind-html="currentlocation.title"></div>
-        <div class="item item-text-wrap"  ng-bind-html="currentlocation.excerpt"></div>
+        <div class="item item-divider" id="currentlocationTitle"></div>
+        <div class="item item-text-wrap"  id="currentlocationExcerpt"></div>
     </div>
-        <div class="item item-text-wrap" style="padding-top:50px;">
-          <h2>Debug info</h2>
+        <div class="item item-text-wrap" style="padding-top:50px;color:#fff;border:none;background-color:#92b7bc;display:block;">
+          <h2 style="color:#fff;">Debug info</h2>
 
-          <p ng-bind-html="currentlocation.title"></p>
-          <p>Floor: <span ng-bind-html="currentlocation.floor"></span></p>
-          <p>Excerpt: <span ng-bind-html="currentlocation.excerpt"></span></p>
-          <p>Accuracy: <span ng-bind-html="currentlocation.accuracy"></span></p>
-          <p>X,Y: <span ng-bind-html="currentlocation.x"></span>, <span ng-bind-html="currentlocation.y"></span></p>
+          <p style="color:#fff;" id="debugTitle"></p>
+          <p style="color:#fff;">Floor: <span id="debugFloor"></span></p>
+          <p style="color:#fff;">Accuracy: <span id="debugAccuracy"></span></p>
+          <p style="color:#fff;">X,Y: <span id="debugX"></span>, <span id="debugY"></span></p>
         </div>  
   </ion-content>
 </ion-view>

@@ -20,6 +20,10 @@ body{
   background: linear-gradient(white, #efefef);
 }
 
+.hideOOTO{
+    display:none;
+}
+
 .tabs {
   background:#fff;
   border-top:solid 1px #fff;
@@ -32,10 +36,14 @@ body{
   position: absolute;
 }
 .floor {
+  -webkit-transition: all 0.5s ease; 
   width:100%;
   border:none;
   background-color: #fff;
   background: linear-gradient(#fff, #fafafa);
+}
+.blur {
+  -webkit-filter: blur(20px);
 }
 .active-floor {
   color: #fff;
@@ -126,7 +134,6 @@ body{
   height: 100%;
 }
 .slider-slide {
-  padding-top: 80px;
   color: #fff;
   background-color: #92b7bc;
   text-align: center;
@@ -191,4 +198,26 @@ body{
 
 .scroll-refresher .icon-refreshing, .scroll-refresher .text-refreshing,.scroll-refresher .icon-pulling,.scroll-refresher .ionic-refresher-content {
     color:#fff;
+}
+
+.backdrop {
+    background-color:#92b7bc;
+}
+
+.loading-container .loading {
+    font-family: CircularStd-Book;
+    font-size:14px;
+    border-radius: 40px;
+    background-color:#92b7bc;
+    color:#fff;    
+}
+#personpin13, #personpin12, #personpin11, #personpin10 {
+    position: absolute;
+    font-size: 30px;
+    display:none;  
+    left:200px;
+}
+
+#personpin13 i, #personpin12 i,#personpin11 i, #personpin10 i{
+    //text-shadow: 1px 0px 0px #fff, 1px 0px 0px #fff, 1px 0px 0px #fff, 1px 0px 0px #fff;  
 }

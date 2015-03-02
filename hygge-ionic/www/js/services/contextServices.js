@@ -1,39 +1,45 @@
 angular.module('hygge.contextServices', ['ionic'])
 
-.factory('contextLocations', function ($ionicPlatform, $http, $resource) {
+.factory('contextLocations', function ($ionicPlatform, $http, $resource,$ionicLoading) {
 
   var locations = [];
-  //
-  // // Mock data for console UI debug
-  // if (window.cordova) {
-  //   locations = [{
-  //     major: 13,
-  //     minor: 1,
-  //     floor: 13,
-  //     x: 50,
-  //     y: 50,
-  //     message: 'test beacon 1'
-  //   },{
-  //     major: 13,
-  //     minor: 2,
-  //     floor: 13,
-  //     x: 100,
-  //     y: 100,
-  //     message: 'test beacon 2'
-  //   }];
-  // }
-  // else {
+  
+   // Mock data for console UI debug
+   if (!window.cordova) {
+     locations = [{
+       major: 13,
+       minor: 1,
+       floor: 13,
+       x: 50,
+       y: 50,
+       message: 'test beacon 1'
+     },{
+       major: 13,
+       minor: 2,
+       floor: 13,
+       x: 100,
+       y: 100,
+       message: 'test beacon 2'
+     }];
+   }
+   else {
+    $ionicLoading.show({
+        template: '<i class="icon ion-loading-c"></i><br>patience'
+    })       
     $http.get('http://mithun-46828.azurewebsites.net/?post_type=beacon&json=1')
     //$http.get('http://mithun-46828.azurewebsites.net/locationsjson?json=1')
       .success(function(data, status, headers, config){
-        console.log('Success', status);
+        $ionicLoading.hide();
+        //console.log('Success', status);
+        //fire directive to show tabs
+        //alert("bind");
       })
       .error(function(data, status, headers, config){
-        console.log('Error', status);
+        //console.log('Error', status);
       })
       .then(function(response){
         var jsonData = response.data;
-        console.log(jsonData);
+        //console.log(jsonData);
         var rawlocs = jsonData.posts;
 
         //Walk the list and create our own data structure
@@ -51,10 +57,10 @@ angular.module('hygge.contextServices', ['ionic'])
 
           locations.push(loc);
         }
-        console.log("all locations: " + JSON.stringify(locations));
+        //console.log("all locations: " + JSON.stringify(locations));
       });
 
-  // }
+   }
   //
 
   // Return context data to controllers
@@ -65,13 +71,73 @@ angular.module('hygge.contextServices', ['ionic'])
     },
     get: function(major, minor) {
       for (var i = 0; i < locations.length; i++){
-          //console.log("TESTING " + locations[i].major + locations[i].minor);
+          console.log("TESTING " + locations[i].major + locations[i].minor);
           if (locations[i].major == major && locations[i].minor == minor) {
-            return locations[i];
+                console.log('Locations: ', locations[i]);
+              return locations[i];
           }
       }
-      return null;
+    }
+  };
 
+})
+
+.factory('contextPeople', function ($ionicPlatform, $http, $resource,$ionicLoading) {
+
+  var people = [];
+  
+   // Mock data for console UI debug
+  /* if (!window.cordova) {
+        people = new Array();  
+        people.push({"name":"Sean O'Brien", "title":"Chief Technologist", "seat":"3809", "x":"193","y":"154","floor":"13","imgsrc":"https://fbcdn-profile-a.akamaihd.net/hprofile-ak-frc3/v/t1.0-1/c0.39.160.160/p160x160/228418_10150582365685134_6219213_n.jpg?oh=f90a7efc0e564767170a38c5e1dc6580&oe=55527F52&__gda__=1430910712_8b273fc4329b98a7e05d94524f45d978"});
+        people.push({"name":"Andrew Lunzer", "title":"Something Tietle", "seat":"2801", "x":"100","y":"114","floor":"12","imgsrc":""});
+        people.push({"name":"William Andrews", "title":"32", "seat":"2000"});
+        people.push({"name":"Allison Brown", "title":"55", "seat":"3000"});
+        people.push({"name":"Stephanie Wayne", "title":"40", "seat":"4000"});
+   }
+   else {*/
+    $ionicLoading.show({
+        template: '<i class="icon ion-loading-c"></i><br>Updating people...'
+    })       
+    $http.get('http://mithun-46828.azurewebsites.net/?post_type=person&json=1')
+    //$http.get('http://mithun-46828.azurewebsites.net/locationsjson?json=1')
+      .success(function(data, status, headers, config){
+        $ionicLoading.hide();
+        //console.log('Success', status);
+        //fire directive to show tabs
+        //alert("bind");
+      })
+      .error(function(data, status, headers, config){
+        //console.log('Error', status);
+      })
+      .then(function(response){
+        var jsonData = response.data;
+        //console.log(jsonData);
+        var rawlocs = jsonData.posts;
+
+        //Walk the list and create our own data structure
+        for (var i = 0; i < rawlocs.length; i++){
+          var ped = {};
+          ped.name = rawlocs[i].custom_fields.name[0];
+          ped.seat = rawlocs[i].custom_fields.seat[0];
+          ped.title = rawlocs[i].custom_fields.title[0];
+          ped.imgsrc = rawlocs[i].custom_fields.imgsrc[0];
+          ped.floor = rawlocs[i].custom_fields.floor[0];
+          ped.x = rawlocs[i].custom_fields.x[0];
+          ped.y = rawlocs[i].custom_fields.y[0];
+
+          people.push(ped);
+        }
+        //console.log("all locations: " + JSON.stringify(locations));
+      });
+
+  // }
+  //
+
+  // Return context data to controllers
+  return {
+    all: function () {
+      return people;
     }
   };
 

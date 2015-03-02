@@ -17,6 +17,9 @@ angular.module('hygge', [
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     console.log("Platform Ready");
+      
+    //initialize Polling $timeout function
+      
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -26,7 +29,7 @@ angular.module('hygge', [
       // org.apache.cordova.statusbar required
       StatusBar.styleLightContent();
     }
-
+    window.analytics.startTrackerWithId('UA-60268305-1');
     // console.log(window.plugins);
 
   });
@@ -40,7 +43,7 @@ angular.module('hygge', [
   $stateProvider
 
   // setup an abstract state for the tabs directive
-    .state('tab', {
+  .state('tab', {
     url: "/tab",
     abstract: true,
     templateUrl: "templates/tabs.html"
@@ -48,28 +51,48 @@ angular.module('hygge', [
 
   // Each tab has its own nav history stack:
 
-  .state('tab.map', {
-    url: '/map',
-    views: {
-      'tab-map': {
-        templateUrl: 'templates/map.html',
-        controller: 'BeaconCtrl'
-      }
-    }
-  })
-
   .state('tab.directory', {
     url: '/directory',
     views: {
       'tab-directory': {
-        templateUrl: 'templates/directory.html',
-        controller: 'BeaconCtrl'
+        templateUrl: 'templates/directory.html'
       }
     }
-  });
+  })
+  
+  .state('tab.map', {
+    url: '/map',
+    views: {
+      'tab-map': {
+        templateUrl: 'templates/map.html'
+      }
+    }
+  }) 
+
+  .state('tab.locate', {
+    url: '/locate',
+    views: {
+      'tab-locate': {
+        templateUrl: 'templates/locate.html'
+      }
+    }
+  })  
+
+ .state('intro', {
+    url: '/intro',
+    templateUrl: 'templates/intro.html'
+  });    
     
+  // check for first-run    
+    if (window.localStorage['didTutorial'] === "true") {
+        $urlRouterProvider.otherwise('/tab/map');
+        //window.analytics.trackView('Map');
+    } else {
+        $urlRouterProvider.otherwise('/intro');   
+        //window.analytics.trackView('Intro');
+    }    
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/map');
+  //$urlRouterProvider.otherwise('/tab/map');
 
 });
 
