@@ -75,6 +75,7 @@ angular.module('hygge.beaconControllers', [])
         //$scope.$apply();
         window.localStorage['didTutorial'] = "true";
         $state.go('tab.map',{});
+        //window.analytics.trackView('Map');
     };
     
     // Clear the interval timer ot avoid a memory leak

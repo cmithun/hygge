@@ -38,6 +38,7 @@ angular.module('hygge.contextControllers', ['ngResource'])
            });
            alertPopup.then(function() {
                 $state.go('tab.map',{});
+                //  window.analytics.trackView('Map');
            });
     }
 })

@@ -29,7 +29,7 @@ angular.module('hygge', [
       // org.apache.cordova.statusbar required
       StatusBar.styleLightContent();
     }
-
+    window.analytics.startTrackerWithId('UA-60268305-1');
     // console.log(window.plugins);
 
   });
@@ -86,8 +86,10 @@ angular.module('hygge', [
   // check for first-run    
     if (window.localStorage['didTutorial'] === "true") {
         $urlRouterProvider.otherwise('/tab/map');
+        //window.analytics.trackView('Map');
     } else {
-        $urlRouterProvider.otherwise('/intro');       
+        $urlRouterProvider.otherwise('/intro');   
+        //window.analytics.trackView('Intro');
     }    
   // if none of the above states are matched, use this as the fallback
   //$urlRouterProvider.otherwise('/tab/map');
