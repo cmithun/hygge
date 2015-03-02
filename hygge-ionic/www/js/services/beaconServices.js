@@ -48,7 +48,6 @@ angular.module('hygge.beaconServices', ['ionic'])
           beacons = beaconResult;
         }
           beacons = beaconResult;
-        //console.log("BEACONRESULT: " + JSON.stringify(beaconResult));
         //console.log("BEACONS: " + JSON.stringify(beacons));
           console.log("BEACONRESULT: " +beaconResult.length);
       };
@@ -70,7 +69,6 @@ angular.module('hygge.beaconServices', ['ionic'])
   // Return beacon data to controllers
   return {
     all: function () {
-      //console.log('*return all*: ' + beacons);
       return beacons;
     }
   };

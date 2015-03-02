@@ -91,8 +91,6 @@ angular.module('hygge', [
         $urlRouterProvider.otherwise('/intro');   
         //window.analytics.trackView('Intro');
     }    
-  // if none of the above states are matched, use this as the fallback
-  //$urlRouterProvider.otherwise('/tab/map');
 
 });
 

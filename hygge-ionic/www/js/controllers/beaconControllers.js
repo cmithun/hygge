@@ -13,7 +13,7 @@ angular.module('hygge.beaconControllers', [])
         // Location = currentlocation
         var beaconCheck = 0;
         if ($scope.beacons.length > 0){
-        //filter out beacons with accuracy = -1 or greater than 12m
+        //filter out beacons with accuracy = -1 or greater than 23m
             var knownbeacons = $scope.beacons.filter(function(val) {
                 return (val.accuracy > 0 && val.accuracy < 23);
             });
@@ -30,7 +30,6 @@ angular.module('hygge.beaconControllers', [])
         //if beacon has changed
         if (beaconCheck != $rootScope.lastbeacon){ 
             $rootScope.lastbeacon = beaconCheck;
-            //call viewStateUpdate directive
             $scope.updateViews($scope.currentlocation);
         }
         console.log("ROOTSCOPE LASTBEACON: "+$rootScope.lastbeacon);
