@@ -20,8 +20,15 @@ angular.module('hygge.beaconControllers', [])
             if (knownbeacons.length < 1) $scope.showOOTO();
             // Sort knownbeacons
             knownbeacons.sortorder = "accuracy";
-            $scope.currentlocation = contextLocations.get(knownbeacons[0].major, knownbeacons[0].minor);
-            $scope.accuracy = knownbeacons[0].accuracy;
+            
+            //loop through knownbeacons until currentlocation.accuracy within radius
+            for(i=0;i<knownbeacons.length;i++){
+                $scope.currentlocation = contextLocations.get(knownbeacons[i].major, knownbeacons[i].minor);
+                $scope.accuracy = knownbeacons[i].accuracy;
+                if ($scope.currentlocation.radius > knownbeacons[i].accuracy) {
+                    break;
+                }
+            }
             beaconCheck = $scope.currentlocation.major+"-"+$scope.currentlocation.minor; 
         } else {
             $scope.showOOTO();
@@ -98,7 +105,7 @@ angular.module('hygge.beaconControllers', [])
                     jQuery("#floor13").addClass("active-floor");  
                     jQuery("#currentlocationTitle").html("Floor 13");
                     jQuery("#currentlocationExcerpt").html("You're on Floor 13 somewhere.");
-                    if(parseInt($scope.accuracy) < 7) { jQuery("#pin13").css({'top':currentlocation.y,'left':currentlocation.x,'display':'inline'});
+                    if(parseInt($scope.accuracy) < 7) { jQuery("#pin13").css({'top':currentlocation.y+"%",'left':currentlocation.x+"%",'display':'inline'});
                         jQuery("#currentlocationTitle").html(currentlocation.title);
                         jQuery("#currentlocationExcerpt").html(currentlocation.excerpt);
                     }
@@ -113,7 +120,7 @@ angular.module('hygge.beaconControllers', [])
                     jQuery("#currentlocationTitle").html("Floor 12");
                     jQuery("#currentlocationExcerpt").html("You're on Floor 12 somewhere.");
                     if(parseInt($scope.accuracy) < 7) {
-                                jQuery("#pin12").css({'top':currentlocation.y,'left':currentlocation.x,'display':'inline'});
+                                jQuery("#pin12").css({'top':currentlocation.y+"%",'left':currentlocation.x+"%",'display':'inline'});
                         jQuery("#currentlocationTitle").html(currentlocation.title);
                         jQuery("#currentlocationExcerpt").html(currentlocation.excerpt);
                     }
@@ -128,7 +135,7 @@ angular.module('hygge.beaconControllers', [])
                     jQuery("#currentlocationTitle").html("Floor 11");
                     jQuery("#currentlocationExcerpt").html("You're on Floor 11 somewhere.");
                     if(parseInt($scope.accuracy) < 7) {
-                                jQuery("#pin11").css({'top':currentlocation.y,'left':currentlocation.x,'display':'inline'});
+                                jQuery("#pin11").css({'top':currentlocation.y+"%",'left':currentlocation.x+"%",'display':'inline'});
                         jQuery("#currentlocationTitle").html(currentlocation.title);
                         jQuery("#currentlocationExcerpt").html(currentlocation.excerpt);
                     }
@@ -143,7 +150,7 @@ angular.module('hygge.beaconControllers', [])
                     jQuery("#currentlocationTitle").html("Floor 10");
                     jQuery("#currentlocationExcerpt").html("You're on Floor 10 somewhere.");
                     if(parseInt($scope.accuracy) < 7) {
-                                        jQuery("#pin10").css({'top':currentlocation.y,'left':currentlocation.x,'display':'inline'});
+                                        jQuery("#pin10").css({'top':currentlocation.y+"%",'left':currentlocation.x+"%",'display':'inline'});
                         jQuery("#currentlocationTitle").html(currentlocation.title);
                         jQuery("#currentlocationExcerpt").html(currentlocation.excerpt);
                     } 
