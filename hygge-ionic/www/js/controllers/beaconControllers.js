@@ -21,14 +21,17 @@ angular.module('hygge.beaconControllers', [])
             // Sort knownbeacons
             knownbeacons.sortorder = "accuracy";
             
-            //loop through knownbeacons until currentlocation.accuracy within radius
+            //remove knownbeacons that are meant for close contact but too far away
+            /*
             for(i=0;i<knownbeacons.length;i++){
-                $scope.currentlocation = contextLocations.get(knownbeacons[i].major, knownbeacons[i].minor);
-                $scope.accuracy = knownbeacons[i].accuracy;
-                if ($scope.currentlocation.radius > knownbeacons[i].accuracy) {
-                    break;
+                $scope.beaconlocation = contextLocations.get(knownbeacons[i].major, knownbeacons[i].minor);
+                if (($scope.beaconlocation.radius < 5) && ($scope.beaconlocation.radius < knownbeacons[i].accuracy)) {
+                    knownbeacons.splice(i,1);
                 }
-            }
+            }*/
+
+            $scope.currentlocation = contextLocations.get(knownbeacons[0].major, knownbeacons[0].minor);
+            $scope.accuracy = knownbeacons[0].accuracy;
             beaconCheck = $scope.currentlocation.major+"-"+$scope.currentlocation.minor; 
         } else {
             $scope.showOOTO();
@@ -37,11 +40,12 @@ angular.module('hygge.beaconControllers', [])
         //if beacon has changed
         if (beaconCheck != $rootScope.lastbeacon){ 
             $rootScope.lastbeacon = beaconCheck;
-            $scope.updateViews($scope.currentlocation);
         }
+        $scope.updateViews($scope.currentlocation);
+        
         console.log("ROOTSCOPE LASTBEACON: "+$rootScope.lastbeacon);
     }
-
+    $scope.accuracy = 100;
     $scope.showOOTO = function() {
             jQuery("#OOTO").removeClass("hideOOTO").fadeIn();
             jQuery(".floor").addClass("blur");
@@ -84,6 +88,11 @@ angular.module('hygge.beaconControllers', [])
         //window.analytics.trackView('Map');
     };
     
+    $scope.showInfo = function(value,cl){                    jQuery("#pin"+value).css({'top':cl.y+"%",'left':cl.x+"%",'display':'inline'});
+            jQuery("#currentlocationTitle").html(cl.title);
+            jQuery("#currentlocationExcerpt").html(cl.excerpt);
+    }
+    
     // Clear the interval timer ot avoid a memory leak
     $scope.$on('$destroy', function(){
         $scope.stopPolling();
@@ -105,9 +114,11 @@ angular.module('hygge.beaconControllers', [])
                     jQuery("#floor13").addClass("active-floor");  
                     jQuery("#currentlocationTitle").html("Floor 13");
                     jQuery("#currentlocationExcerpt").html("You're on Floor 13 somewhere.");
-                    if(parseInt($scope.accuracy) < 7) { jQuery("#pin13").css({'top':currentlocation.y+"%",'left':currentlocation.x+"%",'display':'inline'});
-                        jQuery("#currentlocationTitle").html(currentlocation.title);
-                        jQuery("#currentlocationExcerpt").html(currentlocation.excerpt);
+                    console.log(".ACCURACY:"+$scope.accuracy);
+                    if(parseInt($scope.accuracy) < 10) {
+                        $scope.showInfo(13,currentlocation);
+                    } else {
+                        jQuery("#pin13").css({'display':'none'});
                     }
                     break;
                 case "12":
@@ -119,10 +130,11 @@ angular.module('hygge.beaconControllers', [])
                     jQuery("#floor12").addClass("active-floor");  
                     jQuery("#currentlocationTitle").html("Floor 12");
                     jQuery("#currentlocationExcerpt").html("You're on Floor 12 somewhere.");
-                    if(parseInt($scope.accuracy) < 7) {
-                                jQuery("#pin12").css({'top':currentlocation.y+"%",'left':currentlocation.x+"%",'display':'inline'});
-                        jQuery("#currentlocationTitle").html(currentlocation.title);
-                        jQuery("#currentlocationExcerpt").html(currentlocation.excerpt);
+                    console.log(".ACCURACY:"+$scope.accuracy);
+                    if(parseInt($scope.accuracy) < 10) {
+                        $scope.showInfo(12,currentlocation);
+                    } else {
+                        jQuery("#pin12").css({'display':'none'});
                     }
                     break;
                 case "11":
@@ -134,10 +146,10 @@ angular.module('hygge.beaconControllers', [])
                     jQuery("#floor11").addClass("active-floor");
                     jQuery("#currentlocationTitle").html("Floor 11");
                     jQuery("#currentlocationExcerpt").html("You're on Floor 11 somewhere.");
-                    if(parseInt($scope.accuracy) < 7) {
-                                jQuery("#pin11").css({'top':currentlocation.y+"%",'left':currentlocation.x+"%",'display':'inline'});
-                        jQuery("#currentlocationTitle").html(currentlocation.title);
-                        jQuery("#currentlocationExcerpt").html(currentlocation.excerpt);
+                    if(parseInt($scope.accuracy) < 10) {
+                        $scope.showInfo(11,currentlocation);
+                    } else {
+                        jQuery("#pin11").css({'display':'none'});
                     }
                     break;
                 case "10":
@@ -149,11 +161,11 @@ angular.module('hygge.beaconControllers', [])
                     jQuery("#floor10").addClass("active-floor");  
                     jQuery("#currentlocationTitle").html("Floor 10");
                     jQuery("#currentlocationExcerpt").html("You're on Floor 10 somewhere.");
-                    if(parseInt($scope.accuracy) < 7) {
-                                        jQuery("#pin10").css({'top':currentlocation.y+"%",'left':currentlocation.x+"%",'display':'inline'});
-                        jQuery("#currentlocationTitle").html(currentlocation.title);
-                        jQuery("#currentlocationExcerpt").html(currentlocation.excerpt);
-                    } 
+                    if(parseInt($scope.accuracy) < 10) {
+                        $scope.showInfo(10,currentlocation);
+                    } else {
+                        jQuery("#pin10").css({'display':'none'});
+                    }
                     break;                
                 default:
                     $scope.showOOTO();

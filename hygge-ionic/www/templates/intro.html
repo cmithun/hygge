@@ -5,37 +5,42 @@
         <ion-slide-box on-slide-changed="slideChanged(index)">
           <ion-slide>
                 <video id="v1" ng-init="thumbVideo()" muted loop webkit-playsinline width="100%"> 
-                    <source src="img/intro/rd-lobby.mov" type="video/mp4"/> 
-                    <source src="img/intro/rd-lobby.webm" type="video/webm">
+                    <source src="rd-lobby.webm" type="video/webm"/> 
+                    <source src="rd-lobby.m4v" type="video/m4v"/>
+                    <source src="rd-lobby.mov" type="video/mp4"/>
                 </video>   
           </ion-slide>
           <ion-slide>
                 <video id="v2" muted loop webkit-playsinline width="100%"> 
-                    <source src="img/intro/rd-walk.mov" type="video/mp4"/> 
-                    <source src="img/intro/rd-walk.webm" type="video/webm"> 
+                    <source src="rd-walk.webm" type="video/webm"/> 
+                    <source src="rd-walk.m4v" type="video/m4v"/> 
+                    <source src="rd-walk.mov" type="video/mp4"/> 
                 </video>   
-                <div style="position:relative;top:-80%;text-align:center;"><img src="img/intro/slide2.png" style="width:80%;"></div>
+                <div style="position:absolute;bottom:10%;text-align:center;"><img src="img/intro/slide2.png" style="width:80%;"></div>
           </ion-slide> 
           <ion-slide>
                 <video id="v3" muted loop webkit-playsinline width="100%"> 
-                    <source src="img/intro/rd-rd.mov" type="video/mp4"/> 
-                    <source src="img/intro/rd-rd.webm" type="video/webm"> 
+                    <source src="rd-rd.webm" type="video/webm"/> 
+                    <source src="rd-rd.m4v" type="video/m4v"/> 
+                    <source src="rd-rd.mov" type="video/mp4"/> 
                 </video>   
-                <div style="position:relative;top:-80%;text-align:center;"><img src="img/intro/slide3.png" style="width:80%;"></div>
+                <div style="position:absolute;bottom:10%;text-align:center;"><img src="img/intro/slide3.png" style="width:80%;"></div>
           </ion-slide> 
           <ion-slide>
                 <video id="v4" muted loop webkit-playsinline width="100%"> 
-                    <source src="img/intro/rd-t2f.mov" type="video/mp4"/> 
-                    <source src="img/intro/rd-t2f.webm" type="video/webm"> 
+                    <source src="rd-t2f.webm" type="video/webm"/> 
+                    <source src="rd-t2f.m4v" type="video/m4v"/> 
+                    <source src="rd-t2f.mov" type="video/mp4"/> 
                 </video>   
-                <div style="position:relative;top:-80%;text-align:center;"><img src="img/intro/slide4.png" style="width:80%;"></div>
+                <div style="position:absolute;bottom:10%;text-align:center;"><img src="img/intro/slide4.png" style="width:80%;"></div>
           </ion-slide> 
           <ion-slide>
                 <video id="v5" muted loop webkit-playsinline width="100%"> 
-                    <source src="img/intro/rd-window2.mov" type="video/mp4"/> 
-                    <source src="img/intro/rd-window2.webm" type="video/webm"> 
+                    <source src="rd-window2.webm" type="video/webm"/> 
+                    <source src="rd-window2.m4v" type="video/m4v"/> 
+                    <source src="rd-window2.mov" type="video/mp4"/> 
                 </video>   
-              <div style="position:relative;top:-80%;text-align:center;"><img style="width:80%;" src="img/intro/slide5.png"><br><br><button ng-controller="BeaconCtrl" ng-click="startApp()" class="button button-light">
+              <div style="position:absolute;bottom:10%;text-align:center;"><img style="width:80%;" src="img/intro/slide5.png"><br><br><button ng-controller="BeaconCtrl" ng-click="startApp()" class="button button-light">
   Get Started
 </button>
 </div>

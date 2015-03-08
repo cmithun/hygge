@@ -35,7 +35,7 @@ angular.module('hygge.beaconServices', ['ionic'])
       //   console.log('didStartMonitoringForRegion:', pluginResult);
       // };
 
-      var emptyScanTries = 5;
+      var emptyScanTries = 4;
 
       delegate.didRangeBeaconsInRegion = function (pluginResult) {
         //console.log('[DOM] didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
