@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.hygge218156" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>Hygge</name>
+<widget id="com.ionicframework.kontor218156" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>Kontor</name>
   <description>
-        A Mithun Experiment.
-    </description>
+        A Mithun Smart Office Experiment.
+  </description>
   <author email="CBMMINDevelopers@cmithun.com" href="http://everythingtalks.com">
       Mithun Inc
     </author>
@@ -15,7 +15,7 @@
   <preference name="BackupWebStorage" value="none"/>
   <preference name="SplashScreen" value="screen"/>
   <preference name="SplashScreenDelay" value="3000"/>
-  <preference name="AllowInlineMediaPlayback" value="true" />    
+  <preference name="AllowInlineMediaPlayback" value="true"/>
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>

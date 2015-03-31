@@ -23,8 +23,9 @@ angular.module('hygge.contextServices', ['ionic'])
      }];
    }
    else {
+       var zentext = new Array("Patience.", "To know and not to do is not yet to know.", "It's not how good you are, it's how good you want to be.", "What we do today is what matters most.", "Chop wood, carry water.", "Concentrate on the present moment.","A family is a place where minds come in contact with one another.","A jug fills drop by drop.","Listen.","Move and the way will open.","","");
     $ionicLoading.show({
-        template: '<i class="icon ion-loading-c"></i><br>patience'
+        template: '<img src="img/square-loader.gif" style="height:63px"><br>'+zentext[Math.floor(Math.random() * 12)]
     })       
     $http.get('http://mithun-46828.azurewebsites.net/?post_type=beacon&json=1')
     //$http.get('http://mithun-46828.azurewebsites.net/locationsjson?json=1')
@@ -72,9 +73,9 @@ angular.module('hygge.contextServices', ['ionic'])
     },
     get: function(major, minor) {
       for (var i = 0; i < locations.length; i++){
-          console.log("TESTING " + locations[i].major + locations[i].minor);
+          console.log("BEACON DATA FOR " + locations[i].major +"-"+ locations[i].minor);
           if (locations[i].major == major && locations[i].minor == minor) {
-                console.log('Locations: ', locations[i]);
+              //console.log('Locations: ', locations[i]);
               return locations[i];
           }
       }
@@ -88,7 +89,7 @@ angular.module('hygge.contextServices', ['ionic'])
   var people = [];
   
     $ionicLoading.show({
-        template: '<i class="icon ion-loading-c"></i><br>Updating people...'
+        template: '<img src="img/square-loader.gif" style="height:63px"><br>Updating people and locations...'
     })       
     $http.get('http://mithun-46828.azurewebsites.net/?post_type=person&json=1')
     //$http.get('http://mithun-46828.azurewebsites.net/locationsjson?json=1')

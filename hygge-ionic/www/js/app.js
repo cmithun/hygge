@@ -11,7 +11,9 @@ angular.module('hygge', [
   'hygge.contextServices',
   'hygge.beaconControllers',
   'hygge.contextControllers',
+  'hygge.buttonControllers',
   'hygge.device',
+  'hygge.directives',
   ])
 
 .run(function($ionicPlatform) {
@@ -78,6 +80,15 @@ angular.module('hygge', [
     }
   })  
 
+ .state('tab.news', {
+    url: '/news',
+    views: {
+      'tab-news': {
+        templateUrl: 'templates/news.html'
+      }
+    }
+  })  
+  
  .state('intro', {
     url: '/intro',
     templateUrl: 'templates/intro.html'

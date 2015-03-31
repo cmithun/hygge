@@ -44,12 +44,12 @@ angular.module('hygge.beaconServices', ['ionic'])
         if (beaconResult.length == 0 && emptyScanTries > 0){
           emptyScanTries--;
         }else{
-          emptyScanTries = 5;
+          emptyScanTries = 4;
           beacons = beaconResult;
         }
           beacons = beaconResult;
         //console.log("BEACONS: " + JSON.stringify(beacons));
-          console.log("BEACONRESULT: " +beaconResult.length);
+          //console.log("BEACONRESULT: " +beaconResult.length);
       };
 
       var identifier = '0';

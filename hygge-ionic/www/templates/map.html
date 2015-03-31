@@ -9,9 +9,19 @@
     refreshing-text="updating"
     on-refresh="doRefresh()">
   </ion-refresher>
-    <div id="OOTO" class="hide" style="text-align:center;position: absolute;width: 100%;height: 100%;z-index: 10;background: #92b7bc;"><Img src="img/OOTO.png" style="margin-top:100px;width:90%;"><a href="#" onClick="window.open('maps://?q=510 S Marquette Ave, Minneapolis, MN, 55402');return false;"><button ng-controller="BeaconCtrl" ng-click="startApp()" class="button button-light">
-  Get Directions
-</button></a></div>  
+    <div id="OOTO" class="hide" style="text-align:center;position: absolute;width: 100%;height: 100%;z-index: 10;background: linear-gradient(#92b7bc,#a3c8cd);"><Img src="img/OOTO.png" style="margin-top:50px;width:90%;"><h5 style="
+    color: #fff;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom:7px;
+">You're not at MITHUN but you can still do something smart.</h5><button ng-controller="IntroActions" ng-click="launchIAT()" class="button button-default">
+  Take&nbsp;the&nbsp;Brand&nbsp;Challenge
+</button><br><br><button ng-controller="IntroActions" ng-click="mithunInstagram()" class="button button-default">
+  Follow&nbsp;us&nbsp;on&nbsp;Instagram
+</button><br><br><button ng-controller="IntroActions" ng-click="getDirections()" class="button button-default">
+  Get&nbsp;Directions&nbsp;to&nbsp;MITHUN
+</button></div>  
     <ion-pane id="floor13" class="item floor">
       <h2 class="floor-title">13th floor</h2>
       <div class="floor-map">

@@ -25,7 +25,7 @@ angular.module('hygge.contextControllers', ['ngResource'])
              title: 'You\'ll find '+value.name+' on floor '+value.floor,
              subTitle: 'I\'ve highlighted the location on your map.',
              okText: 'Show Me',
-             okType: 'button-balanced'
+             okType: 'button-default'
            });
            alertPopup.then(function() {
                 $state.go('tab.map',{});

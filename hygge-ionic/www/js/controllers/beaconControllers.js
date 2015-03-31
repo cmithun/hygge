@@ -3,23 +3,28 @@ angular.module('hygge.beaconControllers', [])
 .controller('BeaconCtrl', function($rootScope, $scope, $state, beaconScan, contextLocations, $interval, $ionicModal, $ionicSlideBoxDelegate){    
     $scope.poll = function(){
         var seconds = new Date().getTime() / 1000;
-        console.log("POLLING BEACONS................"+seconds);
+        console.log("1 POLLING BEACONS................"+seconds);
         $scope.beacons = beaconScan.all();
         
-        console.log("found this many: " + $scope.beacons.length);
+        console.log("2 found this many: " + $scope.beacons.length);
 
         // Match Beacon and Location data and pass to View
         // Beacon = currentbeacon
         // Location = currentlocation
         var beaconCheck = 0;
         if ($scope.beacons.length > 0){
+        console.log("3 length loop: " + $scope.beacons.length);
         //filter out beacons with accuracy = -1 or greater than 23m
             var knownbeacons = $scope.beacons.filter(function(val) {
+                console.log("4 loop val.accuracy: " + val.accuracy);
                 return (val.accuracy > 0 && val.accuracy < 23);
             });
             if (knownbeacons.length < 1) $scope.showOOTO();
             // Sort knownbeacons
-            knownbeacons.sortorder = "accuracy";
+            knownbeacons.sort(function(a,b) {
+                return a.accuracy - b.accuracy;
+            });
+            console.log("5 knownbeacons.sorted");
             
             //remove knownbeacons that are meant for close contact but too far away
             /*
@@ -31,8 +36,11 @@ angular.module('hygge.beaconControllers', [])
             }*/
 
             $scope.currentlocation = contextLocations.get(knownbeacons[0].major, knownbeacons[0].minor);
+            console.log("6 knownbeacons[0].major: " + knownbeacons[0].major+"-"+knownbeacons[0].minor);
             $scope.accuracy = knownbeacons[0].accuracy;
-            beaconCheck = $scope.currentlocation.major+"-"+$scope.currentlocation.minor; 
+            console.log("7 accuracy:"+knownbeacons[0].accuracy);
+            beaconCheck = knownbeacons[0].major+"-"+knownbeacons[0].minor; 
+            console.log("8 closest beacon:"+beaconCheck);
         } else {
             $scope.showOOTO();
             $rootScope.lastbeacon = 0;
@@ -40,10 +48,13 @@ angular.module('hygge.beaconControllers', [])
         //if beacon has changed
         if (beaconCheck != $rootScope.lastbeacon){ 
             $rootScope.lastbeacon = beaconCheck;
+            console.log("9a lastbeacon:"+beaconCheck+"|"+$rootScope.lastbeacon);
+            $scope.updateViews($scope.currentlocation);
+        } else {
+            console.log("9b lastbeacon:"+beaconCheck+"|"+$rootScope.lastbeacon);
         }
-        $scope.updateViews($scope.currentlocation);
         
-        console.log("ROOTSCOPE LASTBEACON: "+$rootScope.lastbeacon);
+        console.log("10 ROOTSCOPE LASTBEACON: "+$rootScope.lastbeacon);
     }
     $scope.accuracy = 100;
     $scope.showOOTO = function() {
@@ -66,26 +77,8 @@ angular.module('hygge.beaconControllers', [])
     $scope.stopPolling = function() {
         if (angular.isDefined($rootScope.stop)) {
             $interval.cancel($rootScope.stop);
-        $rootScope.stop = undefined;
+            $rootScope.stop = undefined;
         }
-    };
-    
-    $scope.startApp = function(){
-        v5.pause();
-        v4.pause();
-        v3.pause();
-        v2.pause();
-        v1.pause();
-        jQuery("#ts2").fadeOut();
-        jQuery("#ts3").fadeOut();
-        jQuery("#ts4").fadeOut();
-        jQuery("#ts5").fadeOut();
-        jQuery("#ts1").fadeIn();
-        $ionicSlideBoxDelegate.slide(0);
-        //$scope.$apply();
-        window.localStorage['didTutorial'] = "true";
-        $state.go('tab.map',{});
-        //window.analytics.trackView('Map');
     };
     
     $scope.showInfo = function(value,cl){                    jQuery("#pin"+value).css({'top':cl.y+"%",'left':cl.x+"%",'display':'inline'});
