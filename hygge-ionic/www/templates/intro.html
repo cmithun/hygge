@@ -4,22 +4,22 @@
                 <div style="position:absolute;top:20%;text-align:center;z-index:100;width:100%;pointer-events:none;"><img src="img/intro/title-slide.png" style="width:80%;"><br><br><div class="ts-wrap" style="position:relative;width:80%;"><img id="ts1" src="img/intro/slide1.png" style="position:absolute;top:0px;left: 13%;width:100%;"><img id="ts2" src="img/icon-map-white.png" style="display:none; position:absolute;left: 32%;width: 60%;top:0px;"><img id="ts3" src="img/icon-use-white.png" style="display:none; position:absolute;left: 43%;width: 40%;top:0px;"><i id="ts4" class="icon ion-person-stalker" style="display:none; position:absolute;left: 23%;width: 80%;top:0px;font-size: 10rem;color: #fff;"></i><img id="ts5" src="img/intro/slide5-icon.png" style="display:none;position:absolute;top:10px;left: 13%;width:100%;"></div></div>
         <ion-slide-box on-slide-changed="slideChanged(index)">
           <ion-slide>
-                <video id="v1" ng-init="thumbVideo()" muted loop webkit-playsinline width="100%"> 
-                    <source src="rd-lobby.webm" type="video/webm"/> 
-                    <source src="rd-lobby.m4v" type="video/m4v"/>
-                    <source src="rd-lobby.mov" type="video/mp4"/>
+                <video id="v1" ng-init="thumbVideo()" muted webkit-playsinline width="100%"  poster="img/intro/poster.png"> 
+                    <source src="android.resource://com.ionicframework.kontor218156/raw/beacon.webm" type="video/webm"/> 
+                    <source src="android.resource://com.ionicframework.kontor218156/raw/beacon.m4v" type="video/m4v"/>
+                    <source src="beacon.mov" type="video/mp4"/>
                 </video>   
           </ion-slide>
           <ion-slide>
-                <video id="v2" muted loop webkit-playsinline width="100%"> 
-                    <source src="rd-walk.webm" type="video/webm"/> 
-                    <source src="rd-walk.m4v" type="video/m4v"/> 
-                    <source src="rd-walk.mov" type="video/mp4"/> 
+                <video id="v2" muted loop webkit-playsinline width="100%" poster="img/intro/poster.png"> 
+                    <source src="rd-lobby.webm" type="video/webm"/> 
+                    <source src="rd-lobby.m4v" type="video/m4v"/> 
+                    <source src="rd-lobby.mov" type="video/mp4"/> 
                 </video>   
                 <div style="position:absolute;bottom:10%;text-align:center;"><img src="img/intro/slide2.png" style="width:80%;"></div>
           </ion-slide> 
           <ion-slide>
-                <video id="v3" muted loop webkit-playsinline width="100%"> 
+                <video id="v3" muted loop webkit-playsinline width="100%" poster="img/intro/poster.png"> 
                     <source src="rd-rd.webm" type="video/webm"/> 
                     <source src="rd-rd.m4v" type="video/m4v"/> 
                     <source src="rd-rd.mov" type="video/mp4"/> 
@@ -27,15 +27,15 @@
                 <div style="position:absolute;bottom:10%;text-align:center;"><img src="img/intro/slide3.png" style="width:80%;"></div>
           </ion-slide> 
           <ion-slide>
-                <video id="v4" muted loop webkit-playsinline width="100%"> 
-                    <source src="rd-t2f.webm" type="video/webm"/> 
-                    <source src="rd-t2f.m4v" type="video/m4v"/> 
-                    <source src="rd-t2f.mov" type="video/mp4"/> 
+                <video id="v4" muted loop webkit-playsinline width="100%" poster="img/intro/poster.png"> 
+                    <source src="rd-walk.webm" type="video/webm"/> 
+                    <source src="rd-walk.m4v" type="video/m4v"/> 
+                    <source src="rd-walk.mov" type="video/mp4"/> 
                 </video>   
                 <div style="position:absolute;bottom:10%;text-align:center;"><img src="img/intro/slide4.png" style="width:80%;"></div>
           </ion-slide> 
           <ion-slide>
-                <video id="v5" muted loop webkit-playsinline width="100%"> 
+                <video id="v5" muted loop webkit-playsinline width="100%" poster="img/intro/poster.png"> 
                     <source src="rd-window2.webm" type="video/webm"/> 
                     <source src="rd-window2.m4v" type="video/m4v"/> 
                     <source src="rd-window2.mov" type="video/mp4"/> 

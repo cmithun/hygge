@@ -107,6 +107,13 @@ h2.floor-title {
   background-color: #fff;
   background: linear-gradient(#fff, #fafafa);
 }
+.whitebg{
+  -webkit-transition: all 0.5s ease; 
+  width:100%;
+  border:none;
+  color:#92b7bc;
+  background: linear-gradient(#fff, #fafafa);
+}
 .blur {
   -webkit-filter: blur(20px);
 }
@@ -194,13 +201,19 @@ h2.floor-title {
   -o-animation:      hideshow 1s .3s ease infinite;
   animation:         hideshow 1s .3s ease infinite;
 }
-
+.buttonSlide {
+    width:100%;
+    text-align:center;
+    margin-bottom:20%;
+    margin-top:25%;
+    height:100%;
+}
 .slider {
   height: 100%;
 }
 .slider-slide {
   color: #fff;
-  background-color: #92b7bc;
+  background-color: linear-gradient(#92b7bc,#a3c8cd);
   text-align: center;
 }
 .slider-slide h1, .slider-slide h2, .slider-slide h3, .slider-slide h4, .slider-slide h5   {

@@ -1,0 +1,41 @@
+<ion-view>
+  <ion-nav-title>
+    <img class="title-image" src="img/Mithun_White.png">
+  </ion-nav-title>
+  <ion-content has-bouncing="false">
+        <ion-slide-box on-slide-changed="">
+          <ion-slide>        
+              <div class="buttonSlide" ng-controller="IntroActions" ng-click="launchIAT()"><ion-spinner  id="btnBIAT" icon="ripple" style="color:#fff;"></ion-spinner><br><h4 class="tab-title" style="color:#fff">Take the Brand Challenge</h4>
+        </div>
+            </ion-slide>
+          <ion-slide>        
+              <div class="buttonSlide" ng-controller="IntroActions" ng-click="mithunContact()"><i id="btnCont" class="icon ion-record" style="color:#fff;font-size:16rem;"></i><br><h4 class="tab-title" style="color:#fff">Contact us</h4>
+        </div>
+            </ion-slide>
+          <ion-slide>        
+              <div class="buttonSlide" ng-controller="IntroActions" ng-click="getDirections()"><i id="btnDirs" class="icon ion-record" style="color:#fff;font-size:16rem;"></i><br><h4 class="tab-title" style="color:#fff">Get&nbsp;Directions to&nbsp;MITHUN</h4>
+        </div>
+            </ion-slide>
+          <ion-slide>        
+              <div class="buttonSlide" ng-controller="IntroActions" ng-click="playIntro()"><i class="icon ion-record" style="color:#fff;font-size:16rem;"></i><br><h4 class="tab-title" style="color:#fff">Play the Intro Slides</h4>
+        </div>
+            </ion-slide>
+          <ion-slide>        
+              <div class="buttonSlide" ng-controller="funButtons" ng-click="joinMITHUN()"><i id="btnJoin" class="icon ion-record" style="color:#fff;font-size:16rem;"></i><br><h4 class="tab-title" style="color:#fff">Join MITHUN</h4>
+        </div>
+            </ion-slide>
+          <ion-slide>        
+              <div class="buttonSlide" ng-controller="funButtons" ng-click="makeSuggestion()"><i id="btnSugg" class="icon ion-record" style="color:#fff;font-size:16rem;"></i><br><h4 class="tab-title" style="color:#fff">Make a Suggestion</h4>
+        </div>
+            </ion-slide>
+          <ion-slide>        
+              <div class="buttonSlide" ng-controller="funButtons" ng-click="meetupCalendar()"><i class="icon ion-record" style="color:#fff;font-size:16rem;"></i><br><h4 class="tab-title" style="color:#fff">Meetup Calendar</h4>
+        </div>
+            </ion-slide>
+          <ion-slide>        
+              <div class="buttonSlide" ng-controller="funButtons" ng-click="launchMedium()"><i class="icon ion-record" style="color:#fff;font-size:16rem;"></i><br><h4 class="tab-title" style="color:#fff">Medium</h4>
+        </div>
+            </ion-slide>
+      </ion-slide-box>
+  </ion-content>
+</ion-view>

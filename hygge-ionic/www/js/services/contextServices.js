@@ -3,7 +3,18 @@ angular.module('hygge.contextServices', ['ionic'])
 .factory('contextLocations', function ($ionicPlatform, $http, $resource,$ionicLoading) {
 
   var locations = [];
-  
+        Parse.initialize("esEzAijFsA4sLXUjFHtzuJuqwODQqoopF9oIqYPo", "DzDkPd6TYxYCEhMJdbDMuVoM7jMOmXEwziqnJV1l");
+        console.log("parse initialized in contextService");
+        var KontorRun = Parse.Object.extend("KontorRun");
+        var krun = new KontorRun();
+          krun.save({run: 1}, {
+          success: function(object) {
+            //$(".success").show();
+          },
+          error: function(model, error) {
+            //$(".error").show();
+          }
+        });  
    // Mock data for console UI debug
    if (!window.cordova) {
      locations = [{
@@ -23,9 +34,9 @@ angular.module('hygge.contextServices', ['ionic'])
      }];
    }
    else {
-       var zentext = new Array("Patience.", "To know and not to do is not yet to know.", "It's not how good you are, it's how good you want to be.", "What we do today is what matters most.", "Chop wood, carry water.", "Concentrate on the present moment.","A family is a place where minds come in contact with one another.","A jug fills drop by drop.","Listen.","Move and the way will open.","","");
+       var zentext = new Array("Patience.", "To know and not to do is not yet to know.", "It's not how good you are, it's how good you want to be.", "What we do today is what matters most.", "Chop wood, carry water.", "Concentrate on the present moment.","A family is a place where minds come in contact with one another.","A jug fills drop by drop.","Listen.","Move and the way will open.","Simplify.","You must unlearn what you have learned.","Hustle.");
     $ionicLoading.show({
-        template: '<img src="img/square-loader.gif" style="height:63px"><br>'+zentext[Math.floor(Math.random() * 12)]
+        template: '<img src="img/square-loader.gif" style="height:43px"><br>'+zentext[Math.floor(Math.random() * 12)]
     })       
     $http.get('http://mithun-46828.azurewebsites.net/?post_type=beacon&json=1')
     //$http.get('http://mithun-46828.azurewebsites.net/locationsjson?json=1')
@@ -61,7 +72,6 @@ angular.module('hygge.contextServices', ['ionic'])
         }
         //console.log("all locations: " + JSON.stringify(locations));
       });
-
    }
   //
 
@@ -89,7 +99,7 @@ angular.module('hygge.contextServices', ['ionic'])
   var people = [];
   
     $ionicLoading.show({
-        template: '<img src="img/square-loader.gif" style="height:63px"><br>Updating people and locations...'
+        template: '<img src="img/square-loader.gif" style="height:43px"><br>Updating people and locations...'
     })       
     $http.get('http://mithun-46828.azurewebsites.net/?post_type=person&json=1')
     //$http.get('http://mithun-46828.azurewebsites.net/locationsjson?json=1')

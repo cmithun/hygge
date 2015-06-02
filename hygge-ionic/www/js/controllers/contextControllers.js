@@ -4,7 +4,7 @@ angular.module('hygge.contextControllers', ['ngResource'])
   $scope.locations = contextLocations.all();
 })
 
-.controller('PersonContext', function($scope, contextPeople, $ionicScrollDelegate, $ionicPopup,$state) {
+.controller('PersonContext', function($scope, $rootScope, contextPeople, $ionicScrollDelegate, $ionicPopup,$state) {
     $scope.personSearch = {name: ''};
     $scope.people = contextPeople.all();
 
@@ -21,13 +21,30 @@ angular.module('hygge.contextControllers', ['ngResource'])
         $scope.showAlert(value);
     };
     $scope.showAlert = function(value) {    
-        var alertPopup = $ionicPopup.alert({
+        //update text if not in office
+        var subTitleTxt = 'I\'ve highlighted the location on your map.';
+        var okTextTxt = 'Show Me';
+        if ($rootScope.lastbeacon == 0) {
+            subTitleTxt = 'If you were at MITHUN I could show you where.';
+            okTextTxt = 'Oh, Ok.';
+        }
+            var alertPopup = $ionicPopup.alert({
              title: 'You\'ll find '+value.name+' on floor '+value.floor,
-             subTitle: 'I\'ve highlighted the location on your map.',
-             okText: 'Show Me',
+             subTitle: subTitleTxt,
+             okText: okTextTxt,
              okType: 'button-default'
            });
            alertPopup.then(function() {
+                var PRun = Parse.Object.extend("Find");
+                var prun = new PRun();
+                  prun.save({run: 1}, {
+                  success: function(object) {
+                    //$(".success").show();
+                  },
+                  error: function(model, error) {
+                    //$(".error").show();
+                  }
+                });  
                 $state.go('tab.map',{});
                 //  window.analytics.trackView('Map');
            });

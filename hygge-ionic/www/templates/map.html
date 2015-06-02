@@ -4,7 +4,7 @@
   </ion-nav-title>
   <ion-content class="has-header"> 
   <ion-refresher style="color:#fff;"
-    pulling-text="14th floor coming soon"
+    pulling-text="Refresh"
     refreshing-icon="ion-loading-c"
     refreshing-text="updating"
     on-refresh="doRefresh()">
@@ -17,11 +17,30 @@
     padding-bottom:7px;
 ">You're not at MITHUN but you can still do something smart.</h5><button ng-controller="IntroActions" ng-click="launchIAT()" class="button button-default">
   Take&nbsp;the&nbsp;Brand&nbsp;Challenge
-</button><br><br><button ng-controller="IntroActions" ng-click="mithunInstagram()" class="button button-default">
-  Follow&nbsp;us&nbsp;on&nbsp;Instagram
+</button><br><br><button ng-controller="IntroActions" ng-click="mithunContact()" class="button button-default">
+  Contact us
 </button><br><br><button ng-controller="IntroActions" ng-click="getDirections()" class="button button-default">
   Get&nbsp;Directions&nbsp;to&nbsp;MITHUN
 </button></div>  
+    <ion-pane id="floor14" class="item floor">
+      <h2 class="floor-title">14th floor</h2>
+      <div class="floor-map">
+        <img src="img/14.png">
+        <svg id="pin14" class="option1" style="" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 250 250">
+          <g>
+            <rect id="base" fill="#92B5BA" x="98.026" y="168.847" width="6.074" height="29.153"></rect>
+            <path class="second" id="second_square" fill="#92B5BA" d="M30,51v142h142V51H30z M159,180H43V64h116V180z"></path>
+            <path class="first" id="first_square" fill="#92B5BA" d="M49,69v105h105V69H49z M144,165H58V79h86V165z"></path>
+            <g>
+              <rect id="White_Behind_Logo" x="68" y="89" fill="#FFFFFF" width="67" height="67"></rect>
+              <path id="Mithun_Logo" fill="#92B5BA" d="M87.552,111.247h10.134v27.532h6.757v-27.532h10.138v27.532h6.756v-33.782H80.795
+              v33.782h6.757V111.247z M63.9,84.726v74.327h74.326V84.726H63.9z M131.473,152.295H70.659V91.484h60.813V152.295z"></path>
+            </g>
+          </g>
+        </svg>
+        <div id="personpin13"><i class="icon ion-location balanced"></i></div>  
+      </div>
+    </ion-pane>        
     <ion-pane id="floor13" class="item floor">
       <h2 class="floor-title">13th floor</h2>
       <div class="floor-map">

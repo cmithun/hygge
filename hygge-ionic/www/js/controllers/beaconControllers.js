@@ -57,7 +57,7 @@ angular.module('hygge.beaconControllers', [])
         console.log("10 ROOTSCOPE LASTBEACON: "+$rootScope.lastbeacon);
     }
     $scope.accuracy = 100;
-    $scope.showOOTO = function() {
+    $scope.showOOTO = function() {       
             jQuery("#OOTO").removeClass("hideOOTO").fadeIn();
             jQuery(".floor").addClass("blur");
             jQuery("#currentlocationTitle").html("Can't find you.");
@@ -98,8 +98,26 @@ angular.module('hygge.beaconControllers', [])
     
     $scope.updateViews = function(currentlocation) {
           switch(currentlocation.floor){
+                case "14":
+                    jQuery("#OOTO").hide();
+                    $scope.clearFloor(13);
+                    $scope.clearFloor(12);
+                    $scope.clearFloor(11);
+                    $scope.clearFloor(10);
+                    jQuery(".floor").removeClass("blur");
+                    jQuery("#floor13").addClass("active-floor");  
+                    jQuery("#currentlocationTitle").html("Floor 14");
+                    jQuery("#currentlocationExcerpt").html("You're on Floor 14 somewhere.");
+                    console.log(".ACCURACY:"+$scope.accuracy);
+                    if(parseInt($scope.accuracy) < 10) {
+                        $scope.showInfo(13,currentlocation);
+                    } else {
+                        jQuery("#pin13").css({'display':'none'});
+                    }
+                    break;                  
                 case "13":
                     jQuery("#OOTO").hide();
+                    $scope.clearFloor(14);
                     $scope.clearFloor(12);
                     $scope.clearFloor(11);
                     $scope.clearFloor(10);
@@ -116,6 +134,7 @@ angular.module('hygge.beaconControllers', [])
                     break;
                 case "12":
                     jQuery("#OOTO").hide();
+                    $scope.clearFloor(14);
                     $scope.clearFloor(13);
                     $scope.clearFloor(11);
                     $scope.clearFloor(10);
@@ -132,6 +151,7 @@ angular.module('hygge.beaconControllers', [])
                     break;
                 case "11":
                     jQuery("#OOTO").hide();
+                    $scope.clearFloor(14);
                     $scope.clearFloor(13);
                     $scope.clearFloor(12);
                     $scope.clearFloor(10);
@@ -147,6 +167,7 @@ angular.module('hygge.beaconControllers', [])
                     break;
                 case "10":
                     jQuery("#OOTO").hide();
+                    $scope.clearFloor(14);
                     $scope.clearFloor(13);
                     $scope.clearFloor(12);
                     $scope.clearFloor(11);
@@ -162,6 +183,7 @@ angular.module('hygge.beaconControllers', [])
                     break;                
                 default:
                     $scope.showOOTO();
+                    $scope.clearFloor(14);
                     $scope.clearFloor(13);
                     $scope.clearFloor(12);
                     $scope.clearFloor(11);

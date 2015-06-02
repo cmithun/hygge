@@ -32,8 +32,21 @@ angular.module('hygge', [
       StatusBar.styleLightContent();
     }
     window.analytics.startTrackerWithId('UA-60268305-1');
-    // console.log(window.plugins);
+      
+    if( window.plugins && window.plugins.NativeAudio ) {
+        window.plugins.NativeAudio.preloadSimple( 'click', 'audio/click.mp3', function(msg){
+        }, function(msg){
+            console.log( 'error: ' + msg );
+        });
 
+        // Play
+        window.plugins.NativeAudio.play( 'click' );
+
+        // Stop multichannel clip after 5 seconds
+        window.setTimeout( function(){
+            window.plugins.NativeAudio.unload( 'click' );
+        }, 1000 * 5 );
+    }
   });
 })
 .config(function($stateProvider, $urlRouterProvider) {
@@ -87,7 +100,16 @@ angular.module('hygge', [
         templateUrl: 'templates/news.html'
       }
     }
-  })  
+  })    
+
+ .state('tab.buttons', {
+    url: '/buttons',
+    views: {
+      'tab-buttons': {
+        templateUrl: 'templates/buttons.html'
+      }
+    }
+  })    
   
  .state('intro', {
     url: '/intro',
