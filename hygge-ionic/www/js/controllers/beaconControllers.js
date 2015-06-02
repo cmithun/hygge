@@ -58,10 +58,11 @@ angular.module('hygge.beaconControllers', [])
     }
     $scope.accuracy = 100;
     $scope.showOOTO = function() {       
-            jQuery("#OOTO").removeClass("hideOOTO").fadeIn();
+            /*jQuery("#OOTO").removeClass("hideOOTO").fadeIn();
             jQuery(".floor").addClass("blur");
             jQuery("#currentlocationTitle").html("Can't find you.");
             jQuery("#currentlocationExcerpt").html("Doesn't look like you're at MITHUN.");
+            */
     }
     $rootScope.lastbeacon = 0;
     $scope.startPolling = function() {
@@ -94,6 +95,7 @@ angular.module('hygge.beaconControllers', [])
     $scope.doRefresh = function() {
         $scope.poll();
         $scope.$broadcast('scroll.refreshComplete');
+        jQuery("#floor14").fadeIn(); 
     };
     
     $scope.updateViews = function(currentlocation) {
@@ -105,14 +107,14 @@ angular.module('hygge.beaconControllers', [])
                     $scope.clearFloor(11);
                     $scope.clearFloor(10);
                     jQuery(".floor").removeClass("blur");
-                    jQuery("#floor13").addClass("active-floor");  
+                    jQuery("#floor14").addClass("active-floor");  
                     jQuery("#currentlocationTitle").html("Floor 14");
                     jQuery("#currentlocationExcerpt").html("You're on Floor 14 somewhere.");
                     console.log(".ACCURACY:"+$scope.accuracy);
                     if(parseInt($scope.accuracy) < 10) {
-                        $scope.showInfo(13,currentlocation);
+                        $scope.showInfo(14,currentlocation);
                     } else {
-                        jQuery("#pin13").css({'display':'none'});
+                        jQuery("#pin14").css({'display':'none'});
                     }
                     break;                  
                 case "13":

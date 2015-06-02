@@ -4,7 +4,7 @@
   </ion-nav-title>
   <ion-content class="has-header"> 
   <ion-refresher style="color:#fff;"
-    pulling-text="Refresh"
+    pulling-text="Show me Floor 14"
     refreshing-icon="ion-loading-c"
     refreshing-text="updating"
     on-refresh="doRefresh()">
@@ -22,7 +22,7 @@
 </button><br><br><button ng-controller="IntroActions" ng-click="getDirections()" class="button button-default">
   Get&nbsp;Directions&nbsp;to&nbsp;MITHUN
 </button></div>  
-    <ion-pane id="floor14" class="item floor">
+    <ion-pane id="floor14" class="item floor" style="display:none">
       <h2 class="floor-title">14th floor</h2>
       <div class="floor-map">
         <img src="img/14.png">
