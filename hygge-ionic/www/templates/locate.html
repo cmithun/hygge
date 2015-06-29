@@ -3,7 +3,7 @@
     <img class="title-image" src="img/Mithun_White.png">
   </ion-nav-title>
   <ion-content>
-        <input style="padding-left:17px;padding-top:30px;padding-bottom:30px" type="text" placeholder="Where is _____? Where does ______ sit?" ng-model="personSearch.name"/><ion-scroll direction="y">
+        <input style="padding-left:17px;padding-top:30px;padding-bottom:30px" type="text" placeholder="Where is _____? Where does ______ sit?" ng-model="personSearch.name"/>
       <ion-list>
           <ion-item ng-click="showPin(person)" class="item item-avatar" ng-repeat="person in filtered = (people | filter:{name:personSearch.name} | orderBy:'name')"><img ng-src="{{person.imgsrc}}" style="background-color:#92b7bc;">
       <h2 class="white">{{person.name}}</h2>

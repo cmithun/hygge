@@ -22,6 +22,11 @@
 </button><br><br><button ng-controller="IntroActions" ng-click="getDirections()" class="button button-default">
   Get&nbsp;Directions&nbsp;to&nbsp;MITHUN
 </button></div>  
+      <ion-list>
+          <ion-item ng-click="showPin(person)" class="item item-avatar" ng-repeat="person in filtered = (people | filter:{name:personSearch.name} | orderBy:'name')"><img ng-src="{{person.imgsrc}}" style="background-color:#92b7bc;">
+      <h2 class="white">{{person.name}}</h2>
+      <p class="white">{{person.title}}</p></ion-item>
+      </ion-list>        
     <ion-pane id="floor14" class="item floor" style="display:none">
       <h2 class="floor-title">14th floor</h2>
       <div class="floor-map">
