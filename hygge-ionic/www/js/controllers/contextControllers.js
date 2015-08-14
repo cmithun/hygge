@@ -4,7 +4,141 @@ angular.module('hygge.contextControllers', ['ngResource'])
   $scope.locations = contextLocations.all();
 })
 
+.controller('CodexCtrl', function($scope) {
+  $scope.groups = [{
+      title: "Conference Room Pronunciation",
+      contents: [
+        {
+            line: "Eir: (Eh-er)"
+        },
+        {
+            line: "Asgard: (Ahz-gard)"
+        },
+        {
+            line: "Mjolnir: (Mee-yul-near)"
+        },
+        {
+            line: "Skadi: (Skah-dee)"
+        },
+        {
+            line: "Baldr: (Bahl-der)"
+        },
+        {
+            line: "Loki: (Low-key)"
+        },
+        {
+            line: "Skuld: (Skoold)"
+        },
+        {
+            line: "Thor: (Th-ore)"
+        },
+        {
+            line: "Freyja: (Fray-yah)"
+        },
+        {
+            line: "Odin: (Oh-din)"
+        },
+        {
+            line: "Valhalla: (Vahl-hallah)"
+        }
+      ]
+    },
+    {
+      title: "Regarding Food",
+      contents: [
+        {
+          line: "WHY?"
+        },
+        {
+    	    line: "WHAT IS THE MESSAGE?"
+        },
+        {
+    			line: "WHAT IS THE VEHICLE?"
+        },
+        {
+    			line: "WHO ARE THE AUDIENCE?"
+        }
+      ]
+    },
+      {
+      title: "Regarding Communication",
+      contents: [
+        {
+          line: "BLAH"
+        },
+        {
+    	    line: "BLAH"
+        },
+        {
+    			line: "BLAH"
+        },
+        {
+    			line: "BLAH"
+        },
+        {
+    			line: "BLAH"
+        },
+        {
+    			line: "BLAH"
+        },
+        {
+    			line: "BLAH"
+        }
+      ]
+    },
+      {
+      title: "Regarding Relationships",
+      contents: [
+        {
+          line: "BLAH"
+        },
+        {
+    	    line: "BLAH"
+        },
+        {
+    			line: "BLAH"
+        },
+        {
+    			line: "BLAH"
+        },
+        {
+    			line: "BLAH"
+        },
+        {
+    			line: "BLAH"
+        },
+        {
+    			line: "BLAH"
+        }
+      ]
+    }
+  ];
+  
+  /*
+   * if given group is the selected group, deselect it
+   * else, select the given group
+   */
+  $scope.toggleGroup = function(group) {
+    if ($scope.isGroupShown(group)) {
+      $scope.shownGroup = null;
+    } else {
+      $scope.shownGroup = group;
+    }
+  };
+  $scope.isGroupShown = function(group) {
+    return $scope.shownGroup === group;
+  };
+  
+})
+
 .controller('PersonContext', function($scope, $rootScope, contextPeople, $ionicScrollDelegate, $ionicPopup,$state) {
+    $scope.$watch("personSearch.name.length", function(val) {
+    if (val > 0) {
+        jQuery("#searchList").show();    
+    } else {
+        jQuery("#searchList").hide();        
+    }
+    });
     $scope.personSearch = {name: ''};
     $scope.people = contextPeople.all();
 
@@ -49,6 +183,33 @@ angular.module('hygge.contextControllers', ['ngResource'])
                 //  window.analytics.trackView('Map');
            });
     }
+})
+
+.controller('FindModalController', function($scope, $ionicModal) {
+  $ionicModal.fromTemplateUrl('find-modal.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+  $scope.openModal = function() {
+    $scope.modal.show();
+  };
+  $scope.closeModal = function() {
+    $scope.modal.hide();
+  };
+  //Cleanup the modal when we're done with it!
+  $scope.$on('$destroy', function() {
+    $scope.modal.remove();
+  });
+  // Execute action on hide modal
+  $scope.$on('modal.hidden', function() {
+    // Execute action
+  });
+  // Execute action on remove modal
+  $scope.$on('modal.removed', function() {
+    // Execute action
+  });
 })
 
 .controller('IntroContext', function($scope) {

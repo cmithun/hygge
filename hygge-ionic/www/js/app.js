@@ -84,11 +84,11 @@ angular.module('hygge', [
     }
   }) 
 
-  .state('tab.locate', {
-    url: '/locate',
+  .state('tab.codex', {
+    url: '/codex',
     views: {
-      'tab-locate': {
-        templateUrl: 'templates/locate.html'
+      'tab-codex': {
+        templateUrl: 'templates/codex.html'
       }
     }
   })  

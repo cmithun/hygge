@@ -34,7 +34,7 @@ angular.module('hygge.contextServices', ['ionic'])
      }];
    }
    else {
-       var zentext = new Array("Find a better way.", "Find a better way.", "Patience.", "To know and not to do is not yet to know.", "It's not how good you are, it's how good you want to be.", "What we do today is what matters most.", "Chop wood, carry water.", "Concentrate on the present moment.","A family is a place where minds come in contact with one another.","A jug fills drop by drop.","Listen carefully.","Move and the way will open.","Simplify.","You must unlearn what you have learned.","Hustle.");
+       var zentext = new Array("Find a better way.", "Think no small thoughts.", "Pioneer.", "Pay uncommon attention.", "Pursue perfection.", "Patience.", "There is only one reason for the existence of this business. To help our clients solve their problems.", "To know and not to do is not yet to know.", "It's not how good you are, it's how good you want to be.", "What we do today is what matters most.", "Chop wood, carry water.", "Concentrate on the present moment.","A family is a place where minds come in contact with one another.","A jug fills drop by drop.","Listen carefully.","Move and the way will open.","Simplify.","You must unlearn what you have learned.", "Hustle.");
     $ionicLoading.show({
         template: '<img src="img/square-loader.gif" style="height:43px"><br>'+zentext[Math.floor(Math.random() * 12)]
     })       

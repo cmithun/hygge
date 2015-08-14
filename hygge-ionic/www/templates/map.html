@@ -3,6 +3,14 @@
     <img class="title-image" src="img/Mithun_White.png">
   </ion-nav-title>
   <ion-content class="has-header"> 
+      <div ng-controller="PersonContext">
+          <input style="padding-left:17px;padding-top:30px;padding-bottom:30px" type="text" placeholder="Where is _____? Where does ______ sit?" ng-model="personSearch.name" />
+          <ion-list id="searchList" style="display:none">
+              <ion-item ng-click="showPin(person)" class="item item-avatar" ng-repeat="person in filtered = (people | filter:{name:personSearch.name} | orderBy:'name')"><img ng-src="{{person.imgsrc}}" style="background-color:#92b7bc;">
+          <h2 class="white">{{person.name}}</h2>
+          <p class="white">{{person.title}}</p></ion-item>
+          </ion-list>
+      </div>
   <ion-refresher style="color:#fff;"
     pulling-text="Show me the roof!"
     refreshing-icon="ion-loading-c"
