@@ -2,7 +2,8 @@
   <ion-nav-title>
     <img class="title-image" src="img/Mithun_White.png">
   </ion-nav-title>
-  <ion-content class="padding has-header" style="background: url(img/valhalla.jpg) no-repeat;background-size: cover;">    
+  <ion-content class="padding has-header" style="background: url(img/valhalla.jpg) no-repeat;background-size: cover;border-top: solid 2px #fff;">
+      <img src="img/book-of-knowledge.png" style="width: 50%;margin-left: 25%;margin-right: auto;">
       <ion-list>
         <div ng-repeat="group in groups">
           <ion-item class="item-stable"
@@ -12,11 +13,11 @@
             &nbsp;
             {{group.title}}
           </ion-item>
-          <div ng-show="isGroupShown(group)">
-            <ion-item ng-repeat="content in group.contents" class="item-accordion" style="border-color: #000;background-color: rgba(0,0,0,.6);color: #fff;">
+            <ion-item class="item-accordion"
+                    ng-repeat="content in group.contents"
+                    ng-show="isGroupShown(group)" ng-repeat="content in group.contents" style="border-color: #000;background-color: rgba(100,100,100,.6);color: #fff;">
               {{content.line}}
             </ion-item>
-          </div>
         </div>
       </ion-list>
     </ion-content>

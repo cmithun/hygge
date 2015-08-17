@@ -102,7 +102,29 @@ angular.module('hygge.buttonControllers', [])
         });          
     }
 })
-
+.controller('locationButtons', function($rootScope, $scope, $state, $ionicSlideBoxDelegate){    
+    
+    $scope.show = function(num){
+        //write one div into the show div then hide buttons and show div
+    } 
+    
+    $scope.makeSuggestion = function(){
+        $scope.playBtnAudio();      
+        jQuery("#btnSugg").replaceWith('<div id="btnSugg"><input type="text" size="50" id="txtSuggest"></input><br><button id="btnSuggest" class="button button-default">Send</button></div>');
+        jQuery("#btnSuggest").click(function(){
+            var PRun = Parse.Object.extend("Suggestion");
+            var prun = new PRun();
+              prun.save({run: jQuery("#txtSuggest").text()}, {
+              success: function(object) {
+                jQuery("#btnSugg").replaceWith('<i class="icon ion-checkmark-circled" style="color:#fafafa;font-size:16rem" id="btnCont"></i>');
+              },
+              error: function(model, error) {
+                jQuery("#btnSugg").replaceWith('<i class="icon ion-close-circled" style="color:#fafafa;font-size:16rem" id="btnCont"></i>');
+              }
+            });
+        });
+    }
+})
 .controller('funButtons', function($rootScope, $scope, $state, $ionicSlideBoxDelegate){    
     
     $scope.playBtnAudio = function(){

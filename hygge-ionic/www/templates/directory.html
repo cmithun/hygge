@@ -3,17 +3,41 @@
     <img class="title-image" src="img/Mithun_White.png">
   </ion-nav-title>
   <ion-content has-bouncing="false" class="padding has-header">    
-    <div class="list card">
-        <div class="item item-divider" id="currentlocationTitle"></div>
-        <div class="item item-text-wrap"  id="currentlocationExcerpt"></div>
-    </div>
-        <div class="item item-text-wrap" style="padding-top:50px;color:#fff;border:none;background-color:transparent;display:block;">
+<div id="near-info" style="
+    width: auto;
+    margin-top:-8px;
+    border-top:1px solid #fff;
+    background-color: rgba(0,0,0,.6);
+    height: 63px;
+    margin-left: -10px;
+    margin-right: -10px;
+    color:#fff;
+    padding:10px;
+    text-align:center;
+">No beacons detected.<br>Make sure Bluetooth is enabled.</div>   
+    <div style="vertical-align:bottom">  
+    <div id="near-circle-2" style="float:left;width:50%"><div class="buttonSlide" ng-controller="locationButtons" ng-click="show(3)"><i class="icon ion-pinpoint explore2" style="color:#fff;font-size:10rem;"></i><br><h4 class="tab-title" style="color:#fff">2nd Nearest</h4></div></div>  
+    <div id="near-circle-3" style="float:left;width:50%"><div class="buttonSlide" ng-controller="locationButtons" ng-click="show(2)"><i class="icon ion-pinpoint explore3" style="color:#fff;font-size:10rem;"></i><br><h4 class="tab-title" style="color:#fff">3rd Nearest</h4></div></div>  
+    <div id="near-circle-1" style="width:100%"><div class="buttonSlide" ng-controller="locationButtons" ng-click="show(1)"><i class="icon ion-pinpoint explore1" style="color:#fff;font-size:10rem;"></i><br><h4 class="tab-title" style="color:#fff">Nearest</h4></div></div>     
+    <div class="list card" id="near-card1" style="display:none">
+        <div class="item item-divider" id="currentlocationTitle1"></div>
+        <div class="item item-text-wrap"  id="currentlocationExcerpt1"></div>
+    </div>     
+    <div class="list card" id="near-card2" style="display:none">
+        <div class="item item-divider" id="currentlocationTitle2"></div>
+        <div class="item item-text-wrap"  id="currentlocationExcerpt2"></div>
+    </div>  
+    <div class="list card" id="near-card3" style="display:none">
+        <div class="item item-divider" id="currentlocationTitle3"></div>
+        <div class="item item-text-wrap"  id="currentlocationExcerpt3"></div>
+    </div>      
+        <div class="item item-text-wrap" style="display:none;padding-top:50px;color:#fff;border:none;background-color:transparent;">
           <h2 style="color:#fff;">Debug info</h2>
-
           <p style="color:#fff;" id="debugTitle"></p>
           <p style="color:#fff;">Floor: <span id="debugFloor"></span></p>
           <p style="color:#fff;">Accuracy: <span id="debugAccuracy"></span></p>
           <p style="color:#fff;">X,Y: <span id="debugX"></span>, <span id="debugY"></span></p>
-        </div>  
+        </div> 
+    </div>    
   </ion-content>
 </ion-view>

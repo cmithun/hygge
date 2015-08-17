@@ -5,10 +5,20 @@ angular.module('hygge.contextControllers', ['ngResource'])
 })
 
 .controller('CodexCtrl', function($scope) {
-  $scope.groups = [{
-      title: "Conference Room Pronunciation",
-      contents: [
+  $scope.groups = [
         {
+          title: "WIFI Info",
+          contents: [
+            {
+              line: "Guest Network: oneConnect-guest /!!IPG$$"
+            },
+            {
+              line: "For employees: oneConnect use your IPG creds"
+            }
+          ]
+        },{
+      title: "Conference Room Pronunciation",
+      contents: [{
             line: "Eir: (Eh-er)"
         },
         {
@@ -43,25 +53,8 @@ angular.module('hygge.contextControllers', ['ngResource'])
         }
       ]
     },
-    {
-      title: "Regarding Food",
-      contents: [
-        {
-          line: "WHY?"
-        },
-        {
-    	    line: "WHAT IS THE MESSAGE?"
-        },
-        {
-    			line: "WHAT IS THE VEHICLE?"
-        },
-        {
-    			line: "WHO ARE THE AUDIENCE?"
-        }
-      ]
-    },
       {
-      title: "Regarding Communication",
+      title: "Staying Healthy",
       contents: [
         {
           line: "BLAH"
@@ -87,7 +80,33 @@ angular.module('hygge.contextControllers', ['ngResource'])
       ]
     },
       {
-      title: "Regarding Relationships",
+      title: "IT Helpdesk",
+      contents: [
+        {
+          line: "BLAH"
+        },
+        {
+    	    line: "BLAH"
+        },
+        {
+    			line: "BLAH"
+        },
+        {
+    			line: "BLAH"
+        },
+        {
+    			line: "BLAH"
+        },
+        {
+    			line: "BLAH"
+        },
+        {
+    			line: "BLAH"
+        }
+      ]
+    },
+      {
+      title: "HR Hotline",
       contents: [
         {
           line: "BLAH"

@@ -26,6 +26,7 @@ body{
     opacity:1;
 }
 .item {
+    border:none;
     border-color:#92b7bc;
 }
 .item-avatar {
@@ -57,6 +58,30 @@ body{
   background-size:cover;    
   margin-top:-10px;
   height:117%
+}
+
+.explore1 {
+  background-repeat: no-repeat;
+  background-position: 50%;    
+  background-image: url('../img/explore-1.png');
+  background-size:contain;
+  height: 70%;
+}
+
+.explore2 {
+  background-repeat: no-repeat;
+  background-position: 50%;    
+  background-image: url('../img/explore-2.png');
+  background-size:contain;
+  height: 70%;
+}
+
+.explore3 {
+  background-repeat: no-repeat;
+  background-position: 50%;    
+  background-image: url('../img/explore-3.png');
+  background-size:contain;
+  height: 70%;
 }
 
 .tabs .tab-item .icon.book {
@@ -224,8 +249,6 @@ h2.floor-title {
 .buttonSlide {
     width:100%;
     text-align:center;
-    margin-bottom:20%;
-    margin-top:25%;
     height:100%;
 }
 .slider {
@@ -320,13 +343,28 @@ h2.floor-title {
     background-color:#92b7bc;
     color:#fff;    
 }
-#personpin13, #personpin12, #personpin11, #personpin10 {
+#personpin14, #personpin13, #personpin12, #personpin11, #personpin10 {
     position: absolute;
     font-size: 30px;
     display:none;  
     left:200px;
 }
 
-#personpin13 i, #personpin12 i,#personpin11 i, #personpin10 i{
+#personpin14 i, #personpin13 i, #personpin12 i,#personpin11 i, #personpin10 i{
     //text-shadow: 1px 0px 0px #fff, 1px 0px 0px #fff, 1px 0px 0px #fff, 1px 0px 0px #fff;  
+}
+
+.list .item.item-accordion {
+  line-height: 38px;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: 0.09s all linear;
+  white-space: normal;
+}
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
 }
