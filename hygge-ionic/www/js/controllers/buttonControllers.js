@@ -106,6 +106,16 @@ angular.module('hygge.buttonControllers', [])
     
     $scope.show = function(num){
         //write one div into the show div then hide buttons and show div
+        $("#circles").slideUp();
+        $("#show-card").html($("#near-card"+num).html()).slideDown();
+        $("#back-to-circles").fadeIn();
+    } 
+
+    $scope.hideinfo = function(){
+        //write one div into the show div then hide buttons and show div
+        $("#back-to-circles").fadeOut();
+        $("#show-card").slideUp();
+        $("#circles").slideDown();
     } 
     
     $scope.makeSuggestion = function(){

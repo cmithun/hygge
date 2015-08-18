@@ -54,28 +54,16 @@ angular.module('hygge.contextControllers', ['ngResource'])
       ]
     },
       {
-      title: "Staying Healthy",
+      title: "Stay Healthy",
       contents: [
         {
-          line: "BLAH"
+            line: "Yoga Wednesdays on the roof"
         },
         {
-    	    line: "BLAH"
+            line: "Fitness Room in the basement"
         },
         {
-    			line: "BLAH"
-        },
-        {
-    			line: "BLAH"
-        },
-        {
-    			line: "BLAH"
-        },
-        {
-    			line: "BLAH"
-        },
-        {
-    			line: "BLAH"
+            line: "Wellness Rooms on the 10th floor"
         }
       ]
     },
@@ -83,51 +71,15 @@ angular.module('hygge.contextControllers', ['ngResource'])
       title: "IT Helpdesk",
       contents: [
         {
-          line: "BLAH"
-        },
-        {
-    	    line: "BLAH"
-        },
-        {
-    			line: "BLAH"
-        },
-        {
-    			line: "BLAH"
-        },
-        {
-    			line: "BLAH"
-        },
-        {
-    			line: "BLAH"
-        },
-        {
-    			line: "BLAH"
+          line: "Email helpdesk@mithun.agency with a description of your issue or call Al Devries (612-968-4827) with urgent matters."
         }
       ]
     },
       {
-      title: "HR Hotline",
+      title: "IPG Alertline",
       contents: [
         {
-          line: "BLAH"
-        },
-        {
-    	    line: "BLAH"
-        },
-        {
-    			line: "BLAH"
-        },
-        {
-    			line: "BLAH"
-        },
-        {
-    			line: "BLAH"
-        },
-        {
-    			line: "BLAH"
-        },
-        {
-    			line: "BLAH"
+          line: "800.828.0896"
         }
       ]
     }

@@ -16,22 +16,27 @@
     text-align:center;
 ">No beacons detected.<br>Make sure Bluetooth is enabled.</div>   
     <div style="vertical-align:bottom">  
-    <div id="near-circle-2" style="float:left;width:50%"><div class="buttonSlide" ng-controller="locationButtons" ng-click="show(3)"><i class="icon ion-pinpoint explore2" style="color:#fff;font-size:10rem;"></i><br><h4 class="tab-title" style="color:#fff">2nd Nearest</h4></div></div>  
-    <div id="near-circle-3" style="float:left;width:50%"><div class="buttonSlide" ng-controller="locationButtons" ng-click="show(2)"><i class="icon ion-pinpoint explore3" style="color:#fff;font-size:10rem;"></i><br><h4 class="tab-title" style="color:#fff">3rd Nearest</h4></div></div>  
-    <div id="near-circle-1" style="width:100%"><div class="buttonSlide" ng-controller="locationButtons" ng-click="show(1)"><i class="icon ion-pinpoint explore1" style="color:#fff;font-size:10rem;"></i><br><h4 class="tab-title" style="color:#fff">Nearest</h4></div></div>     
+    <div id="circles">
+        <div id="near-circle-2" style="float:left;width:50%"><div class="buttonSlide" ng-controller="locationButtons" ng-click="show(2)"><i class="icon ion-pinpoint explore2" style="color:#fff;font-size:10rem;"></i><br><h4 class="tab-title" style="color:#fff">2nd Nearest</h4></div></div>  
+        <div id="near-circle-3" style="float:left;width:50%"><div class="buttonSlide" ng-controller="locationButtons" ng-click="show(3)"><i class="icon ion-pinpoint explore3" style="color:#fff;font-size:10rem;"></i><br><h4 class="tab-title" style="color:#fff">3rd Nearest</h4></div></div>  
+        <div id="near-circle-1" style="width:100%"><div class="buttonSlide" ng-controller="locationButtons" ng-click="show(1)"><i class="icon ion-pinpoint explore1" style="color:#fff;font-size:10rem;"></i><br><h4 class="tab-title" style="color:#fff">Nearest</h4></div></div>     
+    </div>
+    <div class="list card" id="show-card" style="display:none">
+    </div>      
+    <div id="back-to-circles" ng-controller="locationButtons"  ng-click="hideinfo()" class="buttonSlide" style="display:none"><i class="icon ion-close-circled" style="color:#fff;font-size:10rem;"></i><br><h4 class="tab-title" style="color:#fff">Close</h4></div>
     <div class="list card" id="near-card1" style="display:none">
-        <div class="item item-divider" id="currentlocationTitle1"></div>
-        <div class="item item-text-wrap"  id="currentlocationExcerpt1"></div>
+        <div class="item item-divider" id="currentlocationTitle1">Test 1</div>
+        <div class="item item-text-wrap"  id="currentlocationExcerpt1">Test 1</div>
     </div>     
     <div class="list card" id="near-card2" style="display:none">
-        <div class="item item-divider" id="currentlocationTitle2"></div>
-        <div class="item item-text-wrap"  id="currentlocationExcerpt2"></div>
+        <div class="item item-divider" id="currentlocationTitle2">Test 2</div>
+        <div class="item item-text-wrap"  id="currentlocationExcerpt2">Test 2</div>
     </div>  
     <div class="list card" id="near-card3" style="display:none">
-        <div class="item item-divider" id="currentlocationTitle3"></div>
-        <div class="item item-text-wrap"  id="currentlocationExcerpt3"></div>
+        <div class="item item-divider" id="currentlocationTitle3">Test 3</div>
+        <div class="item item-text-wrap"  id="currentlocationExcerpt3">Test 3</div>
     </div>      
-        <div class="item item-text-wrap" style="display:none;padding-top:50px;color:#fff;border:none;background-color:transparent;">
+        <div class="item item-text-wrap" style="padding-top:50px;color:#fff;border:none;background-color:transparent;">
           <h2 style="color:#fff;">Debug info</h2>
           <p style="color:#fff;" id="debugTitle"></p>
           <p style="color:#fff;">Floor: <span id="debugFloor"></span></p>

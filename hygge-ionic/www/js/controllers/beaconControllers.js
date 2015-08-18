@@ -36,6 +36,8 @@ angular.module('hygge.beaconControllers', [])
             }*/
 
             $scope.currentlocation = contextLocations.get(knownbeacons[0].major, knownbeacons[0].minor);
+            //$scope.closelocation = contextLocations.get(knownbeacons[1].major, knownbeacons[1].minor);
+            //$scope.remotelocation = contextLocations.get(knownbeacons[2].major, knownbeacons[2].minor);
             console.log("6 knownbeacons[0].major: " + knownbeacons[0].major+"-"+knownbeacons[0].minor);
             $scope.accuracy = knownbeacons[0].accuracy;
             console.log("7 accuracy:"+knownbeacons[0].accuracy);
@@ -82,7 +84,8 @@ angular.module('hygge.beaconControllers', [])
         }
     };
     
-    $scope.showInfo = function(value,cl){                    jQuery("#pin"+value).css({'top':cl.y+"%",'left':cl.x+"%",'display':'inline'});
+    $scope.showInfo = function(value,cl){
+            jQuery("#pin"+value).css({'top':cl.y+"%",'left':cl.x+"%",'display':'inline'});
             jQuery("#currentlocationTitle").html(cl.title);
             jQuery("#currentlocationExcerpt").html(cl.excerpt);
     }
@@ -109,7 +112,7 @@ angular.module('hygge.beaconControllers', [])
                     jQuery(".floor").removeClass("blur");
                     jQuery("#floor14").addClass("active-floor");  
                     jQuery("#currentlocationTitle").html("Floor 14");
-                    jQuery("#currentlocationExcerpt").html("You're on Floor 14 somewhere.");
+                    jQuery("#near-info").html("You're on Floor 14.<br>Here's what we see around you.");
                     console.log(".ACCURACY:"+$scope.accuracy);
                     if(parseInt($scope.accuracy) < 10) {
                         $scope.showInfo(14,currentlocation);
@@ -126,7 +129,7 @@ angular.module('hygge.beaconControllers', [])
                     jQuery(".floor").removeClass("blur");
                     jQuery("#floor13").addClass("active-floor");  
                     jQuery("#currentlocationTitle").html("Floor 13");
-                    jQuery("#currentlocationExcerpt").html("You're on Floor 13 somewhere.");
+                    jQuery("#near-info").html("You're on Floor 13.<br>Here's what we see around you.");
                     console.log(".ACCURACY:"+$scope.accuracy);
                     if(parseInt($scope.accuracy) < 10) {
                         $scope.showInfo(13,currentlocation);
@@ -143,7 +146,7 @@ angular.module('hygge.beaconControllers', [])
                     jQuery(".floor").removeClass("blur");
                     jQuery("#floor12").addClass("active-floor");  
                     jQuery("#currentlocationTitle").html("Floor 12");
-                    jQuery("#currentlocationExcerpt").html("You're on Floor 12 somewhere.");
+                    jQuery("#near-info").html("You're on Floor 12.<br>Here's what we see around you.");
                     console.log(".ACCURACY:"+$scope.accuracy);
                     if(parseInt($scope.accuracy) < 10) {
                         $scope.showInfo(12,currentlocation);
@@ -160,7 +163,7 @@ angular.module('hygge.beaconControllers', [])
                     jQuery(".floor").removeClass("blur");
                     jQuery("#floor11").addClass("active-floor");
                     jQuery("#currentlocationTitle").html("Floor 11");
-                    jQuery("#currentlocationExcerpt").html("You're on Floor 11 somewhere.");
+                    jQuery("#near-info").html("You're on Floor 11. Here's what we see around you.");
                     if(parseInt($scope.accuracy) < 10) {
                         $scope.showInfo(11,currentlocation);
                     } else {
@@ -176,7 +179,7 @@ angular.module('hygge.beaconControllers', [])
                     jQuery(".floor").removeClass("blur");
                     jQuery("#floor10").addClass("active-floor");  
                     jQuery("#currentlocationTitle").html("Floor 10");
-                    jQuery("#currentlocationExcerpt").html("You're on Floor 10 somewhere.");
+                    jQuery("#near-info").html("You're on Floor 10.<br>Here's what we see around you.");
                     if(parseInt($scope.accuracy) < 10) {
                         $scope.showInfo(10,currentlocation);
                     } else {
