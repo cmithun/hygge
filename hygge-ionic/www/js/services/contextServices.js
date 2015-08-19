@@ -67,6 +67,7 @@ angular.module('hygge.contextServices', ['ionic'])
           loc.y = rawlocs[i].custom_fields.y[0];
           loc.floor = rawlocs[i].custom_fields.floor[0];
           loc.radius = rawlocs[i].custom_fields.radius[0];
+          loc.icon = rawlocs[i].custom_fields.icon[0];
 
           locations.push(loc);
         }

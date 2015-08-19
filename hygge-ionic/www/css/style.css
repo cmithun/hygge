@@ -62,7 +62,7 @@ body{
 
 .explore1 {
   background-repeat: no-repeat;
-  background-position: top;    
+  background-position: 50%;    
   background-image: url('../img/explore-1.png');
   background-size:contain;
   height: 70%;
@@ -70,7 +70,7 @@ body{
 
 .explore2 {
   background-repeat: no-repeat;
-  background-position: top;    
+  background-position: 50%;    
   background-image: url('../img/explore-2.png');
   background-size:contain;
   height: 70%;
@@ -78,7 +78,7 @@ body{
 
 .explore3 {
   background-repeat: no-repeat;
-  background-position: top;    
+  background-position: 50%;    
   background-image: url('../img/explore-3.png');
   background-size:contain;
   height: 70%;
